@@ -30,7 +30,7 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "hp",
   "url": "https://github.com/GMonlineua/Foundry-ArchetericaLite",
-  "manifest": "https://raw.githubusercontent.com/GMonlineua/Foundry-ArchetericaLite/master/module.json",
+  "manifest": "https://raw.githubusercontent.com/GMonlineua/Foundry-ArchetericaLite/master/system.json",
   "download": "https://github.com/GMonlineua/Foundry-ArchetericaLite/releases/download/v0.1-alpha/version-0.1.zip",
   "license": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/LICENSE.md",
   "changelog": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/CHANGELOG.md"
