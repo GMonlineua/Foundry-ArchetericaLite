@@ -1,0 +1,96 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <div class="img-block">
+      <img class="profile-img actor-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+      <div class="resource flex-group-center">
+          <label for="system.info.hp.value" class="resource-label">{{localize 'ARCHETERICALITE.Hp'}}</label>
+          <progress id="system.info.hp.value" value="{{system.info.hp.value}}" max="{{system.info.hp.max}}"></progress>
+          <div class="hp-input flexrow">
+            <input type="text" name="system.info.hp.value" value="{{system.info.hp.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.info.hp.max" value="{{system.info.hp.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+    </div>
+    <div class="header-fields actor-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+
+      <div class="flexrow flex-center">
+        <h2 class="flexrow factionname">
+          <label for="system.info.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
+          <input type="text" name="system.info.faction" value="{{system.info.faction}}" data-dtype="String"/>
+        </h2>
+        <button type="button">{{localize 'ARCHETERICALITE.Check'}}</button>
+      </div>
+
+      <div class="resources grid grid-3col">
+
+        <div class="resource flex-group-center">
+          <label for="system.info.infirmity.value" class="resource-label">{{localize 'ARCHETERICALITE.Infirmity'}}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.info.infirmity.value" value="{{system.info.infirmity.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.info.stress.value" class="resource-label">{{localize 'ARCHETERICALITE.Stress'}}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.info.stress.value" value="{{system.info.stress.value}}" data-dtype="Number"/>
+            <span>/</span>
+            <input type="text" name="system.info.stress.max" value="{{system.info.stress.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.info.health.value" class="resource-label">{{localize 'ARCHETERICALITE.Health'}}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+              <select name="system.info.health.value">
+                <option value="healthy">{{localize 'ARCHETERICALITE.Healthy'}}</option>
+                <option value="wounded">{{localize 'ARCHETERICALITE.Wounded'}}</option>
+                <option value="severely-wounded">{{localize 'ARCHETERICALITE.SeverelyWounded'}}</option>
+                <option value="critical-condition">{{localize 'ARCHETERICALITE.CriticalCondition'}}</option>
+                <option value="at-death">{{localize 'ARCHETERICALITE.AtDeath'}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Imago'}}</label>
+          <input type="text" name="system.imago.value" value="{{system.imago.value}}" data-dtype="Number"/>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="general">{{localize 'ARCHETERICALITE.NavGeneral'}}</a>
+    <a class="item" data-tab="combat">{{localize 'ARCHETERICALITE.NavCombat'}}</a>
+    <a class="item" data-tab="description">{{localize 'ARCHETERICALITE.NavDescription'}}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned General Tab --}}
+    <div class="tab general" data-group="primary" data-tab="general">
+      {{> "systems/archetericalite/templates/actor/parts/npc-general.html"}}
+    </div>
+
+    {{!-- Owned Combat Tab --}}
+    <div class="tab combat" data-group="primary" data-tab="combat">
+      {{> "systems/archetericalite/templates/actor/parts/npc-combat.html"}}
+    </div>
+
+    {{!-- Owned Description Tab --}}
+    <div class="tab description" data-group="primary" data-tab="description">
+      {{> "systems/archetericalite/templates/actor/parts/actor-description.html"}}
+    </div>
+
+  </section>
+</form>
+

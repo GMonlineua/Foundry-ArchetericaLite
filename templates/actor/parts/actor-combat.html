@@ -1,0 +1,66 @@
+<div class="grid grid-2col combat-header">
+  <div class="resource flexrow">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.CombatExperience'}}</label>
+    <div class="resource-content flexrow flex-center flex-between">
+      <input type="text" name="system.combatExp.value" value="{{system.combatExp.value}}" data-dtype="Number"/>
+      <span> / </span>
+      <input type="text" name="system.combatExp.max" value="{{system.combatExp.max}}" data-dtype="Number"/>
+    </div>
+  </div>
+  <div class="resource flexrow">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Fatum'}}</label>
+    <div class="resource-content flexrow flex-center flex-between">
+      <span> + </span>
+      <input type="text" name="system.fatum.plus" value="{{system.fatum.plus}}" data-dtype="Number"/>
+      <span> - </span>
+      <input type="text" name="system.fatum.minus" value="{{system.fatum.minus}}" data-dtype="Number"/>
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-2col">
+  <div class="resource flexrow">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}</label>
+    <input type="text" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
+  </div>
+  <div class="resource flexrow">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Fencing'}}</label>
+    <input type="text" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
+  </div>
+  <div class="resource flexrow">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Firearms'}}</label>
+    <input type="text" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
+  </div>
+  <div class="resource flexrow">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Throwing'}}</label>
+    <input type="text" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
+  </div>
+</div>
+
+<div class="item-block">
+  <h1>{{localize 'ARCHETERICALITE.CombatTalentPlural'}}</h1>
+  <ol class="items-list">
+    {{#each comtals as |comtals comtalRank|}}
+      <li class="item flexrow items-header">
+        <div class="item-name">{{localize 'ARCHETERICALITE.Rank'}} <span class="rank" style="--rank:{{comtalRank}}"></div>
+        <div class="item-controls">
+          <a class="item-control item-create" title="Create item" data-type="comtal" data-comtal-rank="{{comtalRank}}"><i class="fas fa-plus"></i>{{localize 'ARCHETERICALITE.Add'}}</a>
+        </div>
+      </li>
+      {{#each comtals as |item id|}}
+        <li class="item flexrow" data-item-id="{{item._id}}">
+          <div class="item-name flexrow">
+            <div class="item-image">
+              <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+            </div>
+            <h4>{{item.name}}</h4>
+          </div>
+          <div class="item-controls">
+            <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+      {{/each}}
+    {{/each}}
+  </ol>
+</div>

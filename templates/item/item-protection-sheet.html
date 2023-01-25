@@ -1,0 +1,84 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      <div class="grid grid-2col">
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Armor'}}</label>
+          <input type="text" name="system.armor" value="{{system.armor}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Elitism'}}</label>
+          <input type="text" name="system.elitism" value="{{system.elitism}}" data-dtype="Number"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">{{localize 'ARCHETERICALITE.NavDescription'}}</a>
+    <a class="item" data-tab="attributes">{{localize 'ARCHETERICALITE.NavAttributes'}}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      <div class="grid grid-2col">
+        <div class="info-bar">
+          <p>{{system.type}}</p>
+          <p>{{localize 'ARCHETERICALITE.Quantity'}}: {{system.quantity}}</p>
+          <p>{{localize 'ARCHETERICALITE.Price'}}: {{system.price}}</p>
+          <p>{{localize 'ARCHETERICALITE.Weight'}}: {{system.weight}}</p>
+          <p>{{localize 'ARCHETERICALITE.HeavyArmor'}}: {{system.heavyArmor}}</p>
+        </div>
+        <div>
+          {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      <div class="resource flexrow">
+        <label class="resource-label">{{localize 'ARCHETERICALITE.Type'}}</label>
+        <input type="text" name="system.type" value="{{system.type}}" data-dtype="String"/>
+      </div>
+      <div class="grid grid-3col">
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Quantity'}}</label>
+          <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Price'}}</label>
+          <input type="text" name="system.price" value="{{system.price}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Weight'}}</label>
+          <input type="text" name="system.weight" value="{{system.weight}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.HeavyArmor'}}</label>
+          <input type="text" name="system.heavyArmor" value="{{system.heavyArmor}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Damage'}}</label>
+          <select name="system.damage">
+            <option value="damage-full">{{localize 'ARCHETERICALITE.DamageFull'}}</option>
+            <option value="damage-half">{{localize 'ARCHETERICALITE.DamageHalf'}}</option>
+            <option value="damage-minimal">{{localize 'ARCHETERICALITE.DamageMinimal'}}</option>
+            <option value="damage-cut">{{localize 'ARCHETERICALITE.DamageCut'}}</option>
+            <option value="damage-custom">{{localize 'ARCHETERICALITE.DamageCustom'}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="resource">
+        <label class="resource-label">{{localize 'ARCHETERICALITE.RollFormula'}}</label>
+        <input type="text" name="system.formula" value="{{system.formula}}" data-dtype="String"/>
+      </div>
+    </div>
+  </section>
+</form>

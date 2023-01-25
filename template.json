@@ -1,0 +1,136 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "info": {
+          "hp": {
+            "value": 12,
+            "max": 12
+          },
+          "stress": {
+            "value": 0,
+            "max": 12
+          },
+          "infirmity": {
+            "value": 0,
+            "max": 4
+          },
+          "health": "healthy",
+          "faction": ""
+        },
+        "talents-pyramid":{
+          "rank1": 4,
+          "rank2": 0,
+          "rank3": 0
+        },
+        "combat": {
+          "brawl": 0,
+          "fencing": 0,
+          "firearms": 0,
+          "throwing": 0,
+          "max": 6
+        },
+        "imago": {
+          "value": 1,
+          "max": 12
+        },
+        "description": {
+          "appearance": "",
+          "general": "",
+          "nature": "",
+          "notes": "",
+          "biography": ""
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "session": 0,
+      "ups": 0,
+      "deepstress": {
+        "value": 0,
+        "max": 12
+      },
+      "combatExp": {
+        "value": 0,
+        "max": 3
+      },
+      "tricks": {
+        "value": 0,
+        "max": 0
+      },
+      "fatum": {
+        "plus": 1,
+        "minus": 0
+      },
+      "riches":{
+        "accommodation": 0,
+        "profit": 0,
+        "zloty": 0,
+        "marks": 0,
+        "info": ""
+      }
+    },
+    "npc": {
+      "templates": ["base"]
+    }
+  },
+  "Item": {
+    "types": ["biography", "attribute", "negative", "comtal", "ability", "metamorphosis", "protection", "weapon"],
+    "templates": {
+      "base": {
+        "description": ""
+      },
+      "equipment": {
+        "type": "",
+        "elitism": null,
+        "price": 0,
+        "quantity": 1,
+        "weight": 0,
+        "damage":"",
+        "formula": "2d6"
+      }
+    },
+    "biography": {
+      "templates": ["base"]
+    },
+    "attribute": {
+      "templates": ["base"],
+      "pluss": 0
+    },
+    "negative": {
+      "templates": ["base"],
+      "rank": 1,
+      "minus": 0
+    },
+    "comtal": {
+      "templates": ["base"],
+      "comtalRank": 2
+    },
+    "ability": {
+      "templates": ["base"],
+      "rank": 1
+    },
+    "metamorphosis": {
+      "templates": ["base"],
+      "rank": 1
+    },
+    "protection": {
+      "templates": ["base", "equipment"],
+      "armor": 1,
+      "heavyArmor": null
+    },
+    "weapon": {
+      "templates": ["base", "equipment"],
+      "armorPiercing": null,
+      "charging": null,
+      "lethality": null,
+      "range": null,
+      "rangeWeapon": false,
+      "roughSight": false,
+      "throwing": false,
+      "twoHanded": false
+    }
+  }
+}

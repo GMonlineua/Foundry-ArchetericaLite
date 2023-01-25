@@ -1,0 +1,22 @@
+<div class="grid grid-2col">
+    <div>
+        <label for="system.description.appearance">{{ localize "ARCHETERICALITE.Appearance" }}</label>
+        <textarea name="system.description.appearance">{{system.description.appearance}}</textarea>
+    </div>
+    <div>
+        <label for="system.description.general">{{ localize "ARCHETERICALITE.GeneralInformation" }}</label>
+        <textarea name="system.description.general">{{system.description.general}}</textarea>
+    </div>
+    <div>
+        <h2><label for="system.description.nature">{{localize 'ARCHETERICALITE.Nature'}}</label></h2>
+        <textarea name="system.description.nature">{{system.description.nature}}</textarea>
+    </div>
+    <div>
+        <h2><label for="system.description.nature">{{localize 'ARCHETERICALITE.Notes'}}</label></h2>
+        <textarea name="system.description.notes">{{system.description.notes}}</textarea>
+    </div>
+    <div class="biography">
+        <h2>{{localize 'ARCHETERICALITE.Biography'}}</h2>
+        {{editor system.description.biography target="system.description.biography" button=true owner=owner editable=editable}}
+    </div>
+</div>

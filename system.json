@@ -1,0 +1,37 @@
+{
+  "id": "archetericalite",
+  "title": "Archeterica Lite",
+  "description": "Archeterica Imago Lite",
+  "version": "0.1",
+  "compatibility": {
+    "minimum": 10,
+    "verified": 10,
+    "maximum": 11
+  },
+  "authors": [
+    {
+      "name": "GMonline-ua",
+      "url": "https://github.com/GMonlineua"
+    }
+  ],
+  "esmodules": ["module/archetericalite.mjs"],
+  "styles": ["css/archetericalite.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "uk",
+      "name": "Українська (Ukrainian)",
+      "path": "lang/uk.json"
+    }
+  ],
+  "initiative": "2d6",
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "hp",
+  "url": "https://github.com/GMonlineua/Foundry-ArchetericaLite",
+  "manifest": "https://raw.githubusercontent.com/GMonlineua/Foundry-ArchetericaLite/master/module.json",
+  "download": "https://github.com/GMonlineua/Foundry-ArchetericaLite/releases/download/v0.1-alpha/version-0.1.zip",
+  "license": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/LICENSE.md",
+  "changelog": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/CHANGELOG.md"
+}
