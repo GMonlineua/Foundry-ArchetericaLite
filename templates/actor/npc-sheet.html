@@ -4,69 +4,78 @@
   <header class="sheet-header">
     <div class="img-block">
       <img class="profile-img actor-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-      <div class="resource flex-group-center">
-          <label for="system.info.hp.value" class="resource-label">{{localize 'ARCHETERICALITE.Hp'}}</label>
-          <progress id="system.info.hp.value" value="{{system.info.hp.value}}" max="{{system.info.hp.max}}"></progress>
-          <div class="hp-input flexrow">
-            <input type="number" name="system.info.hp.value" value="{{system.info.hp.value}}" data-dtype="Number"/>
+      <div class=" hp-bar resource">
+          <progress id="system.info.hp.value" value="{{system.info.hp.value}}" max="{{system.info.hp.max}}" title="{{localize 'ARCHETERICALITE.Hp'}}"></progress>
+          <div class="hp-input">
+            <input class="clear-input" type="number" name="system.info.hp.value" value="{{system.info.hp.value}}" data-dtype="Number"/>
             <span> / </span>
-            <input type="number" name="system.info.hp.max" value="{{system.info.hp.max}}" data-dtype="Number"/>
+            <input class="clear-input" type="number" name="system.info.hp.max" value="{{system.info.hp.max}}" data-dtype="Number"/>
           </div>
         </div>
     </div>
     <div class="header-fields actor-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
 
-      <div class="flexrow flex-center">
-        <h2 class="flexrow factionname">
+      <div class="faction-block grid grid-2col">
+        <h2 class="faction-name">
           <label for="system.info.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
-          <input type="text" name="system.info.faction" value="{{system.info.faction}}" data-dtype="String"/>
+          <input class="clear-input" type="text" name="system.info.faction" value="{{system.info.faction}}" data-dtype="String"/>
         </h2>
-        <button type="button">{{localize 'ARCHETERICALITE.Check'}}</button>
+        <button class="rollable check" data-roll="2d6" type="button">{{localize 'ARCHETERICALITE.Check'}}</button>
       </div>
 
-      <div class="resources grid grid-3col">
-
-        <div class="resource flex-group-center">
-          <label for="system.info.infirmity.value" class="resource-label">{{localize 'ARCHETERICALITE.Infirmity'}}</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.info.infirmity.value" value="{{system.info.infirmity.value}}" data-dtype="Number"/>
-          </div>
+      <div class="resources flexrow">
+        <div class="resource">
+          <label for="system.info.stress.value" class="resource-label">{{localize 'ARCHETERICALITE.Stress'}}: </label>
+          <input type="number" name="system.info.stress.value" value="{{system.info.stress.value}}" data-dtype="Number"/>
         </div>
 
-        <div class="resource flex-group-center">
-          <label for="system.info.stress.value" class="resource-label">{{localize 'ARCHETERICALITE.Stress'}}</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.info.stress.value" value="{{system.info.stress.value}}" data-dtype="Number"/>
-            <span>/</span>
-            <input type="text" name="system.info.stress.max" value="{{system.info.stress.max}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.info.health.value" class="resource-label">{{localize 'ARCHETERICALITE.Health'}}</label>
-          <div class="resource-content flexrow flex-center flex-between">
-              <select name="system.info.health.value">
-                <option value="healthy">{{localize 'ARCHETERICALITE.Healthy'}}</option>
-                <option value="wounded">{{localize 'ARCHETERICALITE.Wounded'}}</option>
-                <option value="severely-wounded">{{localize 'ARCHETERICALITE.SeverelyWounded'}}</option>
-                <option value="critical-condition">{{localize 'ARCHETERICALITE.CriticalCondition'}}</option>
-                <option value="at-death">{{localize 'ARCHETERICALITE.AtDeath'}}</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
+        <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.Imago'}}</label>
-          <input type="text" name="system.imago.value" value="{{system.imago.value}}" data-dtype="Number"/>
+          <input type="number" name="system.imago.value" value="{{system.imago.value}}" data-dtype="Number"/>
         </div>
 
+        <div class="resource">
+          <label for="system.info.infirmity.value" class="resource-label">{{localize 'ARCHETERICALITE.Infirmity'}}: </label>
+          <input type="number" name="system.info.infirmity.value" value="{{system.info.infirmity.value}}" data-dtype="Number"/>
+        </div>
+
+        <div class="resource flexrow">
+          <label for="system.info.health.value" class="resource-label">{{localize 'ARCHETERICALITE.Health'}}: </label>
+          <select name="system.info.health.value">
+            <option value="healthy">{{localize 'ARCHETERICALITE.Healthy'}}</option>
+            <option value="wounded">{{localize 'ARCHETERICALITE.Wounded'}}</option>
+            <option value="severely-wounded">{{localize 'ARCHETERICALITE.SeverelyWounded'}}</option>
+            <option value="critical-condition">{{localize 'ARCHETERICALITE.CriticalCondition'}}</option>
+            <option value="at-death">{{localize 'ARCHETERICALITE.AtDeath'}}</option>
+          </select>
+        </div>
       </div>
+
+      <div class="resources flexrow">
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
+          <input type="number" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Fencing'}}:</label>
+          <input type="number" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Firearms'}}:</label>
+          <input type="number" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Throwing'}}:</label>
+          <input type="number" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
+        </div>
+      </div>
+
     </div>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
+  <nav class="sheet-tabs tabs flexrow" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="general">{{localize 'ARCHETERICALITE.NavGeneral'}}</a>
     <a class="item" data-tab="combat">{{localize 'ARCHETERICALITE.NavCombat'}}</a>
