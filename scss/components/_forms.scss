@@ -103,10 +103,10 @@
     }
   }
 
-  .resources{
+  .resources {
     margin-bottom: 5px;
 
-    .resource{
+    .resource {
       flex: auto;
       align-items: baseline;
       *{
@@ -116,11 +116,60 @@
   }
 }
 
-.sheet-tabs {
+nav.sheet-tabs {
   flex: 0;
+  border-top-width: 2px;
+  border-bottom: none;
+
+  a.item {
+    background-color: rgb(165 154 132 / 30%);
+    text-shadow: none;
+  }
+
+  a.item.active {
+    background: none;
+    text-shadow: none;
+  }
 }
 
 .sheet-body {
+  .block-header {
+    position: relative;
+
+    a.item-add {
+      position: absolute;
+      top: 7px;
+      right: 0;
+
+      i {
+        margin-right: 2px;
+      }
+      i::before {
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+
+  .item-header {
+      position: relative;
+
+      .item-name {
+        display: flex;
+        h3 {
+          margin: 0 3px;
+          width: 100%;
+          border: none;
+        }
+      }
+
+      .item-controls {
+        position: absolute;
+        top: 5px;
+        right: 3px;
+      }
+    }
+
   .riches-info {
     grid-area: 1 / 2 / span 2 /  auto;
   }
