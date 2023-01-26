@@ -30,18 +30,6 @@ input.clear-input:focus {
   margin-right: 5px;
 }
 
-.resources {
-  margin-bottom: 5px;
-
-  .resource {
-    flex: auto;
-    align-items: baseline;
-    *{
-      flex: auto;
-    }
-  }
-}
-
 .rollable {
   &:hover,
   &:focus {

@@ -1,3 +1,15 @@
+.resources {
+  margin-bottom: 5px;
+
+  .resource {
+    flex: auto;
+    align-items: baseline;
+    *{
+      flex: auto;
+    }
+  }
+}
+
 .resource-label {
   font-weight: bold;
 }
