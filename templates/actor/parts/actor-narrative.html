@@ -55,11 +55,9 @@
   <div class="grid grid-2col">
    {{#each attribute as |item id|}}
       <div class="item" data-item-id="{{item._id}}">
-        <div class="item-header flexrow">
-          <div class="item-name flexrow">
-            <div class="item-image">
-              <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
-            </div>
+        <div class="item-header">
+          <div class="item-name">
+            <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
             <h3>{{item.name}} (+{{item.system.plus}})</h3>
           </div>
           <div class="item-controls">

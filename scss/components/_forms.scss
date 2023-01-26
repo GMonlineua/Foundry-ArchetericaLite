@@ -171,6 +171,12 @@ nav.sheet-tabs {
     }
   }
 
+  .mystical {
+    .resource-content {
+      display: inline;
+    }
+  }
+
   .riches-info {
     grid-area: 1 / 2 / span 2 /  auto;
   }

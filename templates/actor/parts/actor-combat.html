@@ -1,44 +1,44 @@
-<div class="grid grid-2col combat-header">
-  <div class="resource flexrow">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.CombatExperience'}}</label>
-    <div class="resource-content flexrow flex-center flex-between">
-      <input type="text" name="system.combatExp.value" value="{{system.combatExp.value}}" data-dtype="Number"/>
+<div class="resources flexrow">
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.CombatExperience'}}:</label>
+    <div class="resource-content">
+      <input type="number" name="system.combatExp.value" value="{{system.combatExp.value}}" data-dtype="Number"/>
       <span> / </span>
-      <input type="text" name="system.combatExp.max" value="{{system.combatExp.max}}" data-dtype="Number"/>
+      <input type="number" name="system.combatExp.max" value="{{system.combatExp.max}}" data-dtype="Number"/>
     </div>
   </div>
-  <div class="resource flexrow">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Fatum'}}</label>
-    <div class="resource-content flexrow flex-center flex-between">
-      <span> + </span>
-      <input type="text" name="system.fatum.plus" value="{{system.fatum.plus}}" data-dtype="Number"/>
-      <span> - </span>
-      <input type="text" name="system.fatum.minus" value="{{system.fatum.minus}}" data-dtype="Number"/>
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Fatum'}}:</label>
+    <div class="resource-content">
+      <i class="fas fa-plus"></i>
+      <input type="number" name="system.fatum.plus" value="{{system.fatum.plus}}" data-dtype="Number"/>
+      <i class="fas fa-minus"></i>
+      <input type="number" name="system.fatum.minus" value="{{system.fatum.minus}}" data-dtype="Number"/>
     </div>
   </div>
 </div>
 
-<div class="grid grid-2col">
-  <div class="resource flexrow">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}</label>
-    <input type="text" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
+<div class="resources flexrow">
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
+    <input type="number" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
   </div>
-  <div class="resource flexrow">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Fencing'}}</label>
-    <input type="text" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Fencing'}}:</label>
+    <input type="number" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
   </div>
-  <div class="resource flexrow">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Firearms'}}</label>
-    <input type="text" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Firearms'}}:</label>
+    <input type="number" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
   </div>
-  <div class="resource flexrow">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Throwing'}}</label>
-    <input type="text" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Throwing'}}:</label>
+    <input type="number" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
   </div>
 </div>
 
 <div class="item-block">
-  <h1>{{localize 'ARCHETERICALITE.CombatTalentPlural'}}</h1>
+  <h2>{{localize 'ARCHETERICALITE.CombatTalentPlural'}}</h2>
   <ol class="items-list">
     {{#each comtals as |comtals comtalRank|}}
       <li class="item flexrow items-header">

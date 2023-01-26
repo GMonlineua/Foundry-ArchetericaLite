@@ -107,7 +107,7 @@
   "ARCHETERICALITE.Range": "Дистанція",
   "ARCHETERICALITE.RangeWeapon": "Стрілецька",
   "ARCHETERICALITE.RoughSight": "Грубий Приціл",
-  "ARCHETERICALITE.Throwing": "Метальна",
   "ARCHETERICALITE.TwoHanded": "Дворучна",
-  "ARCHETERICALITE.WeaponFirearms": "Вогнепальна"
+  "ARCHETERICALITE.WeaponFirearms": "Вогнепальна",
+  "ARCHETERICALITE.WeaponThrowing": "Метальна"
 }

@@ -32,9 +32,25 @@ input.clear-input:focus {
   margin-right: 5px;
 }
 
+.resources {
+  margin-bottom: 5px;
+}
+.resources .resource {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.resources .resource * {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
+
 .rollable:hover, .rollable:focus {
   color: #000;
-  text-shadow: 0 0 10px red;
   cursor: pointer;
 }
 
@@ -376,26 +392,65 @@ input.clear-input:focus {
 .archetericalite .sheet-header .faction-block button.check:focus {
   outline: none;
 }
-.archetericalite .sheet-header .resources {
-  margin-bottom: 5px;
-}
-.archetericalite .sheet-header .resources .resource {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
-  flex: auto;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-}
-.archetericalite .sheet-header .resources .resource * {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
-  flex: auto;
-}
-.archetericalite .sheet-tabs {
+.archetericalite nav.sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
+  border-top-width: 2px;
+  border-bottom: none;
+}
+.archetericalite nav.sheet-tabs a.item {
+  background-color: rgba(165, 154, 132, 0.3);
+  text-shadow: none;
+}
+.archetericalite nav.sheet-tabs a.item.active {
+  background: none;
+  text-shadow: none;
+}
+.archetericalite .sheet-body .block-header {
+  position: relative;
+}
+.archetericalite .sheet-body .block-header a.item-add {
+  position: absolute;
+  top: 7px;
+  right: 0;
+}
+.archetericalite .sheet-body .block-header a.item-add i {
+  margin-right: 2px;
+}
+.archetericalite .sheet-body .block-header a.item-add i::before {
+  position: relative;
+  top: 1px;
+}
+.archetericalite .sheet-body .item-header {
+  position: relative;
+}
+.archetericalite .sheet-body .item-header .item-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.archetericalite .sheet-body .item-header .item-name h3 {
+  margin: 0 3px;
+  width: 100%;
+  border: none;
+}
+.archetericalite .sheet-body .item-header .item-controls {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+}
+.archetericalite .sheet-body .combat .resource-content {
+  display: inline;
+}
+.archetericalite .sheet-body .combat .resource-content i {
+  margin-left: 5px;
+}
+.archetericalite .sheet-body .combat .rank {
+  margin-left: 3px;
+}
+.archetericalite .sheet-body .mystical .resource-content {
+  display: inline;
 }
 .archetericalite .sheet-body .riches-info {
   grid-area: 1/2/span 2/auto;
