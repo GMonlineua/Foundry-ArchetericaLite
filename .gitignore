@@ -1,3 +1,6 @@
 # Node Modules
 node_modules/
 npm-debug.log
+
+# Test Pictures
+pictures/

@@ -20,12 +20,35 @@
       flex: 0 0 100px;
       height: 100px;
       margin-right: 10px;
+      border: none;
     }
 
     .profile-img.actor-img {
       height: 100%;
       width: 100%;
     }
+
+    .hp-bar {
+      position: relative;
+      top: -10px;
+      height: 20px;
+      overflow-y: visible;
+
+      progress {
+        width: 100%;
+      }
+
+      .hp-input {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: -10px;
+        * {
+          text-align: center;
+        }
+      }
+    }
+
   }
 
   .header-fields {
@@ -41,10 +64,54 @@
     padding: 0px;
     margin: 5px 0;
     border-bottom: 0;
+    font-family: $font-secondary;
+    font-weight: 700;
     input {
       width: 100%;
       height: 100%;
       margin: 0;
+    }
+  }
+
+  .faction-block {
+    grid-template-columns: auto 100px;
+    gap: 25px;
+
+    h2.faction-name {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      border-bottom: 0;
+      input {
+        border-bottom-width: 1px;
+      }
+    }
+
+    button.check {
+      height: 30px;
+      margin: 0;
+      border-style: solid;
+      border-color: #777;
+      border-width: 1px;
+      text-shadow: none;
+      font-family: $font-primary;
+      font-weight: bold;
+    }
+
+    button.check:focus {
+      outline: none;
+    }
+  }
+
+  .resources{
+    margin-bottom: 5px;
+
+    .resource{
+      flex: auto;
+      align-items: baseline;
+      *{
+        flex: auto;
+      }
     }
   }
 }
@@ -53,18 +120,20 @@
   flex: 0;
 }
 
-.archetericalite .riches-info{
-  grid-area: 1 / 2 / span 2 /  auto;
-}
+.sheet-body {
+  .riches-info {
+    grid-area: 1 / 2 / span 2 /  auto;
+  }
 
-.archetericalite .biography{
-  grid-area: 2 / 2 / span 2 /  auto;
+  .biography {
+    grid-area: 2 / 2 / span 2 /  auto;
+  }
 }
 
 .sheet-body,
 .sheet-body .tab,
 .sheet-body .tab .editor {
-  height: 100%;
+  height: calc(100% - 2px);
 }
 
 .tox {
@@ -77,12 +146,6 @@
   }
 }
 
-.rank{
-  counter-increment: my-awesome-counter 0;
-  counter-reset: my-awesome-counter var(--rank);
-}
-
-.rank:before{
-  content: counter(my-awesome-counter, upper-roman);
-  margin-right: 5px;
+.window-content input[type="number"] {
+  max-width: 35px;
 }

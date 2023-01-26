@@ -33,18 +33,22 @@ const css = gulp.series(compileScss);
 
 /* -----------------------------------------
   Watch Updates
- -----------------------------------------
+ -----------------------------------------*/
 
- function watchUpdates() {
-   gulp.watch(SYSTEM_SCSS, css);
- }
-*/
+function watchUpdates() {
+  gulp.watch(SYSTEM_SCSS, css);
+}
 
 /* ----------------------------------------- */
 /*  Export Tasks
 /* ----------------------------------------- */
 
 exports.default = gulp.series(
+  compileScss,
+  watchUpdates
+);
+exports.build = gulp.series(
   compileScss
 );
 exports.css = css;
+

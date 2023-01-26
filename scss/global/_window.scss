@@ -2,6 +2,34 @@
   font-family: $font-primary;
 }
 
+.hide {
+  display: none;
+}
+
+input.clear-input {
+  border-width: 0;
+  border-radius: 0;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+input.clear-input:focus {
+        outline: none;
+}
+
+.rank {
+  counter-increment: my-awesome-counter 0;
+  counter-reset: my-awesome-counter var(--rank);
+}
+
+.rank:before {
+  content: counter(my-awesome-counter, upper-roman);
+  margin-right: 5px;
+}
+
 .rollable {
   &:hover,
   &:focus {

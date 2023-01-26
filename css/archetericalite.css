@@ -1,7 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* Global styles */
 .window-app {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lora", serif;
+}
+
+.hide {
+  display: none;
+}
+
+input.clear-input {
+  border-width: 0;
+  border-radius: 0;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input.clear-input:focus {
+  outline: none;
+}
+
+.rank {
+  counter-increment: my-awesome-counter 0;
+  counter-reset: my-awesome-counter var(--rank);
+}
+
+.rank:before {
+  content: counter(my-awesome-counter, upper-roman);
+  margin-right: 5px;
 }
 
 .rollable:hover, .rollable:focus {
@@ -224,14 +252,13 @@
 }
 
 /* Styles limited to archetericalite sheets */
-.archetericalite {
-  /* ----------------------------------------- */
+.archetericalite { /* ----------------------------------------- */
   /*  Items Lists                              */
   /* ----------------------------------------- */
   /* Example style for ArchetericaLite (can be removed if not needed) */
 }
 .archetericalite .item-form {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lora", serif;
 }
 .archetericalite .sheet-header {
   -webkit-box-flex: 0;
@@ -265,10 +292,33 @@
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
+  border: none;
 }
 .archetericalite .sheet-header .img-block .profile-img.actor-img {
   height: 100%;
   width: 100%;
+}
+.archetericalite .sheet-header .img-block .hp-bar {
+  position: relative;
+  top: -10px;
+  height: 20px;
+  overflow-y: visible;
+}
+.archetericalite .sheet-header .img-block .hp-bar progress {
+  width: 100%;
+}
+.archetericalite .sheet-header .img-block .hp-bar .hp-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  top: -10px;
+}
+.archetericalite .sheet-header .img-block .hp-bar .hp-input * {
+  text-align: center;
 }
 .archetericalite .sheet-header .header-fields {
   -webkit-box-flex: 1;
@@ -285,27 +335,78 @@
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
 }
 .archetericalite .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
+.archetericalite .sheet-header .faction-block {
+  grid-template-columns: auto 100px;
+  gap: 25px;
+}
+.archetericalite .sheet-header .faction-block h2.faction-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-bottom: 0;
+}
+.archetericalite .sheet-header .faction-block h2.faction-name input {
+  border-bottom-width: 1px;
+}
+.archetericalite .sheet-header .faction-block button.check {
+  height: 30px;
+  margin: 0;
+  border-style: solid;
+  border-color: #777;
+  border-width: 1px;
+  text-shadow: none;
+  font-family: "Lora", serif;
+  font-weight: bold;
+}
+.archetericalite .sheet-header .faction-block button.check:focus {
+  outline: none;
+}
+.archetericalite .sheet-header .resources {
+  margin-bottom: 5px;
+}
+.archetericalite .sheet-header .resources .resource {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.archetericalite .sheet-header .resources .resource * {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
 .archetericalite .sheet-tabs {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
 }
-.archetericalite .archetericalite .riches-info {
+.archetericalite .sheet-body .riches-info {
   grid-area: 1/2/span 2/auto;
 }
-.archetericalite .archetericalite .biography {
+.archetericalite .sheet-body .biography {
   grid-area: 2/2/span 2/auto;
 }
 .archetericalite .sheet-body,
 .archetericalite .sheet-body .tab,
 .archetericalite .sheet-body .tab .editor {
-  height: 100%;
+  height: calc(100% - 2px);
 }
 .archetericalite .tox .tox-editor-container {
   background: #fff;
@@ -313,13 +414,8 @@
 .archetericalite .tox .tox-edit-area {
   padding: 0 8px;
 }
-.archetericalite .rank {
-  counter-increment: my-awesome-counter 0;
-  counter-reset: my-awesome-counter var(--rank);
-}
-.archetericalite .rank:before {
-  content: counter(my-awesome-counter, upper-roman);
-  margin-right: 5px;
+.archetericalite .window-content input[type=number] {
+  max-width: 35px;
 }
 .archetericalite .resource-label {
   font-weight: bold;
