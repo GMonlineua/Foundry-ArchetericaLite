@@ -102,18 +102,6 @@
       outline: none;
     }
   }
-
-  .resources {
-    margin-bottom: 5px;
-
-    .resource {
-      flex: auto;
-      align-items: baseline;
-      *{
-        flex: auto;
-      }
-    }
-  }
 }
 
 nav.sheet-tabs {
@@ -152,23 +140,36 @@ nav.sheet-tabs {
   }
 
   .item-header {
-      position: relative;
+    position: relative;
 
-      .item-name {
-        display: flex;
-        h3 {
-          margin: 0 3px;
-          width: 100%;
-          border: none;
-        }
-      }
-
-      .item-controls {
-        position: absolute;
-        top: 5px;
-        right: 3px;
+    .item-name {
+      display: flex;
+      h3 {
+        margin: 0 3px;
+        width: 100%;
+        border: none;
       }
     }
+
+    .item-controls {
+      position: absolute;
+      top: 5px;
+      right: 3px;
+    }
+  }
+
+  .combat {
+    .resource-content {
+      display: inline;
+      i {
+        margin-left: 5px;
+      }
+    }
+
+    .rank{
+      margin-left: 3px
+    }
+  }
 
   .riches-info {
     grid-area: 1 / 2 / span 2 /  auto;
