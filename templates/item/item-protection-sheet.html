@@ -1,15 +1,15 @@
 <form class="{{cssClass}}" autocomplete="off">
-  <header class="sheet-header">
-    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+  <header class="items-header">
+    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <div class="grid grid-2col">
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      <div class="resources flexrow">
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Armor'}}</label>
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Armor'}}: </label>
           <input type="text" name="system.armor" value="{{system.armor}}" data-dtype="Number"/>
         </div>
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Elitism'}}</label>
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Elitism'}}: </label>
           <input type="text" name="system.elitism" value="{{system.elitism}}" data-dtype="Number"/>
         </div>
       </div>
@@ -17,7 +17,7 @@
   </header>
 
   {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
+  <nav class="sheet-tabs tabs flexrow" data-group="primary">
     <a class="item" data-tab="description">{{localize 'ARCHETERICALITE.NavDescription'}}</a>
     <a class="item" data-tab="attributes">{{localize 'ARCHETERICALITE.NavAttributes'}}</a>
   </nav>

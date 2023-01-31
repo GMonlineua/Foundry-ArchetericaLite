@@ -32,23 +32,6 @@ input.clear-input:focus {
   margin-right: 5px;
 }
 
-.resources {
-  margin-bottom: 5px;
-}
-.resources .resource {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
-  flex: auto;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-}
-.resources .resource * {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
-  flex: auto;
-}
-
 .rollable:hover, .rollable:focus {
   color: #000;
   cursor: pointer;
@@ -268,7 +251,8 @@ input.clear-input:focus {
 }
 
 /* Styles limited to archetericalite sheets */
-.archetericalite { /* ----------------------------------------- */
+.archetericalite {
+  /* ----------------------------------------- */
   /*  Items Lists                              */
   /* ----------------------------------------- */
   /* Example style for ArchetericaLite (can be removed if not needed) */
@@ -303,14 +287,6 @@ input.clear-input:focus {
   padding-right: 10px;
 }
 .archetericalite .sheet-header .img-block .profile-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
-  height: 100px;
-  margin-right: 10px;
-  border: none;
-}
-.archetericalite .sheet-header .img-block .profile-img.actor-img {
   height: 100%;
   width: 100%;
 }
@@ -472,31 +448,79 @@ input.clear-input:focus {
 .archetericalite .window-content input[type=number] {
   max-width: 35px;
 }
+.archetericalite .resources {
+  margin-bottom: 5px;
+}
+.archetericalite .resources .resource {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.archetericalite .resources .resource * {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
 .archetericalite .resource-label {
   font-weight: bold;
 }
 .archetericalite .items-header {
-  height: 28px;
-  margin: 2px 0;
-  padding: 0;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
-  font-weight: bold;
-}
-.archetericalite .items-header > * {
-  font-size: 14px;
-  text-align: center;
-}
-.archetericalite .items-header .item-name {
-  font-weight: bold;
-  padding-left: 5px;
-  text-align: left;
+  -webkit-box-flex: 100px;
+  -ms-flex: 100px auto;
+  flex: 100px auto;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.archetericalite .items-header .item-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+  border: none;
+}
+.archetericalite .items-header .header-fields {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.archetericalite .items-header .header-fields h1.item-name {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+.archetericalite .items-header .header-fields h1.item-name input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.archetericalite .sheet-body .info-bar {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
+.archetericalite .sheet-body .editor-block {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
 }
 .archetericalite .items-list {
   list-style: none;
