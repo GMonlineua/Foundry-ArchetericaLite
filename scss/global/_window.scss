@@ -20,6 +20,16 @@ input.clear-input:focus {
   outline: none;
 }
 
+.window-content {
+  input[type="number"] {
+    max-width: 35px;
+  }
+
+  input[type="text"] {
+    width: auto;
+  }
+}
+
 .rank {
   counter-increment: my-awesome-counter 0;
   counter-reset: my-awesome-counter var(--rank);

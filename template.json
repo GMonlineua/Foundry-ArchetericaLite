@@ -83,7 +83,6 @@
         "description": ""
       },
       "equipment": {
-        "type": "",
         "elitism": null,
         "price": 0,
         "quantity": 1,

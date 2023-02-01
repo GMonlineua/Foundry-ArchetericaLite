@@ -32,10 +32,8 @@
   <section class="sheet-body">
 
     {{!-- Description Tab --}}
-    <div class="tab" data-group="primary" data-tab="description">
-      <div class="flexrow">
-        <div class="info-bar">
-          <p>{{system.type}}</p>
+    <div class="tab sidebar-block flexrow" data-group="primary" data-tab="description">
+        <div class="info-sidebar">
           <p>{{localize 'ARCHETERICALITE.Quantity'}}: {{system.quantity}}</p>
           <p>{{localize 'ARCHETERICALITE.Price'}}: {{system.price}}</p>
           <p>{{localize 'ARCHETERICALITE.Weight'}}: {{system.weight}}</p>
@@ -45,47 +43,45 @@
           <p>{{localize 'ARCHETERICALITE.Range'}}: {{system.range}}</p>
         </div>
         <div class="editor-block">
-          Test text The justify-content PropertyThe justify-content PropertyThe justify-content PropertyThe justify-content PropertyThe justify-content PropertyThe justify-content PropertyThe justify-content Property
-<!--          {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}-->
+          {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
         </div>
       </div>
     </div>
 
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      <div class="resource flexrow">
-        <label class="resource-label">{{localize 'ARCHETERICALITE.Type'}}</label>
-        <input type="text" name="system.type" value="{{system.type}}" data-dtype="String"/>
-      </div>
-      <div class="grid grid-3col">
-        <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Quantity'}}</label>
-          <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
-        </div>
-        <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Price'}}</label>
-          <input type="text" name="system.price" value="{{system.price}}" data-dtype="Number"/>
-        </div>
-        <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Weight'}}</label>
-          <input type="text" name="system.weight" value="{{system.weight}}" data-dtype="Number"/>
-        </div>
 
+      <div class="resources flexrow">
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.ArmorPiercing'}}</label>
-          <input type="text" name="system.armorPiercing" value="{{system.armorPiercing}}" data-dtype="Number"/>
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Quantity'}}:</label>
+          <input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
         </div>
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Lethality'}}</label>
-          <input type="text" name="system.lethality" value="{{system.lethality}}" data-dtype="Number"/>
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Price'}}:</label>
+          <input type="number" name="system.price" value="{{system.price}}" data-dtype="Number"/>
         </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Weight'}}:</label>
+          <input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"/>
+        </div>
+      </div>
+
+      <div class="resources flexrow">
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.ArmorPiercing'}}:</label>
+          <input type="number" name="system.armorPiercing" value="{{system.armorPiercing}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Lethality'}}:</label>
+          <input type="number" name="system.lethality" value="{{system.lethality}}" data-dtype="Number"/>
+        </div>
+      </div>
+
+      <div class="resources flexrow">
         <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.TwoHanded'}}</label>
           <input type="checkbox" name="system.twoHanded" value="{{system.twoHanded}}" data-dtype="Boolean"/>
         </div>
-      </div>
-
-      <div class="grid grid-2col">
         <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.WeaponThrowing'}}</label>
           <input type="checkbox" name="system.throwing" value="{{system.throwing}}" data-dtype="Boolean"/>
@@ -96,13 +92,13 @@
         </div>
       </div>
 
-      <div class="grid grid-3col range-weapon">
+      <div class="resources flexrow">
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Range'}}</label>
-          <input type="text" name="system.range" value="{{system.range}}" data-dtype="Number"/>
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Range'}}:</label>
+          <input type="number" name="system.range" value="{{system.range}}" data-dtype="Number"/>
         </div>
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Charging'}}</label>
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Charging'}}:</label>
           <input type="text" name="system.charging" value="{{system.charging}}" data-dtype="String"/>
         </div>
         <div class="resource">
@@ -112,7 +108,7 @@
       </div>
 
       <div class="resource">
-        <label class="resource-label">{{localize 'ARCHETERICALITE.RollFormula'}}</label>
+        <label class="resource-label">{{localize 'ARCHETERICALITE.RollFormula'}}: </label>
         <input type="text" name="system.formula" value="{{system.formula}}" data-dtype="String"/>
       </div>
     </div>

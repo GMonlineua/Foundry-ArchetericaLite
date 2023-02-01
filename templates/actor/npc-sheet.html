@@ -3,7 +3,7 @@
   {{!-- Sheet Header --}}
   <header class="sheet-header">
     <div class="img-block">
-      <img class="profile-img actor-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
       <div class=" hp-bar resource">
           <progress id="system.info.hp.value" value="{{system.info.hp.value}}" max="{{system.info.hp.max}}" title="{{localize 'ARCHETERICALITE.Hp'}}"></progress>
           <div class="hp-input">
@@ -13,7 +13,7 @@
           </div>
         </div>
     </div>
-    <div class="header-fields actor-fields">
+    <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
 
       <div class="faction-block grid grid-2col">
