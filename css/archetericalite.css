@@ -432,8 +432,16 @@ input.clear-input:focus {
 .archetericalite .sheet-body .riches-info {
   grid-area: 1/2/span 2/auto;
 }
+.archetericalite .sheet-body .riches-info .editor {
+  padding: 0 5px;
+  border: 1px solid var(--color-border-light-primary);
+}
 .archetericalite .sheet-body .biography {
   grid-area: 2/2/span 2/auto;
+}
+.archetericalite .sheet-body .biography .editor {
+  padding: 0 5px;
+  border: 1px solid var(--color-border-light-primary);
 }
 .archetericalite .sheet-body,
 .archetericalite .sheet-body .tab,
@@ -610,8 +618,8 @@ input.clear-input:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
+  background-color: rgba(165, 154, 132, 0.3);
+  border: 1px solid var(--color-border-light-primary);
   font-weight: bold;
 }
 .archetericalite .items-list .items-header > * {
