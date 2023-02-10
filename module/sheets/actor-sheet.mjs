@@ -8,7 +8,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["archetericalite", "sheet", "actor", "character"],
-      template: "systems/archetericalite/templates/actor/actor-sheet.html",
+      template: "systems/archetericalite/templates/actor/actor-sheet.hbs",
       width: 750,
       height: 800,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "narrative" }]
@@ -19,7 +19,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["archetericalite", "sheet", "actor", "npc"],
-      template: "systems/archetericalite/templates/actor/actor-sheet.html",
+      template: "systems/archetericalite/templates/actor/actor-sheet.hbs",
       width: 750,
       height: 800,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }]
@@ -28,7 +28,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/archetericalite/templates/actor/${this.actor.type}-sheet.html`;
+    return `systems/archetericalite/templates/actor/${this.actor.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -66,8 +66,8 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    if ( !game.user.isGM && this.actor.limited ) return "systems/archetericalite/templates/actor/limited-sheet.html";
-    return `systems/archetericalite/templates/actor/${this.actor.type}-sheet.html`;
+    if ( !game.user.isGM && this.actor.limited ) return "systems/archetericalite/templates/actor/limited-sheet.hbs";
+    return `systems/archetericalite/templates/actor/${this.actor.type}-sheet.hbs`;
   }
 
   /**
@@ -147,11 +147,11 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
+  activateListeners(hbs) {
+    super.activateListeners(hbs);
 
     // Render the item sheet for viewing/editing prior to the editable check.
-    html.find('.item-edit').click(ev => {
+    hbs.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
@@ -162,10 +162,10 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     if (!this.isEditable) return;
 
     // Add Inventory Item
-    html.find('.item-create').click(this._onItemCreate.bind(this));
+    hbs.find('.item-create').click(this._onItemCreate.bind(this));
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
+    hbs.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.delete();
@@ -173,12 +173,12 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     });
 
     // Rollable.
-    html.find('.rollable').click(this._onRoll.bind(this));
+    hbs.find('.rollable').click(this._onRoll.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = ev => this._onDragStart(ev);
-      html.find('li.item').each((i, li) => {
+      hbs.find('li.item').each((i, li) => {
         if (li.classList.contains("inventory-header")) return;
         li.setAttribute("draggable", true);
         li.addEventListener("dragstart", handler, false);

@@ -26,30 +26,18 @@
 
       <div class="resources flexrow">
         <div class="resource">
-          <label for="system.session" class="resource-label">{{localize 'ARCHETERICALITE.Session'}}: </label>
-          <input type="number" name="system.session" value="{{system.session}}" data-dtype="Number"/>
-        </div>
-
-        <div class="resource">
-          <label for="system.ups" class="resource-label">{{localize 'ARCHETERICALITE.FreeUp'}}: </label>
-          <input type="number" name="system.ups" value="{{system.ups}}" data-dtype="Number"/>
-        </div>
-
-        <div class="resource">
-          <label for="system.info.infirmity.value" class="resource-label">{{localize 'ARCHETERICALITE.Infirmity'}}: </label>
-          <input type="number" name="system.info.infirmity.value" value="{{system.info.infirmity.value}}" data-dtype="Number"/>
-        </div>
-      </div>
-
-      <div class="resources flexrow">
-        <div class="resource">
           <label for="system.info.stress.value" class="resource-label">{{localize 'ARCHETERICALITE.Stress'}}: </label>
           <input type="number" name="system.info.stress.value" value="{{system.info.stress.value}}" data-dtype="Number"/>
         </div>
 
         <div class="resource">
-          <label for="system.deepstress.value" class="resource-label">{{localize 'ARCHETERICALITE.DeepStress'}}: </label>
-          <input type="number" name="system.deepstress.value" value="{{system.deepstress.value}}" data-dtype="Number"/>
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Imago'}}</label>
+          <input type="number" name="system.imago.value" value="{{system.imago.value}}" data-dtype="Number"/>
+        </div>
+
+        <div class="resource">
+          <label for="system.info.infirmity.value" class="resource-label">{{localize 'ARCHETERICALITE.Infirmity'}}: </label>
+          <input type="number" name="system.info.infirmity.value" value="{{system.info.infirmity.value}}" data-dtype="Number"/>
         </div>
 
         <div class="resource flexrow">
@@ -63,45 +51,53 @@
           </select>
         </div>
       </div>
+
+      <div class="resources flexrow">
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
+          <input type="number" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Fencing'}}:</label>
+          <input type="number" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Firearms'}}:</label>
+          <input type="number" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Throwing'}}:</label>
+          <input type="number" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
+        </div>
+      </div>
+
     </div>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="narrative">{{localize 'ARCHETERICALITE.NavNarrative'}}</a>
+    <a class="item" data-tab="general">{{localize 'ARCHETERICALITE.NavGeneral'}}</a>
     <a class="item" data-tab="combat">{{localize 'ARCHETERICALITE.NavCombat'}}</a>
-    <a class="item" data-tab="mystical">{{localize 'ARCHETERICALITE.NavMystical'}}</a>
-    <a class="item" data-tab="riches">{{localize 'ARCHETERICALITE.NavRiches'}}</a>
     <a class="item" data-tab="description">{{localize 'ARCHETERICALITE.NavDescription'}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Owned Narrative Tab --}}
-    <div class="tab narrative" data-group="primary" data-tab="narrative">
-      {{> "systems/archetericalite/templates/actor/parts/actor-narrative.html"}}
+    {{!-- Owned General Tab --}}
+    <div class="tab general" data-group="primary" data-tab="general">
+      {{> "systems/archetericalite/templates/actor/parts/npc-general.hbs"}}
     </div>
 
     {{!-- Owned Combat Tab --}}
     <div class="tab combat" data-group="primary" data-tab="combat">
-       {{> "systems/archetericalite/templates/actor/parts/actor-combat.html"}}
-    </div>
-
-    {{!-- Owned Mystical Tab --}}
-    <div class="tab mystical" data-group="primary" data-tab="mystical">
-      {{> "systems/archetericalite/templates/actor/parts/actor-mystical.html"}}
-    </div>
-
-    {{!-- Owned Riches Tab --}}
-    <div class="tab riches" data-group="primary" data-tab="riches">
-      {{> "systems/archetericalite/templates/actor/parts/actor-riches.html"}}
+      {{> "systems/archetericalite/templates/actor/parts/npc-combat.hbs"}}
     </div>
 
     {{!-- Owned Description Tab --}}
     <div class="tab description" data-group="primary" data-tab="description">
-      {{> "systems/archetericalite/templates/actor/parts/actor-description.html"}}
+      {{> "systems/archetericalite/templates/actor/parts/actor-description.hbs"}}
     </div>
 
   </section>
