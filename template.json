@@ -19,7 +19,7 @@
           "health": "healthy",
           "faction": ""
         },
-        "talents-pyramid":{
+        "talentsPyramid":{
           "rank1": 4,
           "rank2": 0,
           "rank3": 0
@@ -31,9 +31,15 @@
           "throwing": 0,
           "max": 6
         },
-        "imago": {
-          "value": 1,
-          "max": 12
+        "mystical": {
+          "imago": {
+            "value": 1,
+            "max": 12
+          },
+          "abyssMark": {
+            "value": null,
+            "max": 12
+          }
         },
         "description": {
           "appearance": "",
@@ -56,13 +62,17 @@
         "value": 0,
         "max": 3
       },
+      "fatum": {
+        "plus": 1,
+        "minus": 0
+      },
       "tricks": {
         "value": 0,
         "max": 0
       },
-      "fatum": {
-        "plus": 1,
-        "minus": 0
+      "xenomagoGleam": {
+        "value": null,
+        "max": 12
       },
       "riches":{
         "accommodation": 0,
