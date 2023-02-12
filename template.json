@@ -19,11 +19,6 @@
           "health": "healthy",
           "faction": ""
         },
-        "talentsPyramid":{
-          "rank1": 4,
-          "rank2": 0,
-          "rank3": 0
-        },
         "combat": {
           "brawl": 0,
           "fencing": 0,
@@ -57,6 +52,11 @@
       "deepstress": {
         "value": 0,
         "max": 12
+      },
+      "talentsPyramid":{
+        "rank1": 4,
+        "rank2": 0,
+        "rank3": 0
       },
       "combatExp": {
         "value": 0,

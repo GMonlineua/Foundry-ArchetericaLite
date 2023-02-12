@@ -146,6 +146,34 @@ nav.sheet-tabs {
     }
   }
 
+  .narrative-block {
+    display: grid;
+    grid-template-columns: 75px auto;
+    gap: 10px;
+
+    .talentsPyramid {
+      text-align: center;
+
+      h4 {
+        font-weight: bold;
+      }
+
+      .resource {
+        margin: 20px 0;
+
+        input {
+          min-width: 50px;
+          border-radius: 7px;
+        }
+
+        .resource-label {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .combat {
     .resource-content {
       display: inline;

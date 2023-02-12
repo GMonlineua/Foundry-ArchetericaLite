@@ -417,6 +417,28 @@ input.clear-input:focus {
   top: 5px;
   right: 3px;
 }
+.archetericalite .sheet-body .narrative-block {
+  display: grid;
+  grid-template-columns: 75px auto;
+  gap: 10px;
+}
+.archetericalite .sheet-body .narrative-block .talentsPyramid {
+  text-align: center;
+}
+.archetericalite .sheet-body .narrative-block .talentsPyramid h4 {
+  font-weight: bold;
+}
+.archetericalite .sheet-body .narrative-block .talentsPyramid .resource {
+  margin: 20px 0;
+}
+.archetericalite .sheet-body .narrative-block .talentsPyramid .resource input {
+  min-width: 50px;
+  border-radius: 7px;
+}
+.archetericalite .sheet-body .narrative-block .talentsPyramid .resource .resource-label {
+  display: block;
+  width: 100%;
+}
 .archetericalite .sheet-body .combat .resource-content {
   display: inline;
 }
