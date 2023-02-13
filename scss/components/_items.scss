@@ -41,6 +41,10 @@
 
   .editor-block {
     flex: auto;
+
+    .editor {
+      min-height: 200px;
+    }
   }
 }
 

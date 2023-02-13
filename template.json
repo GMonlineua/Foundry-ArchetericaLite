@@ -87,7 +87,7 @@
     }
   },
   "Item": {
-    "types": ["biography", "attribute", "negative", "comtal", "ability", "metamorphosis", "protection", "weapon"],
+    "types": ["biography", "attribute", "negative", "comtal", "ability", "metamorphosis", "loot", "protection", "weapon"],
     "templates": {
       "base": {
         "description": ""
@@ -97,8 +97,7 @@
         "price": 0,
         "quantity": 1,
         "weight": 0,
-        "damage":"",
-        "formula": "2d6"
+        "damage":""
       }
     },
     "biography": {
@@ -124,6 +123,9 @@
     "metamorphosis": {
       "templates": ["base"],
       "rank": 1
+    },
+    "loot": {
+      "templates": ["base", "equipment"]
     },
     "protection": {
       "templates": ["base", "equipment"],

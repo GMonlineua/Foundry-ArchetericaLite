@@ -5,8 +5,11 @@
   font-family: "Lora", serif;
 }
 
-.hide {
-  display: none;
+.window-content input[type=number] {
+  max-width: 35px;
+}
+.window-content input[type=text] {
+  width: auto;
 }
 
 input.clear-input {
@@ -22,13 +25,6 @@ input.clear-input:focus {
   outline: none;
 }
 
-.window-content input[type=number] {
-  max-width: 35px;
-}
-.window-content input[type=text] {
-  width: auto;
-}
-
 .rank {
   counter-increment: my-awesome-counter 0;
   counter-reset: my-awesome-counter var(--rank);
@@ -42,6 +38,14 @@ input.clear-input:focus {
 .rollable:hover, .rollable:focus {
   color: #000;
   cursor: pointer;
+}
+
+.tox {
+  min-height: 300px;
+}
+
+.editor {
+  min-height: 200px;
 }
 
 .grid,
@@ -452,7 +456,7 @@ input.clear-input:focus {
   display: inline;
 }
 .archetericalite .sheet-body .riches .editor {
-  min-height: 200px;
+  min-height: 150px;
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
 }
@@ -466,7 +470,7 @@ input.clear-input:focus {
   grid-area: 2/2/span 2/auto;
 }
 .archetericalite .sheet-body .description .grid .editor {
-  min-height: 200px;
+  min-height: 150px;
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
 }
@@ -611,6 +615,9 @@ input.clear-input:focus {
   -webkit-box-flex: 1;
   -ms-flex: auto;
   flex: auto;
+}
+.archetericalite .sheet-body .editor-block .editor {
+  min-height: 200px;
 }
 .archetericalite .items-list {
   list-style: none;

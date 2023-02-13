@@ -86,6 +86,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     };
     const metamorphosis = [];
     const ability = [];
+    const loot = [];
     const protection = [];
     const weapon = [];
 
@@ -118,6 +119,10 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
       else if (i.type === 'metamorphosis') {
         metamorphosis.push(i);
       }
+      // Append to loot.
+      else if (i.type === 'loot') {
+        loot.push(i);
+      }
       // Append to protection.
       else if (i.type === 'protection') {
         protection.push(i);
@@ -135,6 +140,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     context.comtals = comtals;
     context.ability = ability;
     context.metamorphosis = metamorphosis;
+    context.loot = loot;
     context.protection = protection;
     context.weapon = weapon;
   }

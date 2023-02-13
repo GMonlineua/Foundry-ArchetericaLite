@@ -2,8 +2,14 @@
   font-family: $font-primary;
 }
 
-.hide {
-  display: none;
+.window-content {
+  input[type="number"] {
+    max-width: 35px;
+  }
+
+  input[type="text"] {
+    width: auto;
+  }
 }
 
 input.clear-input {
@@ -18,16 +24,6 @@ input.clear-input {
 
 input.clear-input:focus {
   outline: none;
-}
-
-.window-content {
-  input[type="number"] {
-    max-width: 35px;
-  }
-
-  input[type="text"] {
-    width: auto;
-  }
 }
 
 .rank {
@@ -46,4 +42,12 @@ input.clear-input:focus {
     color: #000;
     cursor: pointer;
   }
+}
+
+.tox {
+  min-height: 300px;
+}
+
+.editor {
+  min-height: 200px;
 }
