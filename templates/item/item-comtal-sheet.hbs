@@ -5,7 +5,7 @@
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="resource">
         <label class="resource-label">{{localize 'ARCHETERICALITE.CombatTalentRank'}}: </label>
-        <input type="number" name="system.comtalRank" value="{{system.comtalRank}}" data-dtype="Number"/>
+        <input type="number" name="system.comtalRank" value="{{system.comtalRank}}" data-dtype="Number" min="1" max="6"/>
       </div>
     </div>
   </header>

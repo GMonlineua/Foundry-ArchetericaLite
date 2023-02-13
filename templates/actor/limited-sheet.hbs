@@ -1,32 +1,18 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
 
-  {{!-- Sheet Header --}}
-  <header class="sheet-header">
-    <div class="img-block">
-      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-    </div>
-    <div class="header-fields">
+  <div class="limited-sheet">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="limited-info">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-        <div class="resource flex-group-center">
-            <label for="system.info.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}</label>
-            <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.info.faction" value="{{system.info.faction}}" data-dtype="String"/>
-            </div>
-        </div>
+      <div>
+        <h2>{{localize 'ARCHETERICALITE.Appearance'}}</h2>
+        {{editor system.description.appearance target="system.description.appearance" button=true owner=owner editable=editable}}
+      </div>
+      <div>
+        <h2>{{localize 'ARCHETERICALITE.GeneralInformation'}}</h2>
+        {{editor system.description.general target="system.description.general" button=true owner=owner editable=editable}}
       </div>
     </div>
-  </header>
-
-    {{!-- Sheet Body --}}
-    <section class="sheet-body">
-        <div>
-            <label>{{ localize "ARCHETERICALITE.Appearance" }}</label>
-            <textarea name="system.description.appearance">{{system.description.appearance}}</textarea>
-        </div>
-        <div>
-            <label>{{ localize "ARCHETERICALITE.GeneralInformation" }}</label>
-            <textarea name="system.description.general">{{system.description.general}}</textarea>
-        </div>
-    </section>
+  </div>
 
 </form>

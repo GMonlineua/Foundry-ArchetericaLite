@@ -451,17 +451,22 @@ input.clear-input:focus {
 .archetericalite .sheet-body .mystical .resource-content {
   display: inline;
 }
-.archetericalite .sheet-body .riches-info {
-  grid-area: 1/2/span 2/auto;
-}
-.archetericalite .sheet-body .riches-info .editor {
+.archetericalite .sheet-body .riches .editor {
+  min-height: 200px;
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
 }
-.archetericalite .sheet-body .biography {
+.archetericalite .sheet-body .description {
+  padding-bottom: 25px;
+}
+.archetericalite .sheet-body .description .grid {
+  gap: 35px 10px;
+}
+.archetericalite .sheet-body .description .grid .biography {
   grid-area: 2/2/span 2/auto;
 }
-.archetericalite .sheet-body .biography .editor {
+.archetericalite .sheet-body .description .grid .editor {
+  min-height: 200px;
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
 }
@@ -500,6 +505,57 @@ input.clear-input:focus {
 }
 .archetericalite .resource input {
   display: inline;
+}
+.archetericalite .limited-sheet {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.archetericalite .limited-sheet img.profile-img {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  min-width: 300px;
+  padding-right: 10px;
+  border: none;
+}
+.archetericalite .limited-sheet .limited-info {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+.archetericalite .limited-sheet .limited-info h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+.archetericalite .limited-sheet .limited-info h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.archetericalite .limited-sheet .editor {
+  min-height: 150px;
+  padding: 0 5px;
+  border: 1px solid var(--color-border-light-primary);
 }
 .archetericalite .items-header {
   -webkit-box-flex: 100px;

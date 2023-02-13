@@ -28,6 +28,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
+    if ( !game.user.isGM && this.actor.limited ) return "systems/archetericalite/templates/actor/limited-sheet.hbs";
     return `systems/archetericalite/templates/actor/${this.actor.type}-sheet.hbs`;
   }
 
@@ -62,12 +63,6 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     context.rollData = context.actor.getRollData();
 
     return context;
-  }
-
-  /** @override */
-  get template() {
-    if ( !game.user.isGM && this.actor.limited ) return "systems/archetericalite/templates/actor/limited-sheet.hbs";
-    return `systems/archetericalite/templates/actor/${this.actor.type}-sheet.hbs`;
   }
 
   /**

@@ -10,6 +10,8 @@
   "ITEM.TypeMetamorphosis": "Метаморфоза",
   "ITEM.TypeProtection": "Захист",
   "ITEM.TypeWeapon": "Зброя",
+  "ITEM.TypeLoot": "Предмет",
+
   "ARCHETERICALITE.ItemName": "Назва",
   "ARCHETERICALITE.ActorName": "Ім'я",
   "ARCHETERICALITE.NewItem": "Новий",
@@ -84,11 +86,12 @@
   "ARCHETERICALITE.Notes": "Нотатки",
   "ARCHETERICALITE.Biography": "Біографія",
 
-  "ARCHETERICALITE.Riches": "Багатства",
   "ARCHETERICALITE.Accommodation": "Проживання",
   "ARCHETERICALITE.Profit": "Чистий Прибуток",
   "ARCHETERICALITE.Zloty": "Злоті",
   "ARCHETERICALITE.Marks": "Марки",
+  "ARCHETERICALITE.LootPlural": "Предмети",
+  "ARCHETERICALITE.Riches": "Багатства",
 
   "ARCHETERICALITE.Quantity": "Кількість",
   "ARCHETERICALITE.Weight": "Вага",
