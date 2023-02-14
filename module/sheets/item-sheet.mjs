@@ -26,6 +26,13 @@ export class ArchetericaLiteItemSheet extends ItemSheet {
   getData() {
     // Retrieve base data structure.
     const context = super.getData();
+    const sheetData = this.object;
+
+    if (sheetData.system.comtalRank < 2) {
+      sheetData.system.comtalRank = 2
+    } else if (sheetData.system.comtalRank > 6) {
+      sheetData.system.comtalRank = 6
+    }
 
     // Use a safe clone of the item data for further operations.
     const itemData = context.item;
