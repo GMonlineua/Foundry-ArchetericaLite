@@ -5,7 +5,7 @@
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.PlusPlural'}}: </label>
-          <input type="number" name="system.plus" value="{{system.plus}}" data-dtype="Number"/>
+          <input type="number" name="system.plus" value="{{system.pluss}}" data-dtype="Number"/>
       </div>
     </div>
   </header>
@@ -15,7 +15,66 @@
     {{!-- Description Tab --}}
     <div class="tab">
       <hr>
-      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+      <div class="resources">
+        <div class="resource">
+          <input type="checkbox" name="system.talent1.active" title="{{localize 'ARCHETERICALITE.Active'}}" data-dtype="Boolean" {{#if system.talent1.active}} checked {{/if}}/>
+          <input type="text" name="system.talent1.name" value="{{system.talent1.name}}" placeholder="{{localize 'ITEM.TypeNarrativetalent'}}" data-dtype="String"/>
+          <lable>{{localize 'ARCHETERICALITE.Rank'}}:</lable>
+          <input type="number" name="system.talent1.rank" value="{{system.talent1.rank}}" data-dtype="Number"/>
+           <lable>{{localize 'ARCHETERICALITE.Upheaval'}}</lable>
+           <input type="checkbox" name="system.talent1.upheaval" data-dtype="Boolean" {{#if system.talent1.upheaval}} checked {{/if}}/>
+        </div>
+
+        <div class="resource">
+          <input type="checkbox" name="system.talent2.active" title="{{localize 'ARCHETERICALITE.Active'}}" data-dtype="Boolean" {{#if system.talent2.active}} checked {{/if}}/>
+          <input type="text" name="system.talent2.name" value="{{system.talent2.name}}" placeholder="{{localize 'ITEM.TypeNarrativetalent'}}" data-dtype="String"/>
+          <lable>{{localize 'ARCHETERICALITE.Rank'}}:</lable>
+          <input type="number" name="system.talent2.rank" value="{{system.talent2.rank}}" data-dtype="Number"/>
+          <lable>{{localize 'ARCHETERICALITE.Upheaval'}}</lable>
+          <input type="checkbox" name="system.talent2.upheaval" data-dtype="Boolean" {{#if system.talent2.upheaval}} checked {{/if}}/>
+        </div>
+
+        <div class="resource">
+          <input type="checkbox" name="system.talent3.active" title="{{localize 'ARCHETERICALITE.Active'}}" data-dtype="Boolean" {{#if system.talent3.active}} checked {{/if}}/>
+          <input type="text" name="system.talent3.name" value="{{system.talent3.name}}" placeholder="{{localize 'ITEM.TypeNarrativetalent'}}" data-dtype="String"/>
+          <lable>{{localize 'ARCHETERICALITE.Rank'}}:</lable>
+          <input type="number" name="system.talent3.rank" value="{{system.talent3.rank}}" data-dtype="Number"/>
+          <lable>{{localize 'ARCHETERICALITE.Upheaval'}}</lable>
+          <input type="checkbox" name="system.talent3.upheaval" data-dtype="Boolean" {{#if system.talent3.upheaval}} checked {{/if}}/>
+        </div>
+
+        <div class="resource">
+          <input type="checkbox" name="system.talent4.active" title="{{localize 'ARCHETERICALITE.Active'}}" data-dtype="Boolean" {{#if system.talent4.active}} checked {{/if}}/>
+          <input type="text" name="system.talent4.name" value="{{system.talent4.name}}" placeholder="{{localize 'ITEM.TypeNarrativetalent'}}" data-dtype="String"/>
+          <lable>{{localize 'ARCHETERICALITE.Rank'}}:</lable>
+          <input type="number" name="system.talent4.rank" value="{{system.talent4.rank}}" data-dtype="Number"/>
+          <lable>{{localize 'ARCHETERICALITE.Upheaval'}}</lable>
+          <input type="checkbox" name="system.talent4.upheaval" data-dtype="Boolean" {{#if system.talent4.upheaval}} checked {{/if}}/>
+        </div>
+
+        <div class="resource">
+          <input type="checkbox" name="system.talent5.active" title="{{localize 'ARCHETERICALITE.Active'}}" data-dtype="Boolean" {{#if system.talent5.active}} checked {{/if}}/>
+          <input type="text" name="system.talent5.name" value="{{system.talent5.name}}" placeholder="{{localize 'ITEM.TypeNarrativetalent'}}" data-dtype="String"/>
+          <lable>{{localize 'ARCHETERICALITE.Rank'}}:</lable>
+          <input type="number" name="system.talent5.rank" value="{{system.talent5.rank}}" data-dtype="Number"/>
+          <lable>{{localize 'ARCHETERICALITE.Upheaval'}}</lable>
+          <input type="checkbox" name="system.talent5.upheaval" data-dtype="Boolean" {{#if system.talent5.upheaval}} checked {{/if}}/>
+        </div>
+
+        <div class="resource">
+          <input type="checkbox" name="system.talent6.active" title="{{localize 'ARCHETERICALITE.Active'}}" data-dtype="Boolean" {{#if system.talent6.active}} checked {{/if}}/>
+          <input type="text" name="system.talent6.name" value="{{system.talent6.name}}" placeholder="{{localize 'ITEM.TypeNarrativetalent'}}" data-dtype="String"/>
+          <lable>{{localize 'ARCHETERICALITE.Rank'}}:</lable>
+          <input type="number" name="system.talent6.rank" value="{{system.talent6.rank}}" data-dtype="Number"/>
+          <lable>{{localize 'ARCHETERICALITE.Upheaval'}}</lable>
+          <input type="checkbox" name="system.talent6.upheaval" data-dtype="Boolean" {{#if system.talent6.upheaval}} checked {{/if}}/>
+        </div>
+      </div>
+
+      <hr>
+      <div>
+        {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
     </div>
   </section>
 

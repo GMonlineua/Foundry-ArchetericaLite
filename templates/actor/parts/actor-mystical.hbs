@@ -28,12 +28,12 @@
   </div>
   <ol class="items-list">
     {{#each ability as |item id|}}
-      <li class="item flexrow" data-item-id="{{item._id}}">
+      <li class="item" data-item-id="{{item._id}}">
         <div class="item-name">
           <div class="item-image">
             <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
           </div>
-          <h4>{{item.name}} <span class="rank" style="--rank:{{item.system.rank}}"></h4>
+          <h4>{{item.name}} <span class="rank" style="--rank:{{item.system.rank}}"></span></h4>
         </div>
         <div class="item-controls">
           <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
@@ -51,12 +51,12 @@
   </div>
   <ol class="items-list">
     {{#each metamorphosis as |item id|}}
-      <li class="item flexrow" data-item-id="{{item._id}}">
+      <li class="item" data-item-id="{{item._id}}">
         <div class="item-name">
           <div class="item-image">
             <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
           </div>
-          <h4>{{item.name}} <span class="rank" style="--rank:{{item.system.rank}}"></h4>
+          <h4>{{item.name}} <span class="rank" style="--rank:{{item.system.rank}}"></span></h4>
         </div>
         <div class="item-controls">
           <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
