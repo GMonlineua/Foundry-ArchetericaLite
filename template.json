@@ -105,7 +105,50 @@
     },
     "attribute": {
       "templates": ["base"],
-      "pluss": 0
+      "pluss": 0,
+      "xenomago": false,
+      "talent1": {
+        "name": "",
+        "description": "",
+        "rank": 1,
+        "upheaval": false,
+        "active": true
+      },
+      "talent2": {
+        "name": "",
+        "description": "",
+        "rank": 1,
+        "upheaval": false,
+        "active": true
+      },
+      "talent3": {
+        "name": "",
+        "description": "",
+        "rank": 1,
+        "upheaval": false,
+        "active": false
+      },
+      "talent4": {
+        "name": "",
+        "description": "",
+        "rank": 1,
+        "upheaval": false,
+        "active": false
+      },
+      "talent5": {
+        "name": "",
+        "description": "",
+        "rank": 1,
+        "upheaval": false,
+        "active": false
+      },
+      "talent6": {
+        "name": "",
+        "description": "",
+        "rank": 1,
+        "upheaval": false,
+        "active": false
+      }
     },
     "negative": {
       "templates": ["base"],
@@ -118,7 +161,8 @@
     },
     "ability": {
       "templates": ["base"],
-      "rank": 1
+      "rank": 1,
+      "uses": 1
     },
     "metamorphosis": {
       "templates": ["base"],

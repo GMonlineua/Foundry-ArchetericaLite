@@ -443,6 +443,19 @@ input.clear-input:focus {
   display: block;
   width: 100%;
 }
+.archetericalite .sheet-body .narrative-block .talent-list {
+  position: relative;
+}
+.archetericalite .sheet-body .narrative-block .talent-list li {
+  margin-bottom: 5px;
+}
+.archetericalite .sheet-body .narrative-block .talent-list li input[type=checkbox] {
+  position: absolute;
+  right: 0px;
+}
+.archetericalite .sheet-body .narrative-block .talent-list li:empty {
+  background-color: #555;
+}
 .archetericalite .sheet-body .combat .resource-content {
   display: inline;
 }
@@ -653,12 +666,12 @@ input.clear-input:focus {
   overflow-x: hidden;
 }
 .archetericalite .items-list .item-controls {
+  position: absolute;
+  top: 4px;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
@@ -669,6 +682,7 @@ input.clear-input:focus {
   margin: 0 6px;
 }
 .archetericalite .items-list .item {
+  position: relative;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -730,10 +744,7 @@ input.clear-input:focus {
   flex: 5;
   padding: 5px;
 }
-.archetericalite .attributes input[type=checkbox] {
+.archetericalite input[type=checkbox] {
   position: relative;
   top: 5px;
-}
-.archetericalite .attributes .item-formula {
-  padding: 0 8px;
 }

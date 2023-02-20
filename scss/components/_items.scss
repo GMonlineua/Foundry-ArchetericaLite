@@ -87,8 +87,10 @@
 
   // Control Buttons
   .item-controls {
+    position: absolute;
+    top: 4px;
+    right: 0;
     display: flex;
-    flex: 0 0 100px;
     justify-content: flex-end;
     a {
       font-size: 12px;
@@ -99,6 +101,7 @@
 
   // Individual Item
   .item {
+    position: relative;
     align-items: center;
     padding: 0 2px; // to align with the header border
     border-bottom: 1px solid $c-faint;
@@ -158,13 +161,7 @@
   }
 }
 
-.attributes {
-  input[type="checkbox"] {
-    position: relative;
-    top: 5px;
-  }
-
-  .item-formula {
-    padding: 0 8px;
-  }
+input[type="checkbox"] {
+  position: relative;
+  top: 5px;
 }
