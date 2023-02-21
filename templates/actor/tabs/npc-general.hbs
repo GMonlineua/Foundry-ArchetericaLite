@@ -1,0 +1,21 @@
+<div class="resources flexrow">
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Imago'}}</label>
+    <input type="number" name="system.mystical.imago.value" value="{{system.mystical.imago.value}}" data-dtype="Number"/>
+  </div>
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.AbyssMark'}}</label>
+    <input type="number" name="system.mystical.abyssMark.value" value="{{system.mystical.abyssMark.value}}" data-dtype="Number"/>
+  </div>
+</div>
+
+{{> "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs"}}
+
+<div class="grid grid-2col">
+  {{> "systems/archetericalite/templates/actor/parts/mystical-ability.hbs"}}
+   <div>
+      {{> "systems/archetericalite/templates/actor/parts/negative.hbs"}}
+      {{> "systems/archetericalite/templates/actor/parts/metamorphosis.hbs"}}
+    </div>
+</div>
+

@@ -6,13 +6,23 @@
  export const preloadHandlebarsTemplates = async function() {
   return loadTemplates([
 
-    // Actor partials.
-    "systems/archetericalite/templates/actor/parts/actor-narrative.hbs",
-    "systems/archetericalite/templates/actor/parts/actor-combat.hbs",
-    "systems/archetericalite/templates/actor/parts/actor-mystical.hbs",
-    "systems/archetericalite/templates/actor/parts/actor-riches.hbs",
-    "systems/archetericalite/templates/actor/parts/actor-description.hbs",
-    "systems/archetericalite/templates/actor/parts/npc-general.hbs",
-    "systems/archetericalite/templates/actor/parts/npc-combat.hbs"
+    // Actor tabs.
+    "systems/archetericalite/templates/actor/tabs/actor-narrative.hbs",
+    "systems/archetericalite/templates/actor/tabs/actor-combat.hbs",
+    "systems/archetericalite/templates/actor/tabs/actor-mystical.hbs",
+    "systems/archetericalite/templates/actor/tabs/actor-riches.hbs",
+    "systems/archetericalite/templates/actor/tabs/actor-description.hbs",
+    "systems/archetericalite/templates/actor/tabs/npc-general.hbs",
+    "systems/archetericalite/templates/actor/tabs/npc-combat.hbs",
+    // Parts
+    "systems/archetericalite/templates/actor/parts/biography-type.hbs",
+    "systems/archetericalite/templates/actor/parts/negative.hbs",
+    "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs",
+    "systems/archetericalite/templates/actor/parts/combat-talent.hbs",
+    "systems/archetericalite/templates/actor/parts/mystical-ability.hbs",
+    "systems/archetericalite/templates/actor/parts/metamorphosis.hbs",
+    "systems/archetericalite/templates/actor/parts/weapon.hbs",
+    "systems/archetericalite/templates/actor/parts/protection.hbs",
+    "systems/archetericalite/templates/actor/parts/loot.hbs"
   ]);
 };

@@ -1,0 +1,31 @@
+<div class="resources flexrow">
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Accommodation'}}</label>
+    <input type="number" name="system.riches.accommodation" value="{{system.riches.accommodation}}" data-dtype="Number"/>
+  </div>
+
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Profit'}}</label>
+    <input type="number" name="system.riches.profit" value="{{system.riches.profit}}" data-dtype="Number"/>
+  </div>
+
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Marks'}}</label>
+    <input type="number" name="system.riches.marks" value="{{system.riches.marks}}" data-dtype="Number"/>
+  </div>
+
+  <div class="resource">
+    <label class="resource-label">{{localize 'ARCHETERICALITE.Zloty'}}</label>
+    <input type="number" name="system.riches.zloty" value="{{system.riches.zloty}}" data-dtype="Number"/>
+  </div>
+</div>
+
+<div class="item-block grid grid-2col">
+  {{> "systems/archetericalite/templates/actor/parts/weapon.hbs"}}
+  {{> "systems/archetericalite/templates/actor/parts/protection.hbs"}}
+  {{> "systems/archetericalite/templates/actor/parts/loot.hbs"}}
+  <div>
+    <h2>{{localize 'ARCHETERICALITE.Riches'}}</h2>
+    {{editor system.riches.info target="system.riches.info" button=true owner=owner editable=editable}}
+  </div>
+</div>

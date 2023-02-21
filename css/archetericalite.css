@@ -520,6 +520,9 @@ input.clear-input:focus {
 .archetericalite .resource .resource-label {
   font-weight: bold;
 }
+.archetericalite .resource .resource-content {
+  display: inline;
+}
 .archetericalite .resource input {
   display: inline;
 }
@@ -747,4 +750,7 @@ input.clear-input:focus {
 .archetericalite input[type=checkbox] {
   position: relative;
   top: 5px;
+}
+.archetericalite img {
+  border: none;
 }

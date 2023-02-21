@@ -37,30 +37,4 @@
   </div>
 </div>
 
-<div class="item-block">
-  <h2>{{localize 'ARCHETERICALITE.CombatTalentPlural'}}</h2>
-  <ol class="items-list">
-    {{#each comtals as |comtals comtalRank|}}
-      <li class="item flexrow items-header">
-        <div class="item-name">{{localize 'ARCHETERICALITE.Rank'}} <span class="rank" style="--rank:{{comtalRank}}"></span></div>
-        <div class="item-controls">
-          <a class="item-control item-create" title="Create item" data-type="comtal" data-comtal-rank="{{comtalRank}}"><i class="fas fa-plus"></i>{{localize 'ARCHETERICALITE.Add'}}</a>
-        </div>
-      </li>
-      {{#each comtals as |item id|}}
-        <li class="item" data-item-id="{{item._id}}">
-          <div class="item-name flexrow">
-            <div class="item-image">
-              <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
-            </div>
-            <h4>{{item.name}}</h4>
-          </div>
-          <div class="item-controls">
-            <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-          </div>
-        </li>
-      {{/each}}
-    {{/each}}
-  </ol>
-</div>
+{{> "systems/archetericalite/templates/actor/parts/combat-talent.hbs"}}

@@ -1,0 +1,25 @@
+<div class="narrative-block">
+  <div class="talentsPyramid">
+    <h4>{{localize 'ARCHETERICALITE.TalentsPyramid'}}</h4>
+    <div class="resource">
+      <input type="number" name="system.talentsPyramid.rank3" value="{{system.talentsPyramid.rank3}}" data-dtype="Number"/>
+      <label for="system.talentsPyramid.rank3" class="resource-label">{{localize 'ARCHETERICALITE.Rank'}} III</label>
+    </div>
+    <div class="resource">
+      <input type="number" name="system.talentsPyramid.rank2" value="{{system.talentsPyramid.rank2}}" data-dtype="Number"/>
+      <label for="system.talentsPyramid.rank2" class="resource-label">{{localize 'ARCHETERICALITE.Rank'}} II</label>
+    </div>
+    <div class="resource">
+      <input type="number" name="system.talentsPyramid.rank1" value="{{system.talentsPyramid.rank1}}" data-dtype="Number"/>
+      <label for="system.talentsPyramid.rank1" class="resource-label">{{localize 'ARCHETERICALITE.Rank'}} I</label>
+    </div>
+  </div>
+
+  <div>
+    <div class="grid grid-2col">
+      {{> "systems/archetericalite/templates/actor/parts/biography-type.hbs"}}
+      {{> "systems/archetericalite/templates/actor/parts/negative.hbs"}}
+    </div>
+    {{> "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs"}}
+  </div>
+</div>
