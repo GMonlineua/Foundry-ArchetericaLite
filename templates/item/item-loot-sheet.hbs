@@ -9,12 +9,24 @@
           <input type="number" name="system.price" value="{{system.price}}" data-dtype="Number"/>
         </div>
         <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Weight'}}:</label>
+          <input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.Quantity'}}:</label>
           <input type="number" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
         </div>
         <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.Elitism'}}: </label>
           <input type="number" name="system.elitism" value="{{system.elitism}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.ItemUses'}}: </label>
+          <div class="resource-content">
+            <input type="number" name="system.uses.value" value="{{system.uses.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="number" name="system.uses.max" value="{{system.uses.max}}" data-dtype="Number"/>
+          </div>
         </div>
       </div>
     </div>
@@ -27,27 +39,8 @@
         <p>{{localize 'ARCHETERICALITE.Quantity'}}: {{system.quantity}}</p>
         <p>{{localize 'ARCHETERICALITE.Weight'}}: {{system.weight}}</p>
       </div>
-      <div>
-        <div class="resources flexrow">
-          <div class="resource">
-            <label class="resource-label">{{localize 'ARCHETERICALITE.Weight'}}:</label>
-            <input type="number" name="system.weight" value="{{system.weight}}" data-dtype="Number"/>
-          </div>
-          <div class="resource">
-            <label class="resource-label">{{localize 'ARCHETERICALITE.Damage'}}:</label>
-            <select name="system.damage">
-              <option value="damage-none">{{localize 'ARCHETERICALITE.DamageNone'}}</option>
-              <option value="damage-full">{{localize 'ARCHETERICALITE.DamageFull'}}</option>
-              <option value="damage-half">{{localize 'ARCHETERICALITE.DamageHalf'}}</option>
-              <option value="damage-minimal">{{localize 'ARCHETERICALITE.DamageMinimal'}}</option>
-              <option value="damage-cut">{{localize 'ARCHETERICALITE.DamageCut'}}</option>
-              <option value="damage-custom">{{localize 'ARCHETERICALITE.DamageCustom'}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="editor-block">
-          {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
-        </div>
+      <div class="editor-block">
+        {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
       </div>
     </div>
   </section>

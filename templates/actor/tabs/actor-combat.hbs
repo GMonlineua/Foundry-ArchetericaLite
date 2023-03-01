@@ -8,18 +8,6 @@
     </div>
   </div>
   <div class="resource">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Fatum'}}:</label>
-    <div class="resource-content">
-      <i class="fas fa-plus"></i>
-      <input type="number" name="system.fatum.plus" value="{{system.fatum.plus}}" data-dtype="Number"/>
-      <i class="fas fa-minus"></i>
-      <input type="number" name="system.fatum.minus" value="{{system.fatum.minus}}" data-dtype="Number"/>
-    </div>
-  </div>
-</div>
-
-<div class="resources flexrow">
-  <div class="resource">
     <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
     <input type="number" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
   </div>
@@ -37,4 +25,7 @@
   </div>
 </div>
 
-{{> "systems/archetericalite/templates/actor/parts/combat-talent.hbs"}}
+<div class="flexrow">
+  {{> "systems/archetericalite/templates/actor/parts/combat-talent.hbs"}}
+  {{> "systems/archetericalite/templates/actor/parts/combat-rule.hbs"}}
+</div>

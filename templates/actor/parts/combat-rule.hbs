@@ -1,10 +1,10 @@
 <div class="item-block">
-    <div class="block-header">
-      <h2>{{localize 'ITEM.TypeProtection'}}</h2>
-      <a class="item-add item-create" title="Create item" data-type="protection"><i class="fas fa-plus"></i>{{localize 'ARCHETERICALITE.Add'}}</a>
-    </div>
-    <ol class="items-list">
-      {{#each protection as |item id|}}
+  <div class="block-header">
+    <h2>{{localize 'ARCHETERICALITE.CombatRulePlural'}}</h2>
+    <a class="item-add item-create" title="Create item" data-type="combatRule"><i class="fas fa-plus"></i>{{localize 'ARCHETERICALITE.Add'}}</a>
+  </div>
+  <ol class="items-list">
+    {{#each combatRule as |item id|}}
       <li class="item flexrow" data-item-id="{{item._id}}">
         <div class="item-name">
           <a class="item-image rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
@@ -22,6 +22,6 @@
           <a class="item-control item-delete" title="{{localize 'ARCHETERICALITE.DeleteItem'}}"><i class="fas fa-trash"></i></a>
         </div>
       </li>
-      {{/each}}
-    </ol>
+    {{/each}}
+  </ol>
 </div>

@@ -3,9 +3,19 @@
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <div class="resource">
-        <label class="resource-label">{{localize 'ARCHETERICALITE.CombatTalentRank'}}: </label>
-        <input type="number" name="system.comtalRank" value="{{system.comtalRank}}" data-dtype="Number" min="1" max="6"/>
+      <div class="resources flexrow">
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.CombatTalentRank'}}: </label>
+          <input type="number" name="system.comtalRank" value="{{system.comtalRank}}" data-dtype="Number" min="1" max="6"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.ItemUses'}}: </label>
+          <div class="resource-content">
+            <input type="number" name="system.uses.value" value="{{system.uses.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="number" name="system.uses.max" value="{{system.uses.max}}" data-dtype="Number"/>
+          </div>
+        </div>
       </div>
     </div>
   </header>

@@ -62,10 +62,6 @@
         "value": 0,
         "max": 3
       },
-      "fatum": {
-        "plus": 1,
-        "minus": 0
-      },
       "tricks": {
         "value": 0,
         "max": 0
@@ -87,7 +83,7 @@
     }
   },
   "Item": {
-    "types": ["biography", "attribute", "negative", "comtal", "ability", "metamorphosis", "loot", "protection", "weapon"],
+    "types": ["biography", "attribute", "negative", "comtal", "combatRule", "ability", "metamorphosis", "loot", "protection", "weapon"],
     "templates": {
       "base": {
         "description": ""
@@ -96,8 +92,7 @@
         "elitism": null,
         "price": 0,
         "quantity": 1,
-        "weight": 0,
-        "damage":""
+        "weight": 0
       }
     },
     "biography": {
@@ -155,7 +150,18 @@
     },
     "comtal": {
       "templates": ["base"],
-      "comtalRank": 2
+      "comtalRank": 2,
+      "uses": {
+        "value": null,
+        "max": null
+      }
+    },
+    "combatRule": {
+      "templates": ["base"],
+      "uses": {
+        "value": null,
+        "max": null
+      }
     },
     "ability": {
       "templates": ["base"],
@@ -189,6 +195,7 @@
       "templates": ["base", "equipment"],
       "armorPiercing": null,
       "charging": null,
+      "damage":"",
       "lethality": null,
       "range": null,
       "rangeWeapon": false,

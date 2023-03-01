@@ -19,6 +19,7 @@
     "systems/archetericalite/templates/actor/parts/negative.hbs",
     "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs",
     "systems/archetericalite/templates/actor/parts/combat-talent.hbs",
+    "systems/archetericalite/templates/actor/parts/combat-rule.hbs",
     "systems/archetericalite/templates/actor/parts/mystical-ability.hbs",
     "systems/archetericalite/templates/actor/parts/metamorphosis.hbs",
     "systems/archetericalite/templates/actor/parts/weapon.hbs",

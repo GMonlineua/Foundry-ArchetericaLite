@@ -78,8 +78,9 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
       5: [],
       6: []
     };
-    const metamorphosis = [];
+    const combatRule = [];
     const ability = [];
+    const metamorphosis = [];
     const loot = [];
     const protection = [];
     const weapon = [];
@@ -101,13 +102,25 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
       }
       // Append to combat talent.
       else if (i.type === 'comtal') {
-        if (i.system.comtalRank != undefined) {
-          comtals[i.system.comtalRank].push(i);
+        if (i.system.comtalRank > 1) {
+          if (i.system.comtalRank < 7) {
+            comtals[i.system.comtalRank].push(i);
+          }
+          else {
+            comtals[6].push(i);
+          }
         }
+        else if (i.system.comtalRank < 2) {
+          comtals[2].push(i);
+        }
+      }
+      // Append to combatRule.
+      else if (i.type === 'combatRule') {
+        combatRule.push(i);
       }
       // Append to ability.
       else if (i.type === 'ability') {
-        ability.push(i);2
+        ability.push(i);
       }
       // Append to metamorphosis.
       else if (i.type === 'metamorphosis') {
@@ -132,6 +145,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     context.attribute = attribute;
     context.negative = negative;
     context.comtals = comtals;
+    context.combatRule = combatRule;
     context.ability = ability;
     context.metamorphosis = metamorphosis;
     context.loot = loot;
@@ -194,7 +208,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     // Grab any data associated with this control.
     const data = duplicate(header.dataset);
     // Initialize a default name.
-    const name = game.i18n.localize("ARCHETERICALITE.NewItem") + " " + game.i18n.localize(`ITEM.Type${type.capitalize()}`);
+    const name = game.i18n.localize("ARCHETERICALITE.NewItem") ;
     // Prepare the item object.
     const itemData = {
       name: name,
