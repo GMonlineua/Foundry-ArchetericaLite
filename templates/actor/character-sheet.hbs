@@ -54,12 +54,14 @@
 
         <div class="resource flexrow">
           <label for="system.info.health.value" class="resource-label">{{localize 'ARCHETERICALITE.Health'}}: </label>
-          <select name="system.info.health.value">
+           <select name="system.info.health" data-type="String">
+            {{#select system.info.health}}
             <option value="healthy">{{localize 'ARCHETERICALITE.Healthy'}}</option>
             <option value="wounded">{{localize 'ARCHETERICALITE.Wounded'}}</option>
             <option value="severely-wounded">{{localize 'ARCHETERICALITE.SeverelyWounded'}}</option>
             <option value="critical-condition">{{localize 'ARCHETERICALITE.CriticalCondition'}}</option>
             <option value="at-death">{{localize 'ARCHETERICALITE.AtDeath'}}</option>
+            {{/select}}
           </select>
         </div>
       </div>

@@ -89,10 +89,15 @@
         "description": ""
       },
       "equipment": {
-        "elitism": null,
-        "price": 0,
         "quantity": 1,
-        "weight": 0
+        "price": 0,
+        "elitism": null,
+        "weight": null,
+        "load": null,
+        "uses": {
+          "value": null,
+          "max": null
+        }
       }
     },
     "biography": {
@@ -176,36 +181,29 @@
       "rank": 1
     },
     "loot": {
-      "templates": ["base", "equipment"],
-      "uses": {
-        "value": null,
-        "max": null
-      }
+      "templates": ["base", "equipment"]
     },
     "protection": {
       "templates": ["base", "equipment"],
       "armor": 1,
-      "heavyArmor": null,
-      "uses": {
-        "value": null,
-        "max": null
-      }
+      "heavyArmor": null
     },
     "weapon": {
       "templates": ["base", "equipment"],
-      "armorPiercing": null,
-      "charging": null,
-      "damage":"",
-      "lethality": null,
-      "range": null,
-      "rangeWeapon": false,
-      "roughSight": false,
+      "fencing": false,
+      "firearms": false,
       "throwing": false,
+      "damage": "full",
+      "armorPiercing": null,
+      "lethality": null,
       "twoHanded": false,
-      "uses": {
-        "value": null,
-        "max": null
-      }
+      "range": {
+        "min": null,
+        "max": 1
+      },
+      "charging": null,
+      "roughSight": false,
+      "misfire": "none"
     }
   }
 }
