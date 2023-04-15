@@ -16,13 +16,10 @@
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
 
-      <div class="faction-block grid grid-2col">
-        <h2 class="faction-name">
-          <label for="system.info.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
-          <input class="clear-input" type="text" name="system.info.faction" value="{{system.info.faction}}" data-dtype="String"/>
-        </h2>
-        <button class="rollable check" data-roll="2d6" type="button">{{localize 'ARCHETERICALITE.Check'}}</button>
-      </div>
+      <h2 class="faction">
+        <label for="system.info.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
+        <input class="clear-input" type="text" name="system.info.faction" value="{{system.info.faction}}" data-dtype="String"/>
+      </h2>
 
       <div class="resources flexrow">
         <div class="resource">

@@ -61,33 +61,14 @@
     }
   }
 
-  .faction-block {
-    grid-template-columns: auto 100px;
-    gap: 25px;
-
-    h2.faction-name {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      border-bottom: 0;
-      input {
-        border-bottom-width: 1px;
-      }
-    }
-
-    button.check {
-      height: 30px;
-      margin: 0;
-      border-style: solid;
-      border-color: #777;
-      border-width: 1px;
-      text-shadow: none;
-      font-family: $font-primary;
-      font-weight: bold;
-    }
-
-    button.check:focus {
-      outline: none;
+  h2.faction {
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 0;
+    input {
+      border-bottom-width: 1px;
     }
   }
 }
@@ -109,6 +90,21 @@ nav.sheet-tabs {
 }
 
 .sheet-body {
+  button.check {
+    height: 30px;
+    margin: 0;
+    border-style: solid;
+    border-color: #777;
+    border-width: 1px;
+    text-shadow: none;
+    font-family: $font-primary;
+    font-weight: bold;
+  }
+
+  button.check:focus {
+    outline: none;
+  }
+
   .block-header {
     position: relative;
 
@@ -146,7 +142,7 @@ nav.sheet-tabs {
     }
   }
 
-  .narrative-block {
+  .attribute-block {
     display: grid;
     grid-template-columns: 75px auto;
     gap: 10px;

@@ -1,0 +1,67 @@
+<form>
+    <div class="roll-template">
+
+      <div class="narrativeTest {{#if  narrative}}active{{/if}}">
+        <label for="narrativeDifficulty">{{localize 'ARCHETERICALITE.Difficulty'}}:</label>
+        <select id="narrativeDifficulty" name="narrativeDifficulty" data-type="Number">
+          <option value="0">{{localize 'ARCHETERICALITE.DifficultyNone'}}</option>
+          <option value="3">{{localize 'ARCHETERICALITE.DifficultyTrivial'}} 3+</option>
+          <option value="5">{{localize 'ARCHETERICALITE.DifficultyEasy'}} 5+</option>
+          <option value="8">{{localize 'ARCHETERICALITE.DifficultyChallenging'}} 8+</option>
+          <option value="10">{{localize 'ARCHETERICALITE.DifficultyExtreme'}} 10+</option>
+          <option value="12">{{localize 'ARCHETERICALITE.DifficultyDesperate'}} 12+</option>
+        </select>
+      </div>
+
+      <div class="mastery-block {{#if  mastery}}active{{/if}}">
+        <div class="actor-block">
+          <label for="actorMastery">{{localize 'ARCHETERICALITE.ActorMastery'}}:</label>
+          <input id="actorMastery" type="number"  value="0" data-dtype="Number"/>
+        </div>
+
+        <div class="opponent-block">
+          <label for="opponentMastery">{{localize 'ARCHETERICALITE.OpponentMastery'}}:</label>
+          <input id="opponentMastery" type="number"  value="0" data-dtype="Number"/>
+        </div>
+
+        <div class="advantages-block">
+          <select id="advantage" name="advantage" data-type="Number">
+            <option value="0">{{localize 'ARCHETERICALITE.NoneAdvantage'}}</option>
+            <option value="2">{{localize 'ARCHETERICALITE.Advantage'}} (+2)</option>
+            <option value="5">{{localize 'ARCHETERICALITE.FullAdvantage'}} (+5)</option>
+            <option value="-2">{{localize 'ARCHETERICALITE.Disadvantage'}} (-2)</option>
+            <option value="-5">{{localize 'ARCHETERICALITE.FullDisadvantage'}} (-5)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="damage-block {{#if  damage}}active{{/if}}">
+        <select id="damage" name="damage" data-type="String">
+          <option value="2d6">{{localize 'ARCHETERICALITE.DamageFull'}}</option>
+          <option value="floor(2d6/2)">{{localize 'ARCHETERICALITE.DamageHalf'}}</option>
+          <option value="floor(2d6/3)">{{localize 'ARCHETERICALITE.DamageMinimal'}}</option>
+          <option value="2">{{localize 'ARCHETERICALITE.DamageCut'}}</option>
+        </select>
+        <div class="lethality-block">
+          <label for="lethality">{{localize 'ARCHETERICALITE.Lethality'}}:</label>
+          <input id="lethality" type="number"  value="0" data-dtype="Number"/>
+        </div>
+      </div>
+
+      <div class="imago-block {{#if  imago}}active{{/if}}">
+        <label for="imago">{{localize 'ARCHETERICALITE.OpponentImago'}}:</label>
+        <input id="imago" type="number"  value="1" data-dtype="Number"/>
+      </div>
+
+      <div class="difficulty-block {{#if  customDifficulty}}active{{/if}}">
+        <label for="customDifficulty">{{localize 'ARCHETERICALITE.Difficulty'}}:</label>
+        <input id="customDifficulty" type="number"  value="0" data-dtype="Number"/>
+      </div>
+
+      <div class="modifier {{#if  modifier}}active{{/if}}">
+        <label for="modifier">{{localize 'ARCHETERICALITE.Modifier'}}: </label>
+        <input id="modifier" type="number"  data-dtype="Number" name="modifier" value="0">
+      </div>
+
+    </div>
+</form>

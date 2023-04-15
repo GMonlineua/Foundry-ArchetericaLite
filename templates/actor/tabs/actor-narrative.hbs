@@ -1,4 +1,14 @@
-<div class="narrative-block">
+<div class="flexrow button-block">
+  <button class="check" data-type="narrative" type="button">{{localize 'ARCHETERICALITE.NarrativeTest'}}</button>
+  <button class="check" data-type="embarrassment" type="button">{{localize 'ARCHETERICALITE.EmbarrassmentTest'}}</button>
+</div>
+
+<div class="grid grid-2col">
+  {{> "systems/archetericalite/templates/actor/parts/biography-type.hbs"}}
+  {{> "systems/archetericalite/templates/actor/parts/negative.hbs"}}
+</div>
+
+<div class="attribute-block">
   <div class="talentsPyramid">
     <h4>{{localize 'ARCHETERICALITE.TalentsPyramid'}}</h4>
     <div class="resource">
@@ -15,11 +25,5 @@
     </div>
   </div>
 
-  <div>
-    <div class="grid grid-2col">
-      {{> "systems/archetericalite/templates/actor/parts/biography-type.hbs"}}
-      {{> "systems/archetericalite/templates/actor/parts/negative.hbs"}}
-    </div>
-    {{> "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs"}}
-  </div>
+  {{> "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs"}}
 </div>

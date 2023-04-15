@@ -1,3 +1,5 @@
+import { prepareRollDialog } from "../helpers/roll.js";
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -7,7 +9,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["archetericalite", "sheet", "actor", "character"],
+      classes: ["archetericalite", "sheet", "actor"],
       template: "systems/archetericalite/templates/actor/actor-sheet.hbs",
       width: 750,
       height: 800,
@@ -16,20 +18,26 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
   }
 
   /** @override */
-  static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
-      classes: ["archetericalite", "sheet", "actor", "npc"],
-      template: "systems/archetericalite/templates/actor/actor-sheet.hbs",
-      width: 750,
-      height: 800,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }]
-    });
-  }
-
-  /** @override */
   get template() {
     if ( !game.user.isGM && this.actor.limited ) return "systems/archetericalite/templates/actor/limited-sheet.hbs";
     return `systems/archetericalite/templates/actor/${this.actor.type}-sheet.hbs`;
+  }
+
+    /* -------------------------------------------- */
+
+  _getHeaderButtons() {
+    let buttons = super._getHeaderButtons();
+    if (this.actor.isOwner) {
+      buttons = [
+        {
+          label: game.i18n.localize("ARCHETERICALITE.Test"),
+          class: "standart-test",
+          icon: "fas fa-dice",
+          onclick: (ev) => prepareRollDialog(game.i18n.localize("ARCHETERICALITE.StandartTest"), "", this)
+        }
+      ].concat(buttons);
+    }
+    return buttons;
   }
 
   /* -------------------------------------------- */
@@ -184,6 +192,9 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     // Rollable.
     hbs.find('.rollable').click(this._onRoll.bind(this));
 
+    // Rollable.
+    hbs.find('.check').click(this._onCheck.bind(this));
+
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = ev => this._onDragStart(ev);
@@ -246,12 +257,21 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
       let label = dataset.label ? `[ability] ${dataset.label}` : '';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          flavor: label,
+          rollMode: game.settings.get('core', 'rollMode'),
+        });
       return roll;
     }
+  }
+
+  _onCheck(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const testName = element.innerText;
+    const dataset = element.dataset;
+    const testType = dataset.type;
+    prepareRollDialog(testName, testType, this)
   }
 
 }
