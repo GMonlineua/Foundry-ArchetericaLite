@@ -102,7 +102,7 @@ function narrativeTest(testName, speaker, html) {
 }
 
 function embarrassment(testName, speaker, sheet, html) {
-  let difficulty = sheet.object.system.info.stress.value;
+  let difficulty = sheet.object.system.stress;
   let modifier = html.find("#modifier")[0].value;
   rollDice(testName, speaker, modifier, difficulty)
 }
@@ -134,7 +134,7 @@ function damageTest(testName, speaker, html) {
 function imagoTest(testName, speaker, sheet, html) {
   let modifier = html.find("#modifier")[0].value;
   let opponentImago = parseInt(html.find("#imago")[0].value, 10);
-  let actorImago = sheet.object.system.mystical.imago.value;
+  let actorImago = sheet.object.system.mystical.imago;
   let difficulty = 7 - actorImago + opponentImago;
   rollDice(testName, speaker, modifier, difficulty);
 

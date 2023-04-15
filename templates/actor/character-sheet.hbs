@@ -5,11 +5,11 @@
     <div class="img-block">
       <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
       <div class=" hp-bar resource">
-          <progress id="system.info.hp.value" value="{{system.info.hp.value}}" max="{{system.info.hp.max}}" title="{{localize 'ARCHETERICALITE.Hp'}}"></progress>
+          <progress id="system.hp.value" value="{{system.hp.value}}" max="{{system.hp.max}}" title="{{localize 'ARCHETERICALITE.Hp'}}"></progress>
           <div class="hp-input">
-            <input class="clear-input" type="number" name="system.info.hp.value" value="{{system.info.hp.value}}" data-dtype="Number"/>
+            <input class="clear-input" type="number" name="system.hp.value" value="{{system.hp.value}}" data-dtype="Number"/>
             <span> / </span>
-            <input class="clear-input" type="number" name="system.info.hp.max" value="{{system.info.hp.max}}" data-dtype="Number"/>
+            <input class="clear-input" type="number" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number"/>
           </div>
         </div>
     </div>
@@ -17,8 +17,8 @@
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
 
       <h2 class="faction">
-        <label for="system.info.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
-        <input class="clear-input" type="text" name="system.info.faction" value="{{system.info.faction}}" data-dtype="String"/>
+        <label for="system.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
+        <input class="clear-input" type="text" name="system.faction" value="{{system.faction}}" data-dtype="String"/>
       </h2>
 
       <div class="resources flexrow">
@@ -33,26 +33,26 @@
         </div>
 
         <div class="resource">
-          <label for="system.info.infirmity.value" class="resource-label">{{localize 'ARCHETERICALITE.Infirmity'}}: </label>
-          <input type="number" name="system.info.infirmity.value" value="{{system.info.infirmity.value}}" data-dtype="Number"/>
+          <label for="system.infirmity" class="resource-label">{{localize 'ARCHETERICALITE.Infirmity'}}: </label>
+          <input type="number" name="system.infirmity" value="{{system.infirmity}}" data-dtype="Number"/>
         </div>
       </div>
 
       <div class="resources flexrow">
         <div class="resource">
-          <label for="system.info.stress.value" class="resource-label">{{localize 'ARCHETERICALITE.Stress'}}: </label>
-          <input type="number" name="system.info.stress.value" value="{{system.info.stress.value}}" data-dtype="Number"/>
+          <label for="system.stress" class="resource-label">{{localize 'ARCHETERICALITE.Stress'}}: </label>
+          <input type="number" name="system.stress" value="{{system.stress}}" data-dtype="Number"/>
         </div>
 
         <div class="resource">
-          <label for="system.deepstress.value" class="resource-label">{{localize 'ARCHETERICALITE.DeepStress'}}: </label>
-          <input type="number" name="system.deepstress.value" value="{{system.deepstress.value}}" data-dtype="Number"/>
+          <label for="system.deepstress" class="resource-label">{{localize 'ARCHETERICALITE.DeepStress'}}: </label>
+          <input type="number" name="system.deepstress" value="{{system.deepstress}}" data-dtype="Number"/>
         </div>
 
         <div class="resource flexrow">
-          <label for="system.info.health.value" class="resource-label">{{localize 'ARCHETERICALITE.Health'}}: </label>
-          <select name="system.info.health" data-type="String">
-            {{#select system.info.health}}
+          <label for="system.health.value" class="resource-label">{{localize 'ARCHETERICALITE.Health'}}: </label>
+          <select name="system.health" data-type="String">
+            {{#select system.health}}
             <option value="healthy">{{localize 'ARCHETERICALITE.Healthy'}}</option>
             <option value="wounded">{{localize 'ARCHETERICALITE.Wounded'}}</option>
             <option value="severely-wounded">{{localize 'ARCHETERICALITE.SeverelyWounded'}}</option>

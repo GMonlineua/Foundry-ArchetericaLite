@@ -3,38 +3,22 @@
     "types": ["character", "npc"],
     "templates": {
       "base": {
-        "info": {
-          "hp": {
-            "value": 12,
-            "max": 12
-          },
-          "stress": {
-            "value": 0,
-            "max": 12
-          },
-          "infirmity": {
-            "value": 0,
-            "max": 4
-          },
-          "health": "healthy",
-          "faction": ""
+        "hp": {
+          "value": 12,
+          "max": 12
         },
+        "stress": 0,
+        "infirmity": 0,
+        "health": "healthy",
+        "faction": "",
         "combat": {
           "brawl": 0,
           "fencing": 0,
           "firearms": 0,
-          "throwing": 0,
-          "max": 6
+          "throwing": 0
         },
         "mystical": {
-          "imago": {
-            "value": 1,
-            "max": 12
-          },
-          "abyssMark": {
-            "value": null,
-            "max": 12
-          }
+          "imago": 1
         },
         "description": {
           "appearance": "",
@@ -49,26 +33,23 @@
       "templates": ["base"],
       "session": 0,
       "ups": 0,
-      "deepstress": {
-        "value": 0,
-        "max": 12
-      },
+      "deepstress": 0,
       "talentsPyramid":{
         "rank1": 4,
         "rank2": 0,
         "rank3": 0
       },
       "combatExp": {
-        "value": 0,
+        "value": 3,
         "max": 3
       },
       "tricks": {
         "value": 0,
         "max": 0
       },
-      "xenomagoGleam": {
-        "value": null,
-        "max": 12
+      "mystical": {
+        "abyssMark": null,
+        "xenomagoGleam": null
       },
       "riches":{
         "accommodation": 0,
