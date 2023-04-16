@@ -1,9 +1,23 @@
-<div class="flexrow button-block">
-  <button class="check" data-type="mastery" type="button">{{localize 'ARCHETERICALITE.MasteryTest'}}</button>
-  <button class="check" data-type="damage" type="button">{{localize 'ARCHETERICALITE.Damage'}}</button>
+<div class="resources flexrow">
+  <div class="resource">
+    <label class="resource-label check" data-type="brawl">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
+    <input type="number" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
+  </div>
+  <div class="resource">
+    <label class="resource-label check" data-type="fencing">{{localize 'ARCHETERICALITE.Fencing'}}:</label>
+    <input type="number" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
+  </div>
+  <div class="resource">
+    <label class="resource-label check" data-type="firearms">{{localize 'ARCHETERICALITE.Firearms'}}:</label>
+    <input type="number" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
+  </div>
+  <div class="resource">
+    <label class="resource-label check" data-type="throwing">{{localize 'ARCHETERICALITE.Throwing'}}:</label>
+    <input type="number" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
+  </div>
 </div>
 
-<div class="resources flexrow">
+<div class="flexrow">
   <div class="resource">
     <label class="resource-label">{{localize 'ARCHETERICALITE.CombatExperience'}}:</label>
     <div class="resource-content">
@@ -12,22 +26,7 @@
       <input type="number" name="system.combatExp.max" value="{{system.combatExp.max}}" data-dtype="Number"/>
     </div>
   </div>
-  <div class="resource">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
-    <input type="number" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
-  </div>
-  <div class="resource">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Fencing'}}:</label>
-    <input type="number" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
-  </div>
-  <div class="resource">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Firearms'}}:</label>
-    <input type="number" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
-  </div>
-  <div class="resource">
-    <label class="resource-label">{{localize 'ARCHETERICALITE.Throwing'}}:</label>
-    <input type="number" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
-  </div>
+  <button class="check" data-type="damage" type="button">{{localize 'ARCHETERICALITE.Damage'}}</button>
 </div>
 
 <div class="flexrow">

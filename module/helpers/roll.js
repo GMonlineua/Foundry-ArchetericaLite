@@ -1,7 +1,8 @@
-export async function prepareRollDialog(testName, type, sheet) {
+export async function prepareRollDialog(sheet, type) {
   const speaker = ChatMessage.getSpeaker({ actor: sheet.actor });
 
   if (type === "narrative") {
+    const testName = game.i18n.localize("ARCHETERICALITE.NarrativeTest");
     const template_data = { narrative: true, modifier: true };
     const rendered_html = await renderHtml(template_data);
     let submit = {
@@ -9,10 +10,11 @@ export async function prepareRollDialog(testName, type, sheet) {
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
       callback: (html) => narrativeTest(testName, speaker, html)
     };
-    createDialog(testName, speaker, sheet, rendered_html, submit);
+    createDialog(testName, rendered_html, submit);
   }
 
   else if (type === "embarrassment") {
+    const testName = game.i18n.localize("ARCHETERICALITE.EmbarrassmentTest");
     const template_data = { modifier: true };
     const rendered_html = await renderHtml(template_data);
     let submit = {
@@ -20,21 +22,65 @@ export async function prepareRollDialog(testName, type, sheet) {
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
       callback: (html) => embarrassment(testName, speaker, sheet, html)
     };
-    createDialog(testName, speaker, sheet, rendered_html, submit);
+    createDialog(testName, rendered_html, submit);
   }
 
-  else if (type === "mastery") {
+  else if (type === "brawl") {
+    const testName = game.i18n.localize("ARCHETERICALITE.MasteryTest") + ": " + game.i18n.localize("ARCHETERICALITE.Brawl");
     const template_data = { mastery: true };
     const rendered_html = await renderHtml(template_data);
+    let actorMastery = sheet.object.system.combat.brawl;
     let submit = {
       icon: '<i class="fas fa-check"></i>',
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
-      callback: (html) => masteryTest(testName, speaker, html)
+      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
     };
-    createDialog(testName, speaker, sheet, rendered_html, submit);
+    let option = type;
+    createDialog(testName, rendered_html, submit);
+  }
+
+  else if (type === "fencing") {
+    const testName = game.i18n.localize("ARCHETERICALITE.MasteryTest") + ": " + game.i18n.localize("ARCHETERICALITE.Fencing");
+    const template_data = { mastery: true };
+    const rendered_html = await renderHtml(template_data);
+    let actorMastery = sheet.object.system.combat.fencing;
+    let submit = {
+      icon: '<i class="fas fa-check"></i>',
+      label: game.i18n.localize("ARCHETERICALITE.Roll"),
+      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
+    };
+    let option = type;
+    createDialog(testName, rendered_html, submit);
+  }
+
+  else if (type === "firearms") {
+    const testName = game.i18n.localize("ARCHETERICALITE.MasteryTest") + ": " + game.i18n.localize("ARCHETERICALITE.Firearms");
+    const template_data = { mastery: true };
+    const rendered_html = await renderHtml(template_data);
+    let actorMastery = sheet.object.system.combat.firearms;
+    let submit = {
+      icon: '<i class="fas fa-check"></i>',
+      label: game.i18n.localize("ARCHETERICALITE.Roll"),
+      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
+    };
+    createDialog(testName, rendered_html, submit);
+  }
+
+  else if (type === "throwing") {
+    const testName = game.i18n.localize("ARCHETERICALITE.MasteryTest") + ": " + game.i18n.localize("ARCHETERICALITE.Throwing");
+    const template_data = { mastery: true };
+    const rendered_html = await renderHtml(template_data);
+    let actorMastery = sheet.object.system.combat.throwing;
+    let submit = {
+      icon: '<i class="fas fa-check"></i>',
+      label: game.i18n.localize("ARCHETERICALITE.Roll"),
+      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
+    };
+    createDialog(testName, rendered_html, submit);
   }
 
   else if (type === "damage") {
+    const testName = game.i18n.localize("ARCHETERICALITE.Damage");
     const template_data = { damage: true };
     const rendered_html = await renderHtml(template_data);
     let submit = {
@@ -42,10 +88,11 @@ export async function prepareRollDialog(testName, type, sheet) {
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
       callback: (html) => damageTest(testName, speaker, html)
     };
-    createDialog(testName, speaker, sheet, rendered_html, submit);
+    createDialog(testName, rendered_html, submit);
   }
 
   else if (type === "imago") {
+    const testName = game.i18n.localize("ARCHETERICALITE.ImagoTest");
     const template_data = { imago: true, modifier: true };
     const rendered_html = await renderHtml(template_data);
     let submit = {
@@ -53,10 +100,11 @@ export async function prepareRollDialog(testName, type, sheet) {
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
       callback: (html) => imagoTest(testName, speaker, sheet, html)
     };
-    createDialog(testName, speaker, sheet, rendered_html, submit);
+    createDialog(testName, rendered_html, submit);
   }
 
   else {
+    const testName = game.i18n.localize("ARCHETERICALITE.StandartTest");
     const template_data = { customDifficulty: true, modifier: true };
     const rendered_html = await renderHtml(template_data);
     let submit = {
@@ -64,7 +112,7 @@ export async function prepareRollDialog(testName, type, sheet) {
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
       callback: (html) => standartTest(testName, speaker, html)
     };
-    createDialog(testName, speaker, sheet, rendered_html, submit);
+    createDialog(testName, rendered_html, submit);
   }
 }
 
@@ -74,7 +122,7 @@ function renderHtml(template_data) {
   return rendered_html;
 }
 
-function createDialog(testName, speaker, sheet, rendered_html, submit) {
+function createDialog(testName, rendered_html, submit) {
   let d = new Dialog(
     {
       title: testName,
@@ -107,12 +155,8 @@ function embarrassment(testName, speaker, sheet, html) {
   rollDice(testName, speaker, modifier, difficulty)
 }
 
-function masteryTest(testName, speaker, html) {
-  let advantage = parseInt(html.find("#advantage")[0].value, 10);
-  let baseModifier = parseInt(html.find("#modifier")[0].value, 10);
-  let modifier = advantage + baseModifier;
-
-  let actorMastery = parseInt(html.find("#actorMastery")[0].value, 10);
+function masteryTest(testName, speaker, actorMastery, html) {
+  let modifier = html.find("#advantage")[0].value;
   let opponentMastery = parseInt(html.find("#opponentMastery")[0].value, 10);
   let difficulty = 7 - actorMastery + opponentMastery;
 

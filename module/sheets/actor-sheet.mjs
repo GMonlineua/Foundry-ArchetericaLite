@@ -33,7 +33,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
           label: game.i18n.localize("ARCHETERICALITE.Test"),
           class: "standart-test",
           icon: "fas fa-dice",
-          onclick: (ev) => prepareRollDialog(game.i18n.localize("ARCHETERICALITE.StandartTest"), "", this)
+          onclick: (ev) => prepareRollDialog(this)
         }
       ].concat(buttons);
     }
@@ -267,11 +267,8 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
 
   _onCheck(event) {
     event.preventDefault();
-    const element = event.currentTarget;
-    const testName = element.innerText;
-    const dataset = element.dataset;
-    const testType = dataset.type;
-    prepareRollDialog(testName, testType, this)
+    const testType = event.currentTarget.dataset.type;
+    prepareRollDialog(this, testType)
   }
 
 }
