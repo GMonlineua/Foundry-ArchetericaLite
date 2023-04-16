@@ -16,8 +16,9 @@
     "systems/archetericalite/templates/actor/tabs/npc-combat.hbs",
     // Parts
     "systems/archetericalite/templates/actor/parts/biography-type.hbs",
-    "systems/archetericalite/templates/actor/parts/negative.hbs",
     "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs",
+    "systems/archetericalite/templates/actor/parts/negative.hbs",
+    "systems/archetericalite/templates/actor/parts/trauma.hbs",
     "systems/archetericalite/templates/actor/parts/combat-talent.hbs",
     "systems/archetericalite/templates/actor/parts/combat-rule.hbs",
     "systems/archetericalite/templates/actor/parts/mystical-ability.hbs",

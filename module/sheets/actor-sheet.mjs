@@ -79,6 +79,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     const biography = [];
     const attribute = [];
     const negative = [];
+    const trauma = [];
     const comtals = {
       2: [],
       3: [],
@@ -107,6 +108,10 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
       // Append to negative.
       else if (i.type === 'negative') {
         negative.push(i);
+      }
+      // Append to trauma.
+      else if (i.type === 'trauma') {
+        trauma.push(i);
       }
       // Append to combat talent.
       else if (i.type === 'comtal') {
@@ -152,6 +157,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     context.biography = biography;
     context.attribute = attribute;
     context.negative = negative;
+    context.trauma = trauma;
     context.comtals = comtals;
     context.combatRule = combatRule;
     context.ability = ability;
