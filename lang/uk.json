@@ -12,6 +12,7 @@
   "ITEM.TypeMetamorphosis": "Метаморфоза",
   "ITEM.TypeProtection": "Захист",
   "ITEM.TypeWeapon": "Зброя",
+  "ITEM.TypeArtifact": "Диабліка",
   "ITEM.TypeLoot": "Предмет",
 
   "ARCHETERICALITE.ItemName": "Назва",
@@ -121,7 +122,10 @@
   "ARCHETERICALITE.Profit": "Чистий Прибуток",
   "ARCHETERICALITE.Zloty": "Злоті",
   "ARCHETERICALITE.Marks": "Марки",
+  "ARCHETERICALITE.ArtifactPlural": "Диабліка",
   "ARCHETERICALITE.LootPlural": "Предмети",
+  "ARCHETERICALITE.ProtectionPlural": "Захист",
+  "ARCHETERICALITE.WeaponPlural": "Зброя",
   "ARCHETERICALITE.Riches": "Багатства",
 
   "ARCHETERICALITE.Quantity": "Кількість",

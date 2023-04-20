@@ -64,7 +64,7 @@
     }
   },
   "Item": {
-    "types": ["biography", "attribute", "negative", "trauma", "comtal", "combatRule", "ability", "metamorphosis", "loot", "protection", "weapon"],
+    "types": ["biography", "attribute", "negative", "trauma", "comtal", "combatRule", "ability", "metamorphosis", "artifact", "loot", "protection", "weapon"],
     "templates": {
       "base": {
         "description": ""
@@ -164,12 +164,9 @@
       "templates": ["base"],
       "rank": 1
     },
-    "artifacts": {
+    "artifact": {
       "templates": ["base", "equipment"],
-      "imago": {
-        "value": 1,
-        "max": 12
-      }
+      "imago": 1
     },
     "loot": {
       "templates": ["base", "equipment"]

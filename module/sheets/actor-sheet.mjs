@@ -90,6 +90,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     const combatRule = [];
     const ability = [];
     const metamorphosis = [];
+    const artifact = [];
     const loot = [];
     const protection = [];
     const weapon = [];
@@ -139,6 +140,10 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
       else if (i.type === 'metamorphosis') {
         metamorphosis.push(i);
       }
+      // Append to artifact.
+      else if (i.type === 'artifact') {
+        artifact.push(i);
+      }
       // Append to loot.
       else if (i.type === 'loot') {
         loot.push(i);
@@ -162,6 +167,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
     context.combatRule = combatRule;
     context.ability = ability;
     context.metamorphosis = metamorphosis;
+    context.artifact = artifact;
     context.loot = loot;
     context.protection = protection;
     context.weapon = weapon;
