@@ -1,6 +1,6 @@
 {
   "name": "archetericalite",
-  "version": "0.4.3",
+  "version": "0.5",
   "description": "CSS compiler for the Archeterica Lite system",
   "scripts": {
     "build": "gulp build",
@@ -12,7 +12,7 @@
     "last 3 versions"
   ],
   "author": "GMonline-ua",
-  "license": "MIT",
+  "license": "GNU",
   "private": true,
   "dependencies": {
     "gulp-autoprefixer": "^6.1.0",
