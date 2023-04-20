@@ -385,6 +385,9 @@ input.clear-input:focus {
   background: none;
   text-shadow: none;
 }
+.archetericalite .sheet-body .grid {
+  gap: 10px;
+}
 .archetericalite .sheet-body button.check {
   height: 30px;
   margin: 0;
@@ -431,39 +434,42 @@ input.clear-input:focus {
   top: 5px;
   right: 3px;
 }
-.archetericalite .sheet-body .attribute-block {
+.archetericalite .sheet-body .narrative .negative {
+  grid-area: 1/2/span 2/auto;
+}
+.archetericalite .sheet-body .narrative .attribute-block {
   display: grid;
   grid-template-columns: 75px auto;
   gap: 10px;
 }
-.archetericalite .sheet-body .attribute-block .talentsPyramid {
+.archetericalite .sheet-body .narrative .attribute-block .talentsPyramid {
   text-align: center;
 }
-.archetericalite .sheet-body .attribute-block .talentsPyramid h4 {
+.archetericalite .sheet-body .narrative .attribute-block .talentsPyramid h4 {
   font-weight: bold;
 }
-.archetericalite .sheet-body .attribute-block .talentsPyramid .resource {
+.archetericalite .sheet-body .narrative .attribute-block .talentsPyramid .resource {
   margin: 20px 0;
 }
-.archetericalite .sheet-body .attribute-block .talentsPyramid .resource input {
+.archetericalite .sheet-body .narrative .attribute-block .talentsPyramid .resource input {
   min-width: 50px;
   border-radius: 7px;
 }
-.archetericalite .sheet-body .attribute-block .talentsPyramid .resource .resource-label {
+.archetericalite .sheet-body .narrative .attribute-block .talentsPyramid .resource .resource-label {
   display: block;
   width: 100%;
 }
-.archetericalite .sheet-body .attribute-block .talent-list {
+.archetericalite .sheet-body .narrative .attribute-block .talent-list {
   position: relative;
 }
-.archetericalite .sheet-body .attribute-block .talent-list li {
+.archetericalite .sheet-body .narrative .attribute-block .talent-list li {
   margin-bottom: 5px;
 }
-.archetericalite .sheet-body .attribute-block .talent-list li input[type=checkbox] {
+.archetericalite .sheet-body .narrative .attribute-block .talent-list li input[type=checkbox] {
   position: absolute;
   right: 0px;
 }
-.archetericalite .sheet-body .attribute-block .talent-list li:empty {
+.archetericalite .sheet-body .narrative .attribute-block .talent-list li:empty {
   background-color: #555;
 }
 .archetericalite .sheet-body .combat .resource-content {
@@ -493,7 +499,7 @@ input.clear-input:focus {
   grid-area: 2/2/span 2/auto;
 }
 .archetericalite .sheet-body .description .grid .editor {
-  min-height: 150px;
+  min-height: 100px;
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
 }

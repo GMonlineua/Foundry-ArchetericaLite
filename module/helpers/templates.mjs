@@ -26,6 +26,7 @@
     "systems/archetericalite/templates/actor/parts/weapon.hbs",
     "systems/archetericalite/templates/actor/parts/protection.hbs",
     "systems/archetericalite/templates/actor/parts/loot.hbs",
+    "systems/archetericalite/templates/actor/parts/npc-talents.hbs",
     // Apps
     "systems/archetericalite/templates/apps/rollTest.hbs"
   ]);

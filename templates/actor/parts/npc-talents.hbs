@@ -1,0 +1,100 @@
+<div class="item-block">
+  <div class="block-header">
+    <h2>{{localize 'ARCHETERICALITE.AttributePlural'}}</h2>
+    <a class="item-add item-create" title="Create item" data-type="attribute"><i class="fas fa-plus"></i>{{localize 'ARCHETERICALITE.Add'}}</a>
+  </div>
+  {{#each attribute as |item id|}}
+    <div class="item" data-item-id="{{item._id}}">
+      <div class="item-header">
+        <div class="item-name">
+          <h3>{{item.name}} (+{{system.plus}})</h3>
+        </div>
+        <div class="item-controls">
+          <a class="item-control item-edit" title="{{localize 'ARCHETERICALITE.EditItem'}}"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="{{localize 'ARCHETERICALITE.DeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </div>
+      </div>
+      <ul class="talent-list">
+        {{#if system.talent1.name}}
+          <li name="system.talent1">
+            <span>{{system.talent1.name}} </span>
+            <span class="rank" style="--rank:{{system.talent1.rank}}"></span>
+            {{#if system.talent1.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+
+        {{#if system.talent2.name}}
+          <li name="system.talent2">
+              <span>{{system.talent2.name}} </span>
+            <span class="rank" style="--rank:{{system.talent2.rank}}"></span>
+            {{#if system.talent2.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+
+        {{#if system.talent3.name}}
+          <li name="system.talent3">
+              <span>{{system.talent3.name}} </span>
+            <span class="rank" style="--rank:{{system.talent3.rank}}"></span>
+            {{#if system.talent3.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+
+        {{#if system.talent4.name}}
+          <li name="system.talent4">
+              <span>{{system.talent4.name}} </span>
+            <span class="rank" style="--rank:{{system.talent4.rank}}"></span>
+            {{#if system.talent4.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+
+        {{#if system.talent5.name}}
+          <li name="system.talent5">
+              <span>{{system.talent5.name}} </span>
+            <span class="rank" style="--rank:{{system.talent5.rank}}"></span>
+            {{#if system.talent5.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+
+        {{#if system.talent6.name}}
+          <li name="system.talent6">
+              <span>{{system.talent6.name}} </span>
+            <span class="rank" style="--rank:{{system.talent6.rank}}"></span>
+            {{#if system.talent6.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+
+        {{#if system.talent7.name}}
+          <li name="system.talent6">
+              <span>{{system.talent7.name}} </span>
+            <span class="rank" style="--rank:{{system.talent7.rank}}"></span>
+            {{#if system.talent7.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+
+        {{#if system.talent8.name}}
+          <li name="system.talent6">
+              <span>{{system.talent8.name}} </span>
+            <span class="rank" style="--rank:{{system.talent8.rank}}"></span>
+            {{#if system.talent8.upheaval}}
+              ({{localize 'ARCHETERICALITE.AvailableUpheaval'}})
+            {{/if}}
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  {{/each}}
+</div>

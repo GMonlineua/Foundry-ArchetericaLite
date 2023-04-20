@@ -6,12 +6,9 @@
   <button class="check" data-type="narrative" type="button">{{localize 'ARCHETERICALITE.NarrativeTest'}}</button>
 </div>
 
-{{> "systems/archetericalite/templates/actor/parts/narrative-attribute.hbs"}}
-
 <div class="grid grid-2col">
+  {{> "systems/archetericalite/templates/actor/parts/npc-talents.hbs"}}
   {{> "systems/archetericalite/templates/actor/parts/mystical-ability.hbs"}}
-   <div>
-      {{> "systems/archetericalite/templates/actor/parts/negative.hbs"}}
-      {{> "systems/archetericalite/templates/actor/parts/metamorphosis.hbs"}}
-    </div>
+  {{> "systems/archetericalite/templates/actor/parts/negative.hbs"}}
+  {{> "systems/archetericalite/templates/actor/parts/metamorphosis.hbs"}}
 </div>

@@ -90,6 +90,10 @@ nav.sheet-tabs {
 }
 
 .sheet-body {
+  .grid {
+    gap: 10px;
+  }
+
   button.check {
     height: 30px;
     margin: 0;
@@ -142,47 +146,53 @@ nav.sheet-tabs {
     }
   }
 
-  .attribute-block {
-    display: grid;
-    grid-template-columns: 75px auto;
-    gap: 10px;
-
-    .talentsPyramid {
-      text-align: center;
-
-      h4 {
-        font-weight: bold;
-      }
-
-      .resource {
-        margin: 20px 0;
-
-        input {
-          min-width: 50px;
-          border-radius: 7px;
-        }
-
-        .resource-label {
-          display: block;
-          width: 100%;
-        }
-      }
+  .narrative {
+    .negative {
+      grid-area: 1 / 2 / span 2 / auto;
     }
 
-    .talent-list {
-      position: relative;
+    .attribute-block {
+      display: grid;
+      grid-template-columns: 75px auto;
+      gap: 10px;
 
-      li {
-        margin-bottom: 5px;
+      .talentsPyramid {
+        text-align: center;
 
-        input[type="checkbox"] {
-          position: absolute;
-          right: 0px;
+        h4 {
+          font-weight: bold;
+        }
+
+        .resource {
+          margin: 20px 0;
+
+          input {
+            min-width: 50px;
+            border-radius: 7px;
+          }
+
+          .resource-label {
+            display: block;
+            width: 100%;
+          }
         }
       }
 
-      li:empty {
-        background-color: #555;
+      .talent-list {
+        position: relative;
+
+        li {
+          margin-bottom: 5px;
+
+          input[type="checkbox"] {
+            position: absolute;
+            right: 0px;
+          }
+        }
+
+        li:empty {
+          background-color: #555;
+        }
       }
     }
   }
@@ -225,7 +235,7 @@ nav.sheet-tabs {
       }
 
       .editor {
-        min-height: 150px;
+        min-height: 100px;
         padding: 0 5px;
         border: 1px solid var(--color-border-light-primary);
       }
