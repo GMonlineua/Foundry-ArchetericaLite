@@ -43,9 +43,14 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const context = super.getData();
+  async getData() {
+    const context = await super.getData();
     const actorData = this.actor.toObject(false);
+
+    // Encrich editor content
+    context.enrichedGeneral = await TextEditor.enrichHTML(this.object.system.description.general, { async: true })
+    context.enrichedNotes = await TextEditor.enrichHTML(this.object.system.description.notes, { async: true })
+    context.enrichedBiography = await TextEditor.enrichHTML(this.object.system.description.biography, { async: true })
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;

@@ -23,16 +23,11 @@ export class ArchetericaLiteItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
+  async getData() {
     // Retrieve base data structure.
-    const context = super.getData();
-    const sheetData = this.object;
+    const context = await super.getData();
 
-    // if (sheetData.system.comtalRank < 2) {
-    //   sheetData.system.comtalRank = 2
-    // } else if (sheetData.system.comtalRank > 6) {
-    //   sheetData.system.comtalRank = 6
-    // }
+    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, { async: true });
 
     // Use a safe clone of the item data for further operations.
     const itemData = context.item;

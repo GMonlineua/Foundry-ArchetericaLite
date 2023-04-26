@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* Global styles */
+.check {
+  cursor: pointer;
+}
+
 .roll-template > div {
   display: none;
 }
@@ -492,14 +496,12 @@ input.clear-input:focus {
 .archetericalite .sheet-body .description {
   padding-bottom: 25px;
 }
-.archetericalite .sheet-body .description .grid {
-  gap: 35px 10px;
-}
-.archetericalite .sheet-body .description .grid .biography {
+.archetericalite .sheet-body .description .biography {
   grid-area: 2/2/span 2/auto;
 }
-.archetericalite .sheet-body .description .grid .editor {
+.archetericalite .sheet-body .description .editor {
   min-height: 100px;
+  height: auto;
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
 }

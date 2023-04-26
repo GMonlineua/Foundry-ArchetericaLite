@@ -227,18 +227,15 @@ nav.sheet-tabs {
   .description {
     padding-bottom: 25px;
 
-    .grid {
-      gap: 35px 10px;
+    .biography {
+      grid-area: 2 / 2 / span 2 /  auto;
+    }
 
-      .biography {
-        grid-area: 2 / 2 / span 2 /  auto;
-      }
-
-      .editor {
-        min-height: 100px;
-        padding: 0 5px;
-        border: 1px solid var(--color-border-light-primary);
-      }
+    .editor {
+      min-height: 100px;
+      height: auto;
+      padding: 0 5px;
+      border: 1px solid var(--color-border-light-primary);
     }
   }
 }
