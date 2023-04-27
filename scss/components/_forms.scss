@@ -61,14 +61,17 @@
     }
   }
 
-  h2.faction {
-    display: flex;
-    width: 70%;
-    flex-direction: row;
-    justify-content: flex-start;
-    border-bottom: 0;
-    input {
-      border-bottom-width: 1px;
+  .faction-block {
+    grid-template-columns: auto 150px;
+
+    h2.faction {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      border-bottom: 0;
+      input {
+        border-bottom-width: 1px;
+      }
     }
   }
 }
@@ -92,21 +95,6 @@ nav.sheet-tabs {
 .sheet-body {
   .grid {
     gap: 10px;
-  }
-
-  button.check {
-    height: 30px;
-    margin: 0;
-    border-style: solid;
-    border-color: #777;
-    border-width: 1px;
-    text-shadow: none;
-    font-family: $font-primary;
-    font-weight: bold;
-  }
-
-  button.check:focus {
-    outline: none;
   }
 
   .block-header {
@@ -238,6 +226,21 @@ nav.sheet-tabs {
       border: 1px solid var(--color-border-light-primary);
     }
   }
+}
+
+button.check {
+  height: 30px;
+  margin: 0;
+  border-style: solid;
+  border-color: #777;
+  border-width: 1px;
+  text-shadow: none;
+  font-family: $font-primary;
+  font-weight: bold;
+}
+
+button.check:focus {
+  outline: none;
 }
 
 .sheet-body,

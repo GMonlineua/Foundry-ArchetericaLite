@@ -8,7 +8,7 @@ export async function prepareRollDialog(sheet, type) {
     let submit = {
       icon: '<i class="fas fa-check"></i>',
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
-      callback: (html) => narrativeTest(testName, speaker, html)
+      callback: (html) => narrativeTest(testName, speaker, sheet, html)
     };
     createDialog(testName, rendered_html, submit);
   }
@@ -33,9 +33,8 @@ export async function prepareRollDialog(sheet, type) {
     let submit = {
       icon: '<i class="fas fa-check"></i>',
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
-      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
+      callback: (html) => masteryTest(testName, speaker, actorMastery, sheet, html)
     };
-    let option = type;
     createDialog(testName, rendered_html, submit);
   }
 
@@ -47,9 +46,8 @@ export async function prepareRollDialog(sheet, type) {
     let submit = {
       icon: '<i class="fas fa-check"></i>',
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
-      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
+      callback: (html) => masteryTest(testName, speaker, actorMastery, sheet, html)
     };
-    let option = type;
     createDialog(testName, rendered_html, submit);
   }
 
@@ -61,7 +59,7 @@ export async function prepareRollDialog(sheet, type) {
     let submit = {
       icon: '<i class="fas fa-check"></i>',
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
-      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
+      callback: (html) => masteryTest(testName, speaker, actorMastery, sheet, html)
     };
     createDialog(testName, rendered_html, submit);
   }
@@ -74,7 +72,7 @@ export async function prepareRollDialog(sheet, type) {
     let submit = {
       icon: '<i class="fas fa-check"></i>',
       label: game.i18n.localize("ARCHETERICALITE.Roll"),
-      callback: (html) => masteryTest(testName, speaker, actorMastery, html)
+      callback: (html) => masteryTest(testName, speaker, actorMastery, sheet, html)
     };
     createDialog(testName, rendered_html, submit);
   }
@@ -138,15 +136,21 @@ function createDialog(testName, rendered_html, submit) {
       default: "roll",
       close: () => {},
     },
-    { width: "250" }
+    { width: "300" }
   );
   d.render(true);
 }
 
-function narrativeTest(testName, speaker, html) {
-  let difficulty = html.find("#narrativeDifficulty")[0].value;
+function narrativeTest(testName, speaker, sheet, html) {
+  let infirmity = sheet.object.system.infirmity;
+  let difficulty = parseInt(html.find("#narrativeDifficulty")[0].value, 10);
   let modifier = html.find("#modifier")[0].value;
-  rollDice(testName, speaker, modifier, difficulty)
+  if (infirmity > 0) {
+    infirmityRoll(testName, speaker, modifier, difficulty, infirmity)
+  }
+  else {
+    rollDice(testName, speaker, modifier, difficulty)
+  }
 }
 
 function embarrassment(testName, speaker, sheet, html) {
@@ -155,12 +159,17 @@ function embarrassment(testName, speaker, sheet, html) {
   rollDice(testName, speaker, modifier, difficulty)
 }
 
-function masteryTest(testName, speaker, actorMastery, html) {
+function masteryTest(testName, speaker, actorMastery, sheet, html) {
+  let infirmity = sheet.object.system.infirmity;
   let modifier = html.find("#advantage")[0].value;
   let opponentMastery = parseInt(html.find("#opponentMastery")[0].value, 10);
   let difficulty = 7 - actorMastery + opponentMastery;
-
-  rollDice(testName, speaker, modifier, difficulty)
+  if (infirmity > 0) {
+    infirmityRoll(testName, speaker, modifier, difficulty, infirmity)
+  }
+  else {
+    rollDice(testName, speaker, modifier, difficulty)
+  }
 }
 
 function damageTest(testName, speaker, html) {
@@ -185,21 +194,43 @@ function imagoTest(testName, speaker, sheet, html) {
 }
 
 function standartTest(testName, speaker, html) {
-  let difficulty = html.find("#customDifficulty")[0].value;
+  let difficulty = parseInt(html.find("#customDifficulty")[0].value, 10);
   let modifier = html.find("#modifier")[0].value;
   rollDice(testName, speaker, modifier, difficulty);
 }
 
-function rollDice(testName, speaker, modifier, difficulty) {
-  let label = testName;
-  if (difficulty != 0) {
-    label += ", Складність: " + difficulty
-  }
+async function rollDice(testName, speaker, modifier, difficulty) {
   let roll = new Roll("2d6+@modifier", {modifier});
+  await roll.evaluate({ async: true });
+  let dice = [ roll.terms[0].results[0].result, roll.terms[0].results[1].result ]
+  let total = roll.total;
+  let success = (total > difficulty);
+  let data = { testName, modifier, dice, total, difficulty, success };
+  let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
   roll.toMessage({
     speaker: speaker,
-    flavor: label,
-    rollMode: "roll", create: true
+    content: chatMessage
+  });
+}
+
+async function infirmityRoll(testName, speaker, modifier, difficulty, infirmity) {
+  let roll = new Roll("2d6+@modifier", {modifier});
+  let infirmityResult = new Roll(infirmity + "d6");
+  await roll.evaluate({ async: true });
+  await infirmityResult.evaluate({ async: true });
+
+  let dice = [ roll.terms[0].results[0].result, roll.terms[0].results[1].result ];
+  let infirmityDice = [];
+  for (const element of infirmityResult.terms[0].results) {
+    infirmityDice.push(element.result);
+  }
+
+  let total = "?";
+  let data = { testName, modifier, dice, infirmityDice, total };
+  let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
+  roll.toMessage({
+    speaker: speaker,
+    content: chatMessage
   });
   return roll;
 }

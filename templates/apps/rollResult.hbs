@@ -1,0 +1,28 @@
+<div class="roll-result">
+  <h1>{{testName}}</h1>
+
+  <div class="roll-info">
+    {{#if modifier}}<span class="modifier">{{localize 'ARCHETERICALITE.Modifier'}}: {{modifier}}</span>{{/if}}
+
+    <ol class="dice-rolls">
+      {{#each dice }}
+        <li class="dice">{{this}}</li>
+      {{/each}}
+    </ol>
+
+    {{#if infirmityDice}}
+      <ol class="dice-rolls">
+        {{#each infirmityDice }}
+          <li class="dice">{{this}}</li>
+        {{/each}}
+      </ol>
+    {{/if}}
+
+    <span class="result"><span class="text">{{total}}</span></span>
+  </div>
+
+  {{#if  difficulty}}
+      <p class="difficulty">{{localize 'ARCHETERICALITE.Difficulty'}}: {{difficulty}}</p>
+      <h4 class="success">{{#if  success}}{{localize 'ARCHETERICALITE.Success'}}{{else}}{{localize 'ARCHETERICALITE.Fail'}}{{/if}}</h>
+  {{/if}}
+</div>

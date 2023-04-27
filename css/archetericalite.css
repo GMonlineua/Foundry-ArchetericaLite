@@ -7,10 +7,82 @@
 
 .roll-template > div {
   display: none;
+  margin: 5px;
 }
 
 .roll-template > div.active {
   display: block;
+}
+
+.roll-result h1 {
+  font-size: var(--font-size-18);
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+.roll-result .roll-info {
+  position: relative;
+}
+.roll-result .roll-info .dice-rolls {
+  position: relative;
+  list-style: none;
+  margin: 5px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.roll-result .roll-info .dice-rolls .dice {
+  position: relative;
+  min-width: 36px;
+  line-height: 36px;
+  float: left;
+  margin-right: 1px;
+  background-image: url(/icons/svg/d6-grey.svg);
+  background-repeat: no-repeat;
+  background-size: 36px 36px;
+  font-size: var(--font-size-16);
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+.roll-result .roll-info .result {
+  position: absolute;
+  min-width: 48px;
+  line-height: 48px;
+  top: 5px;
+  right: 20px;
+  background-image: url(../icons/ui/two-dice.svg);
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  font-size: var(--font-size-16);
+  color: #000;
+  font-weight: bold;
+}
+.roll-result .roll-info .result .text {
+  position: relative;
+  left: 32px;
+  bottom: 14px;
+}
+.roll-result .difficulty {
+  text-align: center;
+}
+.roll-result .success {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  font-size: var(--font-size-18);
+  font-weight: bold;
+  position: relative;
+  margin: 0;
+  line-height: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 2px #fff inset;
+  box-shadow: 0 0 2px #fff inset;
+  word-break: break-all;
+  text-transform: uppercase;
 }
 
 .flex-group-center,
@@ -357,11 +429,13 @@ input.clear-input:focus {
   height: 100%;
   margin: 0;
 }
-.archetericalite .sheet-header h2.faction {
+.archetericalite .sheet-header .faction-block {
+  grid-template-columns: auto 150px;
+}
+.archetericalite .sheet-header .faction-block h2.faction {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -371,7 +445,7 @@ input.clear-input:focus {
   justify-content: flex-start;
   border-bottom: 0;
 }
-.archetericalite .sheet-header h2.faction input {
+.archetericalite .sheet-header .faction-block h2.faction input {
   border-bottom-width: 1px;
 }
 .archetericalite nav.sheet-tabs {
@@ -391,19 +465,6 @@ input.clear-input:focus {
 }
 .archetericalite .sheet-body .grid {
   gap: 10px;
-}
-.archetericalite .sheet-body button.check {
-  height: 30px;
-  margin: 0;
-  border-style: solid;
-  border-color: #777;
-  border-width: 1px;
-  text-shadow: none;
-  font-family: "Lora", serif;
-  font-weight: bold;
-}
-.archetericalite .sheet-body button.check:focus {
-  outline: none;
 }
 .archetericalite .sheet-body .block-header {
   position: relative;
@@ -504,6 +565,19 @@ input.clear-input:focus {
   height: auto;
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
+}
+.archetericalite button.check {
+  height: 30px;
+  margin: 0;
+  border-style: solid;
+  border-color: #777;
+  border-width: 1px;
+  text-shadow: none;
+  font-family: "Lora", serif;
+  font-weight: bold;
+}
+.archetericalite button.check:focus {
+  outline: none;
 }
 .archetericalite .sheet-body,
 .archetericalite .sheet-body .tab,

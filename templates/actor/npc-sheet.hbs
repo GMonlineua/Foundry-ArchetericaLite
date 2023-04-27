@@ -16,10 +16,13 @@
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
 
-      <h2 class="faction">
-        <label for="system.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
-        <input class="clear-input" type="text" name="system.faction" value="{{system.faction}}" data-dtype="String"/>
-      </h2>
+      <div class="faction-block grid grid-2col">
+        <h2 class="faction">
+          <label for="system.faction" class="resource-label">{{localize 'ARCHETERICALITE.Faction'}}: </label>
+          <input class="clear-input" type="text" name="system.faction" value="{{system.faction}}" data-dtype="String"/>
+        </h2>
+        <button class="check" data-type="narrative" type="button">{{localize 'ARCHETERICALITE.NarrativeTest'}}</button>
+      </div>
 
       <div class="resources flexrow">
         <div class="resource">
@@ -48,19 +51,23 @@
 
       <div class="resources flexrow">
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
+          <label class="resource-label check" data-type="imago">{{localize 'ARCHETERICALITE.Imago'}}</label>
+          <input type="number" name="system.mystical.imago" value="{{system.mystical.imago}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label check" data-type="brawl">{{localize 'ARCHETERICALITE.Brawl'}}:</label>
           <input type="number" name="system.combat.brawl" value="{{system.combat.brawl}}" data-dtype="Number"/>
         </div>
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Fencing'}}:</label>
+          <label class="resource-label check" data-type="fencing">{{localize 'ARCHETERICALITE.Fencing'}}:</label>
           <input type="number" name="system.combat.fencing" value="{{system.combat.fencing}}" data-dtype="Number"/>
         </div>
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Firearms'}}:</label>
+          <label class="resource-label check" data-type="firearms">{{localize 'ARCHETERICALITE.Firearms'}}:</label>
           <input type="number" name="system.combat.firearms" value="{{system.combat.firearms}}" data-dtype="Number"/>
         </div>
         <div class="resource">
-          <label class="resource-label">{{localize 'ARCHETERICALITE.Throwing'}}:</label>
+          <label class="resource-label check" data-type="throwing">{{localize 'ARCHETERICALITE.Throwing'}}:</label>
           <input type="number" name="system.combat.throwing" value="{{system.combat.throwing}}" data-dtype="Number"/>
         </div>
       </div>

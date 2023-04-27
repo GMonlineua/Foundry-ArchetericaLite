@@ -30,6 +30,8 @@
   "ARCHETERICALITE.Difficulty": "Складність",
   "ARCHETERICALITE.Roll": "Кинути",
   "ARCHETERICALITE.RollCancel": "Скасувати",
+  "ARCHETERICALITE.Success": "Успіх",
+  "ARCHETERICALITE.Fail": "Провал",
 
   "ARCHETERICALITE.NarrativeTest": "Наративний Тест",
   "ARCHETERICALITE.DifficultyNone": "Немає",
