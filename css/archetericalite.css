@@ -562,7 +562,7 @@ input.clear-input:focus {
 }
 .archetericalite .sheet-body .description .editor {
   min-height: 100px;
-  height: auto;
+  height: calc(100% - 28px);
   padding: 0 5px;
   border: 1px solid var(--color-border-light-primary);
 }
@@ -578,11 +578,6 @@ input.clear-input:focus {
 }
 .archetericalite button.check:focus {
   outline: none;
-}
-.archetericalite .sheet-body,
-.archetericalite .sheet-body .tab,
-.archetericalite .sheet-body .tab .editor {
-  height: calc(100% - 2px);
 }
 .archetericalite .tox .tox-editor-container {
   background: #fff;
