@@ -21,6 +21,113 @@
   "styles": [
     "css/archetericalite.css"
   ],
+  "packs": [
+    {
+      "name": "npc-uk",
+      "label": "Статисти",
+      "path": "packs-uk/npc.db",
+      "type": "Actor",
+      "private": true
+    },
+    {
+      "name": "adventures-uk",
+      "label": "Готові Сценарії",
+      "path": "packs-uk/adventures.db",
+      "type": "Adventure",
+      "private": true
+    },
+    {
+      "name": "biography-bonuses-uk",
+      "label": "Бонуси Біографій",
+      "path": "packs-uk/biography-bonuses.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "narrative-attributes-uk",
+      "label": "Наративні Атрибути",
+      "path": "packs-uk/narrative-attributes.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "negative-attributes-uk",
+      "label": "Негативні Атрибути",
+      "path": "packs-uk/negative-attributes.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "traumas-uk",
+      "label": "Травми",
+      "path": "packs-uk/traumas.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "mystical-abilities-uk",
+      "label": "Містичні Здібності",
+      "path": "packs-uk/mystical-abilities.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "metamorphosis-uk",
+      "label": "Метаморфози",
+      "path": "packs-uk/metamorphosis.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "combat-talents-uk",
+      "label": "Бойові Таланти>",
+      "path": "packs-uk/combat-talents.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "combat-rules-uk",
+      "label": "Спеціальні Правила",
+      "path": "packs-uk/combat-rules.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "loot-uk",
+      "label": "Предмети",
+      "path": "packs-uk/loot.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "protection-uk",
+      "label": "Захист",
+      "path": "packs-uk/protection.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "weapons-uk",
+      "label": "Зброя",
+      "path": "packs-uk/weapons.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "rules-uk",
+      "label": "Правила",
+      "path": "packs-uk/rules.db",
+      "type": "Item",
+      "private": false
+    },
+    {
+      "name": "tables-uk",
+      "label": "Таблиці",
+      "path": "packs-uk/tables.db",
+      "type": "Item",
+      "private": false
+    }
+  ],
   "languages": [
     {
       "lang": "en",

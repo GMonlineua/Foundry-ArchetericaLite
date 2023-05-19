@@ -1,0 +1,5 @@
+2023/05/19-20:45:26.176298 7fde907f16c0 Delete type=3 #1
+2023/05/19-20:45:29.836451 7fde899fe6c0 Level-0 table #5: started
+2023/05/19-20:45:29.836480 7fde899fe6c0 Level-0 table #5: 0 bytes OK
+2023/05/19-20:45:29.846055 7fde899fe6c0 Delete type=0 #3
+2023/05/19-20:45:29.940219 7fde899fe6c0 Manual compaction at level-0 from 'undefined' @ 72057594037927935 : 1 .. 'undefined' @ 0 : 0; will stop at (end)
