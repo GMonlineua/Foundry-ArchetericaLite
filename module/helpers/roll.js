@@ -146,7 +146,7 @@ function narrativeTest(testName, speaker, sheet, html) {
   let difficulty = parseInt(html.find("#narrativeDifficulty")[0].value, 10);
   let modifier = html.find("#modifier")[0].value;
   if (infirmity > 0) {
-    infirmityRoll(testName, speaker, modifier, difficulty, infirmity)
+    infirmityRoll(testName, speaker, modifier, infirmity)
   }
   else {
     rollDice(testName, speaker, modifier, difficulty)
@@ -165,23 +165,11 @@ function masteryTest(testName, speaker, actorMastery, sheet, html) {
   let opponentMastery = parseInt(html.find("#opponentMastery")[0].value, 10);
   let difficulty = 7 - actorMastery + opponentMastery;
   if (infirmity > 0) {
-    infirmityRoll(testName, speaker, modifier, difficulty, infirmity)
+    infirmityRoll(testName, speaker, modifier, infirmity)
   }
   else {
     rollDice(testName, speaker, modifier, difficulty)
   }
-}
-
-function damageTest(testName, speaker, html) {
-  let damage = html.find("#damage")[0].value;
-  let lethality = html.find("#lethality")[0].value;
-
-  let roll = new Roll("@damage+@lethality", {damage, lethality});
-  roll.toMessage({
-    speaker: speaker,
-    flavor: testName,
-    rollMode: "roll", create: true
-  });
 }
 
 function imagoTest(testName, speaker, sheet, html) {
@@ -204,7 +192,7 @@ async function rollDice(testName, speaker, modifier, difficulty) {
   await roll.evaluate({ async: true });
   let dice = [ roll.terms[0].results[0].result, roll.terms[0].results[1].result ]
   let total = roll.total;
-  let success = (total > difficulty);
+  let success = (total >= difficulty);
   let data = { testName, modifier, dice, total, difficulty, success };
   let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
   roll.toMessage({
@@ -213,7 +201,7 @@ async function rollDice(testName, speaker, modifier, difficulty) {
   });
 }
 
-async function infirmityRoll(testName, speaker, modifier, difficulty, infirmity) {
+async function infirmityRoll(testName, speaker, modifier, infirmity) {
   let roll = new Roll("2d6+@modifier", {modifier});
   let infirmityResult = new Roll(infirmity + "d6");
   await roll.evaluate({ async: true });
@@ -233,4 +221,20 @@ async function infirmityRoll(testName, speaker, modifier, difficulty, infirmity)
     content: chatMessage
   });
   return roll;
+}
+
+async function damageTest(testName, speaker, html) {
+  let damage = html.find("#damage")[0].value;
+  let modifier = html.find("#lethality")[0].value;
+
+  let roll = new Roll("@damage+@modifier", {damage, modifier});
+  await roll.evaluate({ async: true });
+  let dice = [ roll.terms[0].results[0].result, roll.terms[0].results[1].result ]
+  let total = roll.total;
+  let data = { testName, modifier, dice, total };
+  let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
+  roll.toMessage({
+    speaker: speaker,
+    content: chatMessage
+  });
 }

@@ -3,10 +3,6 @@
     "types": ["character", "npc"],
     "templates": {
       "base": {
-        "hp": {
-          "value": 12,
-          "max": 12
-        },
         "stress": 0,
         "infirmity": 0,
         "health": "healthy",
@@ -31,6 +27,10 @@
     },
     "character": {
       "templates": ["base"],
+      "hp": {
+        "value": 12,
+        "max": 12
+      },
       "session": 0,
       "ups": 0,
       "deepstress": 0,
@@ -60,7 +60,11 @@
       }
     },
     "npc": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "hp": {
+        "value": 10,
+        "max": 10
+      }
     }
   },
   "Item": {
