@@ -785,7 +785,7 @@ input.clear-input:focus {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  height: 100%;
+  height: 300px;
   min-width: 300px;
   padding-right: 10px;
   border: none;
@@ -807,6 +807,9 @@ input.clear-input:focus {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+.archetericalite .limited-sheet .general-info {
+  width: 100%;
 }
 .archetericalite .limited-sheet .editor {
   min-height: 150px;

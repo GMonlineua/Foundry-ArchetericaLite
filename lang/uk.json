@@ -15,12 +15,12 @@
   "ITEM.TypeArtifact": "Диабліка",
   "ITEM.TypeLoot": "Предмет",
 
-  "ARCHETERICALITE.ItemName": "Назва",
   "ARCHETERICALITE.ActorName": "Ім'я",
+  "ARCHETERICALITE.ItemName": "Назва",
   "ARCHETERICALITE.NewItem": "Новий",
   "ARCHETERICALITE.EditItem": "Редагувати Елемент",
-  "ARCHETERICALITE.DeleteItem": "Видалити Елемент",
   "ARCHETERICALITE.Add": "Додати",
+  "ARCHETERICALITE.DeleteItem": "Видалити Елемент",
   "ARCHETERICALITE.Rank": "Ранг",
   "ARCHETERICALITE.ItemUses": "Використання",
 
@@ -130,7 +130,6 @@
   "ARCHETERICALITE.WeaponPlural": "Зброя",
   "ARCHETERICALITE.Riches": "Багатства",
 
-  "ARCHETERICALITE.Quantity": "Кількість",
   "ARCHETERICALITE.Price": "Вартість",
   "ARCHETERICALITE.Elitism": "Елітаризм",
   "ARCHETERICALITE.Load": "Навантаження",
