@@ -1,6 +1,6 @@
 {
   "name": "archetericalite",
-  "version": "0.5.3",
+  "version": "0.6",
   "description": "CSS compiler for the Archeterica Lite system",
   "scripts": {
     "build": "gulp build",

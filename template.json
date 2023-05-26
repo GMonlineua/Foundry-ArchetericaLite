@@ -138,7 +138,8 @@
     },
     "trauma": {
       "templates": ["base"],
-      "type": ""
+      "type": "",
+      "embarrassment": false
     },
     "comtal": {
       "templates": ["base"],

@@ -6,7 +6,6 @@ import { ArchetericaLiteActorSheet } from "./sheets/actor-sheet.mjs";
 import { ArchetericaLiteItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { prepareRollDialog } from "./helpers/roll.js";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */

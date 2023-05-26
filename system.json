@@ -2,10 +2,10 @@
   "id": "archetericalite",
   "title": "Archeterica Lite",
   "description": "Archeterica Imago Lite",
-  "version": "0.5.3",
+  "version": "0.6",
   "compatibility": {
-    "minimum": "10",
-    "verified": "10",
+    "minimum": "11",
+    "verified": "11",
     "maximum": "11"
   },
   "authors": [
@@ -80,7 +80,7 @@
     },
     {
       "name": "combat-talents-uk",
-      "label": "Бойові Таланти>",
+      "label": "Бойові Таланти",
       "path": "packs-uk/combat-talents.db",
       "type": "Item",
       "private": false
@@ -117,14 +117,14 @@
       "name": "rules-uk",
       "label": "Правила",
       "path": "packs-uk/rules.db",
-      "type": "Item",
+      "type": "JournalEntry",
       "private": false
     },
     {
       "name": "tables-uk",
       "label": "Таблиці",
       "path": "packs-uk/tables.db",
-      "type": "Item",
+      "type": "RollTable",
       "private": false
     }
   ],
