@@ -25,10 +25,9 @@
     "systems/archetericalite/templates/actor/parts/metamorphosis.hbs",
     "systems/archetericalite/templates/actor/parts/weapon.hbs",
     "systems/archetericalite/templates/actor/parts/protection.hbs",
-    "systems/archetericalite/templates/actor/parts/artifact.hbs",
     "systems/archetericalite/templates/actor/parts/loot.hbs",
     "systems/archetericalite/templates/actor/parts/npc-talents.hbs",
-    // Apps
-    "systems/archetericalite/templates/apps/rollTest.hbs"
+    // Item parts
+    "systems/archetericalite/templates/item/parts/equipment-header.hbs"
   ]);
 };

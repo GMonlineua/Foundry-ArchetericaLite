@@ -134,6 +134,8 @@
   "ARCHETERICALITE.Elitism": "Елітаризм",
   "ARCHETERICALITE.Load": "Навантаження",
   "ARCHETERICALITE.Weight": "Вага",
+  "ARCHETERICALITE.KilogramsAbbreviation": "кг.",
+  "ARCHETERICALITE.Equipped": "Екіпіровано",
 
   "ARCHETERICALITE.WeaponType": "Тип Зброї",
   "ARCHETERICALITE.WeaponFencing": "Фехтувальна",
@@ -146,6 +148,7 @@
   "ARCHETERICALITE.DamageMinimal": "Мінімальне Ушкодження",
   "ARCHETERICALITE.DamageCut": "Поріз",
   "ARCHETERICALITE.DamageCustom": "Власні Пошкодження",
+  "ARCHETERICALITE.DamageNone": "Немає",
   "ARCHETERICALITE.ArmorPiercing": "Бронебій",
   "ARCHETERICALITE.Lethality": "Летальність",
   "ARCHETERICALITE.TwoHanded": "Дворучна",

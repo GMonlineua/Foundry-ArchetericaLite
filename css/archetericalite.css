@@ -314,6 +314,11 @@
   min-height: 600px;
 }
 
+.archetericalite.sheet.item {
+  min-width: 600px;
+  min-height: 400px;
+}
+
 input.clear-input {
   border-width: 0;
   border-radius: 0;
@@ -744,6 +749,7 @@ input.clear-input:focus {
   -webkit-box-flex: 2;
   -ms-flex: 2;
   flex: 2;
+  min-width: 190px;
   max-width: 200px;
   padding: 5px;
   background-color: rgba(165, 154, 132, 0.3);
@@ -754,6 +760,16 @@ input.clear-input:focus {
   -ms-flex: 5;
   flex: 5;
   padding: 5px;
+}
+.archetericalite span.weapon-type:not(:last-of-type)::after {
+  content: ",";
+}
+.archetericalite div.weapon-type {
+  background-color: rgba(165, 154, 132, 0.3);
+  border: 1px solid var(--color-border-light-primary);
+}
+.archetericalite div.weapon-type h3 {
+  border-bottom: none;
 }
 .archetericalite input[type=checkbox] {
   position: relative;

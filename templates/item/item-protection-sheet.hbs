@@ -1,18 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  <header class="items-header">
-    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
-    <div class="header-fields">
-      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <div class="resource">
-        <label class="resource-label">{{localize 'ARCHETERICALITE.ItemUses'}}: </label>
-        <div class="resource-content">
-          <input type="number" name="system.uses.value" value="{{system.uses.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="number" name="system.uses.max" value="{{system.uses.max}}" data-dtype="Number"/>
-        </div>
-      </div>
-    </div>
-  </header>
+  {{> "systems/archetericalite/templates/item/parts/equipment-header.hbs"}}
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
@@ -25,15 +12,18 @@
 
     {{!-- Description Tab --}}
     <div class="tab sidebar-block flexrow" data-group="primary" data-tab="description">
+
       <div class="info-sidebar">
         {{#if system.price}}<p>{{localize 'ARCHETERICALITE.Price'}}: {{system.price}}</p> {{/if}}
         {{#if system.elitism}}<p>{{localize 'ARCHETERICALITE.Elitism'}}: {{system.elitism}}</p> {{/if}}
+        {{#if system.imago}}<p>{{localize 'ARCHETERICALITE.Imago'}}: {{system.imago}}</p> {{/if}}
         {{#if system.load}}<p>{{localize 'ARCHETERICALITE.Load'}}: {{system.load}}</p> {{/if}}
-        {{#if system.weight}}<p>{{localize 'ARCHETERICALITE.Weight'}}: {{system.weight}}</p> {{/if}}
-
-        <p>{{localize 'ARCHETERICALITE.Armor'}}: {{system.armor}}</p>
+        {{#if system.weight}}<p>{{localize 'ARCHETERICALITE.Weight'}}: {{system.weight}} {{localize 'ARCHETERICALITE.KilogramsAbbreviation'}}</p> {{/if}}
+        {{#if system.armor}}<p>{{localize 'ARCHETERICALITE.Armor'}}: {{system.armor}}</p>{{/if}}
         {{#if system.heavyArmor}}<p>{{localize 'ARCHETERICALITE.HeavyArmor'}}: {{system.heavyArmor}}</p>{{/if}}
+        {{#if system.damage}}<p>{{localize system.damage}}</p>{{/if}}
       </div>
+
       <div class="editor-block">
         {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
       </div>
@@ -51,7 +41,12 @@
           <label class="resource-label">{{localize 'ARCHETERICALITE.Elitism'}}: </label>
           <input type="number" name="system.elitism" value="{{system.elitism}}" data-dtype="Number"/>
         </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Imago'}}: </label>
+          <input type="number" name="system.imago" value="{{system.imago}}" data-dtype="Number"/>
+        </div>
       </div>
+
       <div class="resources flexrow">
         <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.Load'}}:</label>
@@ -72,6 +67,18 @@
         <div class="resource">
           <label class="resource-label">{{localize 'ARCHETERICALITE.HeavyArmor'}}:</label>
           <input type="number" name="system.heavyArmor" value="{{system.heavyArmor}}" data-dtype="Number"/>
+        </div>
+        <div class="resource">
+          <label class="resource-label">{{localize 'ARCHETERICALITE.Damage'}}: </label>
+          <select name="system.damage">
+            {{#select system.damage}}
+            <option value="ARCHETERICALITE.DamageFull">{{localize 'ARCHETERICALITE.DamageFull'}}</option>
+            <option value="ARCHETERICALITE.DamageHalf">{{localize 'ARCHETERICALITE.DamageHalf'}}</option>
+            <option value="ARCHETERICALITE.DamageMinimal">{{localize 'ARCHETERICALITE.DamageMinimal'}}</option>
+            <option value="ARCHETERICALITE.DamageCut">{{localize 'ARCHETERICALITE.DamageCut'}}</option>
+            <option value="">{{localize 'ARCHETERICALITE.DamageNone'}}</option>
+            {{/select}}
+          </select>
         </div>
       </div>
     </div>

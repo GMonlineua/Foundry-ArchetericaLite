@@ -11,7 +11,8 @@
           "brawl": 0,
           "fencing": 0,
           "firearms": 0,
-          "throwing": 0
+          "throwing": 0,
+          "armor": 0
         },
         "mystical": {
           "imago": 1
@@ -54,8 +55,9 @@
       "riches":{
         "accommodation": 0,
         "profit": 0,
-        "zloty": 0,
         "marks": 0,
+        "zloty": 0,
+        "load": 0,
         "info": ""
       }
     },
@@ -68,7 +70,7 @@
     }
   },
   "Item": {
-    "types": ["biography", "attribute", "negative", "trauma", "comtal", "combatRule", "ability", "metamorphosis", "artifact", "loot", "protection", "weapon"],
+    "types": ["biography", "attribute", "negative", "trauma", "comtal", "combatRule", "ability", "metamorphosis", "loot", "protection", "weapon"],
     "templates": {
       "base": {
         "description": ""
@@ -78,6 +80,8 @@
         "elitism": null,
         "weight": null,
         "load": null,
+        "equipped": false,
+        "imago": null,
         "uses": {
           "value": null,
           "max": null
@@ -168,24 +172,21 @@
       "templates": ["base"],
       "rank": 1
     },
-    "artifact": {
-      "templates": ["base", "equipment"],
-      "imago": 1
-    },
     "loot": {
       "templates": ["base", "equipment"]
     },
     "protection": {
       "templates": ["base", "equipment"],
       "armor": 1,
-      "heavyArmor": null
+      "heavyArmor": null,
+      "damage": null
     },
     "weapon": {
       "templates": ["base", "equipment"],
       "fencing": false,
       "firearms": false,
       "throwing": false,
-      "damage": "full",
+      "damage": "ARCHETERICALITE.DamageFull",
       "armorPiercing": null,
       "lethality": null,
       "twoHanded": false,
@@ -195,7 +196,7 @@
       },
       "charging": null,
       "roughSight": false,
-      "misfire": "none"
+      "misfire": "ARCHETERICALITE.NoneMisfire"
     }
   }
 }
