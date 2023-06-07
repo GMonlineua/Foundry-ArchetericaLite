@@ -23,109 +23,148 @@
   ],
   "packs": [
     {
-      "name": "npc-uk",
       "label": "Статисти",
-      "path": "packs-uk/npc.db",
       "type": "Actor",
-      "private": true
+      "name": "npc",
+      "path": "packs-uk/npc",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "LIMITED",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     },
     {
-      "name": "adventures-uk",
-      "label": "Готові Сценарії",
-      "path": "packs-uk/adventures.db",
-      "type": "Adventure",
-      "private": true
-    },
-    {
-      "name": "biography-bonuses-uk",
-      "label": "Бонуси Біографій",
-      "path": "packs-uk/biography-bonuses.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "narrative-attributes-uk",
-      "label": "Наративні Атрибути",
-      "path": "packs-uk/narrative-attributes.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "negative-attributes-uk",
-      "label": "Негативні Атрибути",
-      "path": "packs-uk/negative-attributes.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "traumas-uk",
-      "label": "Травми",
-      "path": "packs-uk/traumas.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "mystical-abilities-uk",
-      "label": "Містичні Здібності",
-      "path": "packs-uk/mystical-abilities.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "metamorphosis-uk",
-      "label": "Метаморфози",
-      "path": "packs-uk/metamorphosis.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "combat-talents-uk",
-      "label": "Бойові Таланти",
-      "path": "packs-uk/combat-talents.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "combat-rules-uk",
-      "label": "Спеціальні Правила",
-      "path": "packs-uk/combat-rules.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "loot-uk",
-      "label": "Предмети",
-      "path": "packs-uk/loot.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "protection-uk",
-      "label": "Захист",
-      "path": "packs-uk/protection.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "weapons-uk",
-      "label": "Зброя",
-      "path": "packs-uk/weapons.db",
-      "type": "Item",
-      "private": false
-    },
-    {
-      "name": "rules-uk",
-      "label": "Правила",
-      "path": "packs-uk/rules.db",
-      "type": "JournalEntry",
-      "private": false
-    },
-    {
-      "name": "tables-uk",
-      "label": "Таблиці",
-      "path": "packs-uk/tables.db",
+      "label": "Таблиці Ведучого",
       "type": "RollTable",
-      "private": false
+      "name": "gm-tables",
+      "path": "packs-uk/gm-tables",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "LIMITED",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Зброя",
+      "type": "Item",
+      "name": "weapons",
+      "path": "packs-uk/weapons",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Захист",
+      "type": "Item",
+      "name": "protections",
+      "path": "packs-uk/protections",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Предмети",
+      "type": "Item",
+      "name": "loots",
+      "path": "packs-uk/loots",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Бойові Таланти",
+      "type": "Item",
+      "name": "combat-talents",
+      "path": "packs-uk/combat-talents",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Спеціальні Правила",
+      "type": "Item",
+      "name": "combat-rules",
+      "path": "packs-uk/combat-rules",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Травми",
+      "type": "Item",
+      "name": "traumas",
+      "path": "packs-uk/traumas",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Наративне",
+      "type": "Item",
+      "name": "narrative",
+      "path": "packs-uk/narrative",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Містичне",
+      "type": "Item",
+      "name": "mystical",
+      "path": "packs-uk/mystical",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Таблиці",
+      "type": "RollTable",
+      "name": "tables",
+      "path": "packs-uk/tables",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Правила",
+      "type": "JournalEntry",
+      "name": "rules",
+      "path": "packs-uk/rules",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "languages": [
@@ -149,7 +188,7 @@
   "primaryTokenAttribute": "info.hp",
   "url": "https://github.com/GMonlineua/Foundry-ArchetericaLite",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/Foundry-ArchetericaLite/master/system.json",
-  "download": "https://github.com/GMonlineua/Foundry-ArchetericaLite/releases/download/v0.5.3-beta/version-0.5.3.zip",
+  "download": "https://github.com/GMonlineua/Foundry-ArchetericaLite/releases/download/v0.6-beta/version-0.6.zip",
   "license": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/LICENSE.md",
   "changelog": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/CHANGELOG.md"
 }
