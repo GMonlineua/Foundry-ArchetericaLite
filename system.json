@@ -25,7 +25,7 @@
     {
       "label": "Статисти",
       "type": "Actor",
-      "name": "npc",
+      "name": "npc-uk",
       "path": "packs-uk/npc",
       "system": "archetericalite",
       "ownership": {
@@ -37,7 +37,7 @@
     {
       "label": "Таблиці Ведучого",
       "type": "RollTable",
-      "name": "gm-tables",
+      "name": "gm-tables-uk",
       "path": "packs-uk/gm-tables",
       "system": "archetericalite",
       "ownership": {
@@ -47,34 +47,10 @@
       "flags": {}
     },
     {
-      "label": "Зброя",
+      "label": "Наративне",
       "type": "Item",
-      "name": "weapons",
-      "path": "packs-uk/weapons",
-      "system": "archetericalite",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "label": "Захист",
-      "type": "Item",
-      "name": "protections",
-      "path": "packs-uk/protections",
-      "system": "archetericalite",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "label": "Предмети",
-      "type": "Item",
-      "name": "loots",
-      "path": "packs-uk/loots",
+      "name": "narrative",
+      "path": "packs-uk/narrative-uk",
       "system": "archetericalite",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -85,7 +61,7 @@
     {
       "label": "Бойові Таланти",
       "type": "Item",
-      "name": "combat-talents",
+      "name": "combat-talents-uk",
       "path": "packs-uk/combat-talents",
       "system": "archetericalite",
       "ownership": {
@@ -97,7 +73,7 @@
     {
       "label": "Спеціальні Правила",
       "type": "Item",
-      "name": "combat-rules",
+      "name": "combat-rules-uk",
       "path": "packs-uk/combat-rules",
       "system": "archetericalite",
       "ownership": {
@@ -109,20 +85,8 @@
     {
       "label": "Травми",
       "type": "Item",
-      "name": "traumas",
+      "name": "traumas-uk",
       "path": "packs-uk/traumas",
-      "system": "archetericalite",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "label": "Наративне",
-      "type": "Item",
-      "name": "narrative",
-      "path": "packs-uk/narrative",
       "system": "archetericalite",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -133,8 +97,44 @@
     {
       "label": "Містичне",
       "type": "Item",
-      "name": "mystical",
+      "name": "mystical-uk",
       "path": "packs-uk/mystical",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Зброя",
+      "type": "Item",
+      "name": "weapons-uk",
+      "path": "packs-uk/weapons",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Захист",
+      "type": "Item",
+      "name": "protections-uk",
+      "path": "packs-uk/protections",
+      "system": "archetericalite",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Предмети",
+      "type": "Item",
+      "name": "loots-uk",
+      "path": "packs-uk/loots",
       "system": "archetericalite",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -145,7 +145,7 @@
     {
       "label": "Таблиці",
       "type": "RollTable",
-      "name": "tables",
+      "name": "tables-uk",
       "path": "packs-uk/tables",
       "system": "archetericalite",
       "ownership": {
@@ -157,7 +157,7 @@
     {
       "label": "Правила",
       "type": "JournalEntry",
-      "name": "rules",
+      "name": "rules-uk",
       "path": "packs-uk/rules",
       "system": "archetericalite",
       "ownership": {
