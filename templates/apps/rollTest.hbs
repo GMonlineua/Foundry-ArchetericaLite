@@ -34,7 +34,7 @@
         <select id="damage" name="damage" data-type="String">
           <option value="2d6">{{localize 'ARCHETERICALITE.DamageFull'}}</option>
           <option value="floor(2d6/2)">{{localize 'ARCHETERICALITE.DamageHalf'}}</option>
-          <option value="floor(2d6/3)">{{localize 'ARCHETERICALITE.DamageMinimal'}}</option>
+          <option value="floor(2d6/4)">{{localize 'ARCHETERICALITE.DamageMinimal'}}</option>
           <option value="2">{{localize 'ARCHETERICALITE.DamageCut'}}</option>
         </select>
         <div class="lethality-block">
@@ -55,7 +55,7 @@
 
       <div class="modifier {{#if  modifier}}active{{/if}}">
         <label for="modifier">{{localize 'ARCHETERICALITE.Modifier'}}: </label>
-        <input id="modifier" type="number"  data-dtype="Number" name="modifier" value="0">
+        <input id="modifier" type="number" value="0" data-dtype="Number">
       </div>
 
     </div>

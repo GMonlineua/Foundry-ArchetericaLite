@@ -256,6 +256,7 @@ export class ArchetericaLiteActorSheet extends ActorSheet {
 
     // Handle item rolls.
     if (dataset.rollType) {
+      console.log("dataset.Type")
       if (dataset.rollType == 'item') {
         const itemId = element.closest('.item').dataset.itemId;
         const item = this.actor.items.get(itemId);

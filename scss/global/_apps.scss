@@ -12,6 +12,8 @@
 }
 
 .roll-result{
+  min-height: 88px;
+
   h1 {
     font-size: var(--font-size-18);
     font-weight: bold;
@@ -71,7 +73,7 @@
     text-align: center;
   }
 
-  .success {
+  .success, .panic {
     flex: 0;
     font-size: var(--font-size-18);
     font-weight: bold;
@@ -85,5 +87,9 @@
     box-shadow: 0 0 2px #fff inset;
     word-break: break-all;
     text-transform: uppercase;
+  }
+
+  .panic {
+    margin-top: 10px;
   }
 }

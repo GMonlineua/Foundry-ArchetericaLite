@@ -143,19 +143,20 @@ function createDialog(testName, rendered_html, submit) {
 
 function narrativeTest(testName, speaker, sheet, html) {
   let infirmity = sheet.object.system.infirmity;
+  let stress = sheet.object.system.stress;
   let difficulty = parseInt(html.find("#narrativeDifficulty")[0].value, 10);
-  let modifier = html.find("#modifier")[0].value;
+  let modifier = parseInt(html.find("#modifier")[0].value, 10);
   if (infirmity > 0) {
     infirmityRoll(testName, speaker, modifier, infirmity)
   }
   else {
-    rollDice(testName, speaker, modifier, difficulty)
+    rollDice(testName, speaker, modifier, difficulty, stress)
   }
 }
 
 function embarrassment(testName, speaker, sheet, html) {
   let difficulty = sheet.object.system.stress;
-  let modifier = html.find("#modifier")[0].value;
+  let modifier = parseInt(html.find("#modifier")[0].value, 10);
   rollDice(testName, speaker, modifier, difficulty)
 }
 
@@ -173,7 +174,7 @@ function masteryTest(testName, speaker, actorMastery, sheet, html) {
 }
 
 function imagoTest(testName, speaker, sheet, html) {
-  let modifier = html.find("#modifier")[0].value;
+  let modifier = parseInt(html.find("#modifier")[0].value, 10);
   let opponentImago = parseInt(html.find("#imago")[0].value, 10);
   let actorImago = sheet.object.system.mystical.imago;
   let difficulty = 7 - actorImago + opponentImago;
@@ -182,18 +183,22 @@ function imagoTest(testName, speaker, sheet, html) {
 }
 
 function standartTest(testName, speaker, html) {
+  let modifier = parseInt(html.find("#modifier")[0].value, 10);
   let difficulty = parseInt(html.find("#customDifficulty")[0].value, 10);
-  let modifier = html.find("#modifier")[0].value;
   rollDice(testName, speaker, modifier, difficulty);
 }
 
-async function rollDice(testName, speaker, modifier, difficulty) {
+async function rollDice(testName, speaker, modifier, difficulty, stress) {
   let roll = new Roll("2d6+@modifier", {modifier});
   await roll.evaluate({ async: true });
   let dice = [ roll.terms[0].results[0].result, roll.terms[0].results[1].result ]
   let total = roll.total;
   let success = (total >= difficulty);
   let data = { testName, modifier, dice, total, difficulty, success };
+  if ( stress >= 7 && stress >= total) {
+    data.panic = true
+  };
+  console.log(data)
   let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
   roll.toMessage({
     speaker: speaker,
@@ -220,21 +225,36 @@ async function infirmityRoll(testName, speaker, modifier, infirmity) {
     speaker: speaker,
     content: chatMessage
   });
-  return roll;
 }
 
 async function damageTest(testName, speaker, html) {
-  let damage = html.find("#damage")[0].value;
-  let modifier = html.find("#lethality")[0].value;
+  let damageHtml = html.find("#damage")[0];
+  let damage = damageHtml.value;
+  let modifier = parseInt(html.find("#lethality")[0].value, 10);
+  testName = damageHtml.options[damageHtml.selectedIndex].text;
 
-  let roll = new Roll("@damage+@modifier", {damage, modifier});
-  await roll.evaluate({ async: true });
-  let dice = [ roll.terms[0].results[0].result, roll.terms[0].results[1].result ]
-  let total = roll.total;
-  let data = { testName, modifier, dice, total };
-  let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
-  roll.toMessage({
-    speaker: speaker,
-    content: chatMessage
-  });
+  if (damage != "2")
+  {
+    let roll = new Roll("@damage+@modifier", {damage, modifier});
+    await roll.evaluate({ async: true });
+    let dice = [ roll.dice[0].results[0].result, roll.dice[0].results[1].result ];
+    let total = roll.total;
+    let data = { testName, modifier, dice, total };
+    let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
+
+    roll.toMessage({
+      speaker: speaker,
+      content: chatMessage
+    });
+  }
+  else {
+    let total = 2 + modifier;
+    let data = { testName, modifier, total };
+    let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
+    let chatData = {
+        speaker: speaker,
+        content: chatMessage,
+    };
+    ChatMessage.create(chatData, {});
+  }
 }

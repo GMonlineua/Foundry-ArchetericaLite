@@ -22,7 +22,11 @@
   </div>
 
   {{#if  difficulty}}
-      <p class="difficulty">{{localize 'ARCHETERICALITE.Difficulty'}}: {{difficulty}}</p>
-      <h4 class="success">{{#if  success}}{{localize 'ARCHETERICALITE.Success'}}{{else}}{{localize 'ARCHETERICALITE.Fail'}}{{/if}}</h>
+    <p class="difficulty">{{localize 'ARCHETERICALITE.Difficulty'}}: {{difficulty}}</p>
+    <h4 class="success">{{#if  success}}{{localize 'ARCHETERICALITE.Success'}}{{else}}{{localize 'ARCHETERICALITE.Fail'}}{{/if}}</h>
+  {{/if}}
+
+  {{#if  panic}}
+    <h4 class="panic">{{localize 'ARCHETERICALITE.Panic'}}</h4>
   {{/if}}
 </div>

@@ -14,6 +14,9 @@
   display: block;
 }
 
+.roll-result {
+  min-height: 88px;
+}
 .roll-result h1 {
   font-size: var(--font-size-18);
   font-weight: bold;
@@ -66,7 +69,7 @@
 .roll-result .difficulty {
   text-align: center;
 }
-.roll-result .success {
+.roll-result .success, .roll-result .panic {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
@@ -83,6 +86,9 @@
   box-shadow: 0 0 2px #fff inset;
   word-break: break-all;
   text-transform: uppercase;
+}
+.roll-result .panic {
+  margin-top: 10px;
 }
 
 .flex-group-center,
