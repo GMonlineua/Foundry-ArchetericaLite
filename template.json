@@ -17,6 +17,12 @@
         "mystical": {
           "imago": 1
         },
+      "riches":{
+        "marks": 0,
+        "zloty": 0,
+        "load": 0,
+        "info": ""
+      },
         "description": {
           "appearance": "",
           "general": "",
@@ -54,11 +60,7 @@
       },
       "riches":{
         "accommodation": 0,
-        "profit": 0,
-        "marks": 0,
-        "zloty": 0,
-        "load": 0,
-        "info": ""
+        "profit": 0
       }
     },
     "npc": {
@@ -82,6 +84,7 @@
         "load": null,
         "equipped": false,
         "imago": null,
+        "formula": null,
         "uses": {
           "value": null,
           "max": null
@@ -96,42 +99,42 @@
       "plus": 0,
       "talent1": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       },
       "talent2": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       },
       "talent3": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       },
       "talent4": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       },
       "talent5": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       },
       "talent6": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       },
       "talent7": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       },
       "talent8": {
         "name": "",
-        "rank": 1,
+        "rank": null,
         "upheaval": false
       }
     },

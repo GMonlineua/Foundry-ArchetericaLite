@@ -21,9 +21,10 @@ Hooks.once('init', async function() {
     rollItemMacro
   };
 
-  // Define custom Document classes
+  // Define custom Document classes and other configurations
   CONFIG.Actor.documentClass = ArchetericaLiteActor;
   CONFIG.Item.documentClass = ArchetericaLiteItem;
+  CONFIG.Actor.compendiumBanner = "ui/banners/adventure-banner.webp";
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);

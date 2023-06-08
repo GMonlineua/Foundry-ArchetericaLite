@@ -185,7 +185,6 @@
   "initiative": "2d6",
   "gridDistance": 1,
   "gridUnits": "m",
-  "primaryTokenAttribute": "info.hp",
   "url": "https://github.com/GMonlineua/Foundry-ArchetericaLite",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/Foundry-ArchetericaLite/master/system.json",
   "download": "https://github.com/GMonlineua/Foundry-ArchetericaLite/releases/download/v0.6-beta/version-0.6.zip",
