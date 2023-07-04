@@ -6,6 +6,7 @@ import { ArchetericaLiteActorSheet } from "./sheets/actor-sheet.mjs";
 import { ArchetericaLiteItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
+import { preprocessChatMessage, renderChatMessage } from "./helpers/chat-portraits.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -43,6 +44,16 @@ Hooks.once('init', async function() {
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
+
+/* -------------------------------------------- */
+/*  Chat Message                   */
+/* -------------------------------------------- */
+
+// Preprocess chat message before it is created hook
+Hooks.on("preCreateChatMessage", preprocessChatMessage);
+
+// Render chat message hook
+Hooks.on("renderChatMessage", renderChatMessage);
 
 /* -------------------------------------------- */
 /*  Handlebars Helpers                          */

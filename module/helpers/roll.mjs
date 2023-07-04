@@ -198,7 +198,6 @@ async function rollDice(testName, speaker, modifier, difficulty, stress) {
   if ( stress >= 7 && stress >= total) {
     data.panic = true
   };
-  console.log(data)
   let chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", data);
   roll.toMessage({
     speaker: speaker,

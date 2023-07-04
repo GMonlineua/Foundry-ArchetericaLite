@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* Global styles */
+.portrait {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  border-width: 0;
+  margin-right: 5px;
+}
+
 .check {
   cursor: pointer;
 }
