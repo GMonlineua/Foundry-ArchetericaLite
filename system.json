@@ -2,7 +2,7 @@
   "id": "archetericalite",
   "title": "Archeterica Lite",
   "description": "Archeterica Imago Lite",
-  "version": "0.6",
+  "version": "0.6.1",
   "compatibility": {
     "minimum": "11",
     "verified": "11",
@@ -181,7 +181,7 @@
       "flags": {}
     }
   ],
-  "background": "nue/defaultscene/fvtt-background.webp",
+  "background": "systems/archetericalite/ui/background.webp",
   "initiative": "2d6",
   "gridDistance": 1,
   "gridUnits": "m",

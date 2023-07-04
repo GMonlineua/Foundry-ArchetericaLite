@@ -24,7 +24,15 @@ Hooks.once('init', async function() {
   // Define custom Document classes and other configurations
   CONFIG.Actor.documentClass = ArchetericaLiteActor;
   CONFIG.Item.documentClass = ArchetericaLiteItem;
-  CONFIG.Actor.compendiumBanner = "ui/banners/adventure-banner.webp";
+  CONFIG.Actor.compendiumBanner = "systems/archetericalite/ui/actor-banner.jpg";
+  CONFIG.Adventure.compendiumBanner = "systems/archetericalite/ui/adventure-banner.jpg";
+  CONFIG.Card.compendiumBanner = "systems/archetericalite/ui/card-banner.jpg";
+  CONFIG.JournalEntry.compendiumBanner = "systems/archetericalite/ui/journalentry-banner.jpg";
+  CONFIG.Item.compendiumBanner = "systems/archetericalite/ui/item-banner.jpg";
+  CONFIG.Macro.compendiumBanner = "systems/archetericalite/ui/macro-banner.jpg";
+  CONFIG.Playlist.compendiumBanner = "systems/archetericalite/ui/playlist-banner.jpg";
+  CONFIG.RollTable.compendiumBanner = "systems/archetericalite/ui/rolltable-banner.jpg";
+  CONFIG.Scene.compendiumBanner = "systems/archetericalite/ui/scene-banner.jpg";
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
