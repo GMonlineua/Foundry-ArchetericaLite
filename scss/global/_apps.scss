@@ -79,7 +79,7 @@
     text-align: center;
   }
 
-  .success, .panic {
+  .success, .panic, .fainting {
     flex: 0;
     font-size: var(--font-size-18);
     font-weight: bold;
@@ -95,7 +95,7 @@
     text-transform: uppercase;
   }
 
-  .panic {
+  .panic, .fainting {
     margin-top: 10px;
   }
 }

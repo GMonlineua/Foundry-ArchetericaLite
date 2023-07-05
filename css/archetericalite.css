@@ -77,7 +77,7 @@
 .roll-result .difficulty {
   text-align: center;
 }
-.roll-result .success, .roll-result .panic {
+.roll-result .success, .roll-result .panic, .roll-result .fainting {
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0;
@@ -95,7 +95,7 @@
   word-break: break-all;
   text-transform: uppercase;
 }
-.roll-result .panic {
+.roll-result .panic, .roll-result .fainting {
   margin-top: 10px;
 }
 
