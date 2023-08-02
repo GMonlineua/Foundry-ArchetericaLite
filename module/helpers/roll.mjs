@@ -50,7 +50,7 @@ function getTestData(type, sheet) {
     damage: {
       testName: game.i18n.localize("ARCHETERICALITE.Damage"),
       templateData: { damage: true },
-      testFunction: damageTest,
+      testFunction: rollDamage,
     },
     imago: {
       testName: game.i18n.localize("ARCHETERICALITE.ImagoTest"),
@@ -79,7 +79,7 @@ async function createDialogAndSubmit(testName, templateData, sheet, testFunction
         callback: async (html) => {
           try {
             const formData = new FormData(html[0].querySelector("form"));
-            const data = Object.fromEntries(formData.entries());
+            const data = toIntData(Object.fromEntries(formData.entries()));
 
             const speaker = ChatMessage.getSpeaker({ actor: sheet.actor });
             await testFunction(testName, speaker, data, sheet, actorMastery);
@@ -100,12 +100,23 @@ async function createDialogAndSubmit(testName, templateData, sheet, testFunction
   dialog.render(true);
 }
 
+function toIntData(data) {
+  data.narrativeDifficulty = parseInt(data.narrativeDifficulty, 10);
+  data.opponentMastery = parseInt(data.opponentMastery, 10);
+  data.opponentImago = parseInt(data.opponentImago, 10);
+  data.advantage = parseInt(data.advantage, 10);
+  data.lethality = parseInt(data.lethality, 10);
+  data.customDifficulty = parseInt(data.customDifficulty, 10);
+  data.modifier = parseInt(data.modifier, 10);
+
+  return data;
+}
+
 function narrativeTest(testName, speaker, data, sheet) {
   const infirmity = sheet.object.system.infirmity;
-  const stress = sheet.object.system.stress;
   const difficulty = data.narrativeDifficulty;
   const modifier = data.modifier;
-  rollDice(testName, speaker, modifier, difficulty, stress, infirmity);
+  rollDice(testName, speaker, modifier, difficulty, infirmity);
 }
 
 function embarrassment(testName, speaker, data, sheet) {
@@ -117,14 +128,14 @@ function embarrassment(testName, speaker, data, sheet) {
 function masteryTest(testName, speaker, data, sheet, actorMastery) {
   const infirmity = sheet.object.system.infirmity;
   const modifier = data.advantage;
-  const opponentMastery = parseInt(data.opponentMastery, 10);
+  const opponentMastery = data.opponentMastery;
   const difficulty = 7 - actorMastery + opponentMastery;
   rollDice(testName, speaker, modifier, difficulty, null, infirmity);
 }
 
 function imagoTest(testName, speaker, data, sheet) {
   const modifier = data.modifier;
-  const opponentImago = parseInt(data.opponentImago, 10);
+  const opponentImago = data.opponentImago;
   const actorImago = sheet.object.system.mystical.imago;
   const difficulty = 7 - actorImago + opponentImago;
   rollDice(testName, speaker, modifier, difficulty);
@@ -136,65 +147,119 @@ function standartTest(testName, speaker, data) {
   rollDice(testName, speaker, modifier, difficulty);
 }
 
-async function rollDice(testName, speaker, modifier, difficulty, stress, infirmity) {
+async function rollDice(testName, speaker, modifier, difficulty, infirmity) {
   try {
-    const roll = new Roll("2d6+@modifier", { modifier });
-    const infirmityRoll = infirmity ? new Roll(`${infirmity}d6`) : null;
-    await Promise.all([roll.evaluate({ async: true }), infirmityRoll?.evaluate({ async: true })]);
+    const roll = new Roll("2d6");
+    await roll.evaluate({ async: true });
 
-    const dice = roll.terms[0].results.map((result) => result.result);
-    const infirmityDice = infirmityRoll ? infirmityRoll.terms[0].results.map((result) => result.result) : null;
+    let rollResult = {
+      commonDice: roll.terms[0].results.map((result) => ({ value: result.result, used: false })),
+      infirmityDice: [],
+      success: false,
+      fainting: false,
+      panic: false,
+      total: 0
+    };
 
-    const excludedValues = infirmityDice ? new Set(infirmityDice) : null;
-    const total = dice.reduce((sum, value) => {
-      if (excludedValues && excludedValues.has(value)) {
-        return sum;
-      }
-      return sum + value;
-    }, 0);
+    rollResult.total = rollResult.commonDice[0].value + rollResult.commonDice[1].value + modifier;
 
-    const fainting = total === 0;
-    const success = total >= difficulty;
-    const panic = stress >= 7 && stress > total;
+    if (infirmity > 0) {
+      rollResult = await rollInfirmity(infirmity, rollResult);
+      rollResult.total += modifier;
+    }
 
-    const renderData = { testName, modifier, dice, infirmityDice, total, difficulty, success, panic, fainting };
+    rollResult.success = rollResult.total >= difficulty;
+
+    const renderData = { testName, modifier, difficulty, rollResult };
     await renderAndSendRollResult(speaker, renderData);
   } catch (error) {
     console.error("Error performing roll:", error);
   }
 }
 
+async function rollInfirmity(infirmity, rollResult) {
+  try {
+    const roll = new Roll("2d6");
+    await roll.evaluate({ async: true });
+    rollResult.total = 0;
 
-async function damageTest(testName, speaker, data) {
+    const infirmityHandlers = {
+      1: () => {
+        return [{ value: roll.terms[0].results[0].result, used: false }];
+      },
+      2: () => {
+        return roll.terms[0].results.map((result) => ({ value: result.result, used: false }));
+      },
+      3: () => {
+        let resultsArray = roll.terms[0].results.map((result) => result.result);
+        resultsArray = resultsArray.concat(resultsArray.map((result) => 7 - result));
+        return resultsArray.map((result) => ({ value: result, used: false }));
+      },
+      default: () => {
+        rollResult.fainting = true;
+        return null;
+      },
+    };
+
+    rollResult.infirmityDice = infirmityHandlers[infirmity]?.() || infirmityHandlers.default?.();
+
+    if (!rollResult.fainting) {
+      rollResult.commonDice.forEach(function (value, i) {
+        const infirmityIndex = rollResult.infirmityDice.findIndex((dice) => dice.value === value.value && !dice.used);
+        if (infirmityIndex !== -1 && !value.used) {
+          rollResult.commonDice[i].used = true;
+          rollResult.infirmityDice[infirmityIndex].used = true;
+        } else if (!value.used) {
+          rollResult.total += value.value
+        }
+      });
+
+      if (rollResult.total === 0) {
+        rollResult.fainting = true;
+      }
+    }
+
+    return rollResult;
+  } catch (error) {
+    console.error("Error performing infirmity roll:", error);
+  }
+}
+
+
+async function rollDamage(testName, speaker, data) {
   try {
     const damage = data.damage;
-    const modifier = parseInt(data.modifier, 10);
+    const modifier = data.lethality;
+
+    let rollResult = {
+      commonDice: [],
+      total: 0
+    };
 
     if (damage !== "2") {
       const roll = new Roll("@damage+@modifier", { damage, modifier });
       await roll.evaluate({ async: true });
-      const dice = [roll.dice[0].results[0].result, roll.dice[0].results[1].result];
-      const total = roll.total;
-      const renderData = { testName, modifier, dice, total };
-      await renderAndSendRollResult(speaker, renderData, roll);
+      rollResult.commonDice = [{ value: roll.dice[0].results[0].result }, { value: roll.dice[0].results[1].result }];
+      rollResult.total = roll.total;
     } else {
-      const total = 2 + modifier;
-      const renderData = { testName, modifier, total };
-      await renderAndSendRollResult(speaker, renderData);
+      rollResult.total = 2 + modifier;
     }
+
+    const renderData = { testName, modifier, rollResult };
+    await renderAndSendRollResult(speaker, renderData);
   } catch (error) {
-    console.error("Error in damageTest:", error);
+    console.error("Error in rollDamage:", error);
   }
 }
 
-async function renderAndSendRollResult(speaker, renderData, roll) {
+async function renderAndSendRollResult(speaker, renderData) {
   try {
     const chatMessage = await renderTemplate("systems/archetericalite/templates/apps/rollResult.hbs", renderData);
     const chatData = {
       speaker: speaker,
       content: chatMessage,
-      sound: CONFIG.sounds.dice,
-      isRoll: true,
+      type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+      sound: CONFIG.sounds.dice
     };
     ChatMessage.create(chatData);
   } catch (error) {

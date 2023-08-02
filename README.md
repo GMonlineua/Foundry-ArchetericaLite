@@ -1,6 +1,6 @@
 # Archeterica Lite
 
-[![Foundry Shield 10]][Foundry URL]
+[![Foundry Shield 11]][Foundry URL]
 [![Version]][Version URL]
 [![GNU License]][GNU URL]
 
@@ -15,10 +15,10 @@
 
 Тепер ви можете створити світ з цією системою і використовувати аркуші персонажів та компендіуми для неї у Foundry VTT!
 
-[Foundry Shield 10]: https://img.shields.io/badge/Foundry-10-informational?style=flat-square
+[Foundry Shield 11]: https://img.shields.io/badge/Foundry-11-informational?style=flat-square
 [Foundry URL]: https://foundryvtt.com
 
-[Version]: https://img.shields.io/badge/Version-0.5.2-orange?style=flat-square
+[Version]: https://img.shields.io/badge/Version-0.6.2-orange?style=flat-square
 [Version URL]: https://github.com/GMonlineua/Foundry-ArchetericaLite
 
 [GNU License]: https://img.shields.io/badge/License-GNU-green?style=flat-square

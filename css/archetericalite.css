@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* Global styles */
 .portrait {
-  -webkit-box-flex: 0;
-  -ms-flex: none;
   flex: none;
   border-width: 0;
   margin-right: 5px;
@@ -22,27 +20,27 @@
   display: block;
 }
 
-.roll-result {
+.roll-message {
   min-height: 88px;
 }
-.roll-result h1 {
-  font-size: var(--font-size-18);
+.roll-message h1 {
+  font-size: 18px;
   font-weight: bold;
   border: none;
   text-align: center;
   text-transform: uppercase;
 }
-.roll-result .roll-info {
+.roll-message .roll-info {
   position: relative;
 }
-.roll-result .roll-info .dice-rolls {
+.roll-message .roll-info .dice-rolls {
   position: relative;
   list-style: none;
   margin: 5px 0;
   padding: 0;
   overflow: hidden;
 }
-.roll-result .roll-info .dice-rolls .dice {
+.roll-message .roll-info .dice-rolls .dice {
   position: relative;
   min-width: 36px;
   line-height: 36px;
@@ -51,12 +49,20 @@
   background-image: url(/icons/svg/d6-grey.svg);
   background-repeat: no-repeat;
   background-size: 36px 36px;
-  font-size: var(--font-size-16);
+  font-size: 16px;
   color: #000;
   font-weight: bold;
   text-align: center;
 }
-.roll-result .roll-info .result {
+.roll-message .roll-info .dice-rolls .special-dice {
+  min-width: 32px;
+  line-height: 32px;
+  background-size: 32px 32px;
+}
+.roll-message .roll-info .dice-rolls .dice.infirmity-match {
+  opacity: 0.5;
+}
+.roll-message .roll-info .result {
   position: absolute;
   min-width: 48px;
   line-height: 48px;
@@ -65,23 +71,21 @@
   background-image: url(../icons/ui/two-dice.svg);
   background-repeat: no-repeat;
   background-size: 48px 48px;
-  font-size: var(--font-size-16);
+  font-size: 16px;
   color: #000;
   font-weight: bold;
 }
-.roll-result .roll-info .result .text {
+.roll-message .roll-info .result .text {
   position: relative;
   left: 32px;
   bottom: 14px;
 }
-.roll-result .difficulty {
+.roll-message .difficulty {
   text-align: center;
 }
-.roll-result .success, .roll-result .panic, .roll-result .fainting {
-  -webkit-box-flex: 0;
-  -ms-flex: 0;
+.roll-message .roll-results h4 {
   flex: 0;
-  font-size: var(--font-size-18);
+  font-size: 18px;
   font-weight: bold;
   position: relative;
   margin: 0;
@@ -90,76 +94,55 @@
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-border-light-2);
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px #fff inset;
   box-shadow: 0 0 2px #fff inset;
   word-break: break-all;
   text-transform: uppercase;
 }
-.roll-result .panic, .roll-result .fainting {
-  margin-top: 10px;
+.roll-message .roll-results h4.additionally {
+  margin-top: 5px;
 }
 
 .flex-group-center,
 .flex-group-left,
 .flex-group-right {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   text-align: center;
 }
 
 .flex-group-left {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
 }
 
 .flex-group-right {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
 }
 
 .flexshrink {
-  -webkit-box-flex: 0;
-  -ms-flex: 0;
   flex: 0;
 }
 
 .flex-between {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .flexlarge {
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
   flex: 2;
 }
 
 .align-left {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
 }
 
 .align-right {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
 }
 
 .align-center {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
 }
@@ -339,6 +322,7 @@ input.clear-input {
   background-image: none;
   background-color: transparent;
   -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
 
@@ -379,27 +363,15 @@ input.clear-input:focus {
   font-family: "Lora", serif;
 }
 .archetericalite .sheet-header {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 auto;
   flex: 0 auto;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   margin-bottom: 10px;
 }
 .archetericalite .sheet-header .img-block {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
   flex: 1;
   min-width: 150px;
   padding-right: 10px;
@@ -418,11 +390,7 @@ input.clear-input:focus {
   width: 100%;
 }
 .archetericalite .sheet-header .img-block .hp-bar .hp-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   position: relative;
   top: -10px;
@@ -431,8 +399,6 @@ input.clear-input:focus {
   text-align: center;
 }
 .archetericalite .sheet-header .header-fields {
-  -webkit-box-flex: 4;
-  -ms-flex: 4;
   flex: 4;
 }
 .archetericalite .sheet-header h1.charname {
@@ -452,15 +418,8 @@ input.clear-input:focus {
   grid-template-columns: auto 150px;
 }
 .archetericalite .sheet-header .faction-block h2.faction {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   border-bottom: 0;
 }
@@ -468,8 +427,6 @@ input.clear-input:focus {
   border-bottom-width: 1px;
 }
 .archetericalite nav.sheet-tabs {
-  -webkit-box-flex: 0;
-  -ms-flex: 0;
   flex: 0;
   border-top-width: 2px;
   border-bottom: none;
@@ -504,8 +461,6 @@ input.clear-input:focus {
   position: relative;
 }
 .archetericalite .sheet-body .item-header .item-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .archetericalite .sheet-body .item-header .item-name h3 {
@@ -605,35 +560,21 @@ input.clear-input:focus {
   padding: 0 8px;
 }
 .archetericalite .items-header {
-  -webkit-box-flex: 100px;
-  -ms-flex: 100px auto;
   flex: 100px auto;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   margin-bottom: 10px;
 }
 .archetericalite .items-header .item-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
   border: none;
 }
 .archetericalite .items-header .header-fields {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
   flex: 1;
 }
 .archetericalite .items-header .header-fields h1.item-name {
@@ -650,13 +591,9 @@ input.clear-input:focus {
   margin: 0;
 }
 .archetericalite .sheet-body .info-bar {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
   flex: auto;
 }
 .archetericalite .sheet-body .editor-block {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
   flex: auto;
 }
 .archetericalite .sheet-body .editor-block .editor {
@@ -676,18 +613,12 @@ input.clear-input:focus {
   padding: 0;
 }
 .archetericalite .items-list .item-name {
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
   flex: 2;
   margin: 0;
   overflow: hidden;
   font-size: 13px;
   text-align: left;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .archetericalite .items-list .item-name h3, .archetericalite .items-list .item-name h4 {
@@ -699,11 +630,7 @@ input.clear-input:focus {
   position: absolute;
   top: 4px;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .archetericalite .items-list .item-controls a {
@@ -713,8 +640,6 @@ input.clear-input:focus {
 }
 .archetericalite .items-list .item {
   position: relative;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 0 2px;
   border-bottom: 1px solid #c9c7b8;
@@ -726,8 +651,6 @@ input.clear-input:focus {
   color: #191813;
 }
 .archetericalite .items-list .item .item-name .item-image {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 30px;
   flex: 0 0 30px;
   height: 30px;
   background-size: 30px;
@@ -744,8 +667,6 @@ input.clear-input:focus {
   height: 28px;
   margin: 2px 0;
   padding: 0;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: rgba(165, 154, 132, 0.3);
   border: 1px solid var(--color-border-light-primary);
@@ -760,8 +681,6 @@ input.clear-input:focus {
   text-align: left;
 }
 .archetericalite .sidebar-block .info-sidebar {
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
   flex: 2;
   min-width: 190px;
   max-width: 200px;
@@ -770,8 +689,6 @@ input.clear-input:focus {
   border: 1px solid var(--color-border-light-primary);
 }
 .archetericalite .sidebar-block .editor-block {
-  -webkit-box-flex: 5;
-  -ms-flex: 5;
   flex: 5;
   padding: 5px;
 }
@@ -793,27 +710,15 @@ input.clear-input:focus {
   border: none;
 }
 .archetericalite .limited-sheet {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 auto;
   flex: 0 auto;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   margin-bottom: 10px;
 }
 .archetericalite .limited-sheet img.profile-img {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
   flex: 1;
   height: 300px;
   min-width: 300px;
@@ -821,8 +726,6 @@ input.clear-input:focus {
   border: none;
 }
 .archetericalite .limited-sheet .limited-info {
-  -webkit-box-flex: 2;
-  -ms-flex: 2;
   flex: 2;
 }
 .archetericalite .limited-sheet .limited-info h1.charname {
@@ -848,21 +751,13 @@ input.clear-input:focus {
 }
 .archetericalite .resources {
   margin-bottom: 5px;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
   align-items: baseline;
 }
 .archetericalite .resources .resource {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
   flex: auto;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
   align-items: baseline;
 }
 .archetericalite .resources .resource * {
-  -webkit-box-flex: 1;
-  -ms-flex: auto;
   flex: auto;
 }
 .archetericalite .resource .resource-label {
@@ -874,3 +769,5 @@ input.clear-input:focus {
 .archetericalite .resource input {
   display: inline;
 }
+
+/*# sourceMappingURL=archetericalite.css.map */

@@ -17,11 +17,11 @@
   display: block;
 }
 
-.roll-result{
+.roll-message{
   min-height: 88px;
 
   h1 {
-    font-size: var(--font-size-18);
+    font-size: 18px;
     font-weight: bold;
     border: none;
     text-align: center;
@@ -47,10 +47,20 @@
         background-image: url(/icons/svg/d6-grey.svg);
         background-repeat: no-repeat;
         background-size: 36px 36px;
-        font-size: var(--font-size-16);
+        font-size: 16px;
         color: #000;
         font-weight: bold;
         text-align: center;
+      }
+
+      .special-dice {
+        min-width: 32px;
+        line-height: 32px;
+        background-size: 32px 32px;
+      }
+
+      .dice.infirmity-match {
+        opacity: 0.5;
       }
     }
 
@@ -63,7 +73,7 @@
       background-image: url(../icons/ui/two-dice.svg);
       background-repeat: no-repeat;
       background-size: 48px 48px;
-      font-size: var(--font-size-16);
+      font-size: 16px;
       color: #000;
       font-weight: bold;
 
@@ -79,23 +89,25 @@
     text-align: center;
   }
 
-  .success, .panic, .fainting {
-    flex: 0;
-    font-size: var(--font-size-18);
-    font-weight: bold;
-    position: relative;
-    margin: 0;
-    line-height: 24px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--color-border-light-2);
-    border-radius: 3px;
-    box-shadow: 0 0 2px #fff inset;
-    word-break: break-all;
-    text-transform: uppercase;
-  }
+  .roll-results {
+    h4 {
+      flex: 0;
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+      margin: 0;
+      line-height: 24px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--color-border-light-2);
+      border-radius: 3px;
+      box-shadow: 0 0 2px #fff inset;
+      word-break: break-all;
+      text-transform: uppercase;
+    }
 
-  .panic, .fainting {
-    margin-top: 10px;
+    h4.additionally {
+      margin-top: 5px;
+    }
   }
 }

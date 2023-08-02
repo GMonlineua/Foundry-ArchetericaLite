@@ -2,7 +2,7 @@
   "id": "archetericalite",
   "title": "Archeterica Lite",
   "description": "Archeterica Imago Lite",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "compatibility": {
     "minimum": "11",
     "verified": "11",
@@ -187,7 +187,7 @@
   "gridUnits": "m",
   "url": "https://github.com/GMonlineua/Foundry-ArchetericaLite",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/Foundry-ArchetericaLite/master/system.json",
-  "download": "https://github.com/GMonlineua/Foundry-ArchetericaLite/releases/download/v0.6.1-beta/version-0.6.1.zip",
+  "download": "https://github.com/GMonlineua/Foundry-ArchetericaLite/releases/download/v0.6.2-beta/version-0.6.2.zip",
   "license": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/LICENSE.md",
   "changelog": "https://github.com/GMonlineua/Foundry-ArchetericaLite/blob/master/CHANGELOG.md"
 }

@@ -1,7 +1,7 @@
 <form>
     <div class="roll-template">
 
-      <div class="narrativeTest {{#if  narrative}}active{{/if}}">
+      <div class="narrativeTest {{#if narrative}}active{{/if}}">
         <label for="narrativeDifficulty">{{localize 'ARCHETERICALITE.Difficulty'}}:</label>
         <select id="narrativeDifficulty" name="narrativeDifficulty" data-type="Number">
           <option value="0">{{localize 'ARCHETERICALITE.DifficultyNone'}}</option>
@@ -13,10 +13,10 @@
         </select>
       </div>
 
-      <div class="mastery-block {{#if  mastery}}active{{/if}}">
+      <div class="mastery-block {{#if mastery}}active{{/if}}">
         <div class="mastery-block">
           <label for="opponentMastery">{{localize 'ARCHETERICALITE.OpponentMastery'}}:</label>
-          <input id="opponentMastery" name="opponentMastery" type="number"  value="0" data-dtype="Number"/>
+          <input id="opponentMastery" name="opponentMastery" type="number" value="0" data-dtype="Number"/>
         </div>
 
         <div class="advantages-block">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="damage-block {{#if  damage}}active{{/if}}">
+      <div class="damage-block {{#if damage}}active{{/if}}">
         <select id="damage" name="damage" data-type="String">
           <option value="2d6">{{localize 'ARCHETERICALITE.DamageFull'}}</option>
           <option value="floor(2d6/2)">{{localize 'ARCHETERICALITE.DamageHalf'}}</option>
@@ -39,21 +39,21 @@
         </select>
         <div class="lethality-block">
           <label for="lethality">{{localize 'ARCHETERICALITE.Lethality'}}:</label>
-          <input id="lethality" type="number"  value="0" data-dtype="Number"/>
+          <input id="lethality" name="lethality" type="number" value="0" data-dtype="Number"/>
         </div>
       </div>
 
-      <div class="imago-block {{#if  imago}}active{{/if}}">
+      <div class="imago-block {{#if imago}}active{{/if}}">
         <label for="opponentImago">{{localize 'ARCHETERICALITE.OpponentImago'}}:</label>
-        <input id="opponentImago" name="opponentImago" type="number"  value="1" data-dtype="Number"/>
+        <input id="opponentImago" name="opponentImago" type="number" value="1" data-dtype="Number"/>
       </div>
 
-      <div class="difficulty-block {{#if  customDifficulty}}active{{/if}}">
+      <div class="difficulty-block {{#if customDifficulty}}active{{/if}}">
         <label for="customDifficulty">{{localize 'ARCHETERICALITE.Difficulty'}}:</label>
-        <input id="customDifficulty" name="customDifficulty" type="number"  value="0" data-dtype="Number"/>
+        <input id="customDifficulty" name="customDifficulty" type="number" value="0" data-dtype="Number"/>
       </div>
 
-      <div class="modifier {{#if  modifier}}active{{/if}}">
+      <div class="modifier {{#if modifier}}active{{/if}}">
         <label for="modifier">{{localize 'ARCHETERICALITE.Modifier'}}: </label>
         <input id="modifier" name="modifier" type="number" value="0" data-dtype="Number">
       </div>

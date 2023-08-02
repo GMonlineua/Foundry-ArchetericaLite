@@ -1,36 +1,29 @@
-<div class="roll-result">
+<div class="roll-message">
   <h1>{{testName}}</h1>
 
   <div class="roll-info">
     {{#if modifier}}<span class="modifier">{{localize 'ARCHETERICALITE.Modifier'}}: {{modifier}}</span>{{/if}}
 
     <ol class="dice-rolls">
-      {{#each dice }}
-        <li class="dice">{{this}}</li>
+      {{#each rollResult.commonDice }}
+        <li class="dice {{#if this.used}}infirmity-match{{/if}}">{{this.value}}</li>
       {{/each}}
     </ol>
 
-    {{#if infirmityDice}}
-      <ol class="dice-rolls">
-        {{#each infirmityDice }}
-          <li class="dice">{{this}}</li>
-        {{/each}}
-      </ol>
-    {{/if}}
+    <ol class="dice-rolls">
+      {{#each rollResult.infirmityDice }}
+        <li class="dice special-dice {{#if this.used}}infirmity-match{{/if}}">{{this.value}}</li>
+      {{/each}}
+    </ol>
 
-    <span class="result"><span class="text">{{total}}</span></span>
+    <span class="result"><span class="text">{{rollResult.total}}</span></span>
   </div>
 
-  {{#if  difficulty}}
-    <p class="difficulty">{{localize 'ARCHETERICALITE.Difficulty'}}: {{difficulty}}</p>
-    <h4 class="success">{{#if  success}}{{localize 'ARCHETERICALITE.Success'}}{{else}}{{localize 'ARCHETERICALITE.Fail'}}{{/if}}</h>
-  {{/if}}
-
-  {{#if  panic}}
-    <h4 class="panic">{{localize 'ARCHETERICALITE.Panic'}}</h4>
-  {{/if}}
-
-  {{#if  fainting}}
-    <h4 class="fainting">{{localize 'ARCHETERICALITE.InfirmityZeroSum'}}</h4>
-  {{/if}}
+  <div class="roll-results">
+    {{#if difficulty}}
+      <p class="additionally">{{localize 'ARCHETERICALITE.Difficulty'}}: {{difficulty}}</p>
+      <h4 class="additionally">{{#if rollResult.success}}{{localize 'ARCHETERICALITE.Success'}}{{else}}{{localize 'ARCHETERICALITE.Fail'}}{{/if}}</h>
+    {{/if}}
+    {{#if rollResult.fainting}}<h4 class="additionally">{{localize 'ARCHETERICALITE.InfirmityZeroSum'}}</h4>{{/if}}
+  </div>
 </div>
