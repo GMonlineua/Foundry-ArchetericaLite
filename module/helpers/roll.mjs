@@ -130,7 +130,7 @@ function masteryTest(testName, speaker, data, sheet, actorMastery) {
   const modifier = data.advantage;
   const opponentMastery = data.opponentMastery;
   const difficulty = 7 - actorMastery + opponentMastery;
-  rollDice(testName, speaker, modifier, difficulty, null, infirmity);
+  rollDice(testName, speaker, modifier, difficulty, infirmity);
 }
 
 function imagoTest(testName, speaker, data, sheet) {
